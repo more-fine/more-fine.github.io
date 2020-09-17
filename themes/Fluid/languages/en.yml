@@ -1,44 +1,44 @@
 search:
-  title: Search
-  keyword: keyword
+  title: 搜索
+  keyword: 请输入关键字
   status:
     success: v
     error: x
 
-postTotal: "%d posts in total."
+postTotal: "%d 篇博客文章   By __ Mr Xu."
 
 paginator:
-  pre: Previous
-  next: Next
+  pre: 上一页
+  next: 下一页
 
 post:
-  toc: TOC
-  pre: Previous
-  next: Next
+  toc: 目录
+  pre: 上一篇
+  next: 下一篇
 
 home:
-  title: Home
+  title: 首页
 
 archive:
-  title: Archives
-  subtitle: Archive
+  title: 归档
+  subtitle: 归档页面描述文字
 
 tag:
-  title: Tags
-  subtitle: Tag
+  title: 标签
+  subtitle: 标签页面描述文字
 
 category:
-  title: Categories
-  subtitle: Category
+  title: 分类
+  subtitle: 分类页面描述文字
 
 about:
-  title: About
-  subtitle: About
+  title: 关于
+  subtitle: 关于页面描述文字
 
 page404:
-  title: Page not found
-  subtitle: Oops, Page not found...
+  title: 页面走丢啦~
+  subtitle: 不好意思啦, 当前页面找不到啦...
 
 links:
-  title: Links
-  subtitle: Links
+  title: 友链
+  subtitle: 友情链接
