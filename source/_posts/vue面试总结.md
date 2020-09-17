@@ -1,7 +1,7 @@
 ---
 title: 面试总结
-tags: 面试题
-categories: 找工作必备知识点
+tags: vue
+categories: 知识点总结
 ---
 # 面试总结
 
