@@ -29,4 +29,4 @@ cnpm i -g @vue/cli-init
 
 启动：npm run dev
 
-![21.png](/img/21.png)
+![21.png](/img/1.png)
