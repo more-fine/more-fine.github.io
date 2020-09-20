@@ -31,28 +31,24 @@ npm run serve
 
 ## 具体步骤：
 
-![img](http://localhost:4000/img/2.png)
+![2.png](/img/2.png)
 
  
 
 
-![img](http://localhost:4000/img/3.png)
-
- 
-
- 
-
-![img](http://localhost:4000/img/4.png)
+![img](/img/3.png)
 
  
 
  
 
-![img](http://localhost:4000/img/5.png)
+![img](/img/4.png)
 
  
 
  
+
+![img](/img/5.png)
 
  
 
@@ -60,7 +56,11 @@ npm run serve
 
  
 
-![img](http://localhost:4000/img/6.png)
+ 
+
+ 
+
+![img](/img/6.png)
 
  
 
@@ -76,7 +76,7 @@ npm run serve
 
  
 
-![img](http://localhost:4000/img/7.png)
+![img](/img/7.png)
 
  
 
@@ -84,18 +84,18 @@ npm run serve
 
  
 
-![img](http://localhost:4000/img/8.png)
+![img](/img/8.png)
 
 
- 
 
- 
-![img](http://localhost:4000/img/9.png)
 
- 
-![img](http://localhost:4000/img/10.png)
 
- ![img](http://localhost:4000/img/11.png)
+![img](/img/9.png)
+
+
+![img](/img/10.png)
+
+ ![img](/img/11.png)
 
  
 
