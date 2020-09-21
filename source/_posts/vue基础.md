@@ -1,6 +1,6 @@
 ---
 title: vue基础
-date: 2020-09-18 00:15:04
+date: 2020-09-16 20:15:04
 tags: vue
 categories: 知识点总结
 ---
