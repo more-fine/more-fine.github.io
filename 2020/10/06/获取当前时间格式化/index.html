@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="Mr Xu">
   <meta name="keywords" content="">
-  <title>鼠标滚轮事件小demo - more-fine</title>
+  <title>获取当前时间格式化 - more-fine</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -160,8 +160,8 @@
               
   <div class="mt-3 post-meta">
     <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-    <time datetime="2020-09-29 23:12" pubdate>
-      2020-09-29 23:12
+    <time datetime="2020-10-06 12:51" pubdate>
+      2020-10-06 12:51
     </time>
   </div>
 
@@ -171,7 +171,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      438 字
+      159 字
     </span>
   
 
@@ -181,7 +181,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      5
+      2
        分钟
     </span>
   
@@ -219,7 +219,7 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto" id="post">
             <!-- SEO header -->
-            <h1 style="display: none">鼠标滚轮事件小demo</h1>
+            <h1 style="display: none">获取当前时间格式化</h1>
             
               <p class="note note-info">
                 
@@ -228,80 +228,31 @@
               </p>
             
             <div class="markdown-body" id="post-body">
-              <h2 id="鼠标滚轮事件小demo"><a href="#鼠标滚轮事件小demo" class="headerlink" title="鼠标滚轮事件小demo"></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/MrXXD/p/13298188.html">鼠标滚轮事件小demo</a></h2><p>一般很多网站都会有一些这样的效果来提升用户的体验度,返回顶部的功能啊,当然也包括一些顶部的菜单滑动显示隐藏的功能等</p>
-<p>也是记录一下以便以后方便拿来用,有需要的也给您提供一份便捷.可能写的不太好,欢迎交流探讨</p>
-<h3 id="简单的举个栗子"><a href="#简单的举个栗子" class="headerlink" title="简单的举个栗子:"></a>简单的举个栗子:</h3><p>上滑效果:</p>
-<p><img src="https://img2020.cnblogs.com/blog/1809041/202007/1809041-20200714110315176-1377970511.png" srcset="/img/loading.gif" alt="img"></p>
-<p>上滑效果:</p>
-<p><img src="https://img2020.cnblogs.com/blog/1809041/202007/1809041-20200714110321236-684601970.jpg" srcset="/img/loading.gif" alt="img"></p>
-<p>返回顶部效果:</p>
-<p><img src="https://img2020.cnblogs.com/blog/1809041/202007/1809041-20200714110222524-536348246.png" srcset="/img/loading.gif" alt="img"></p>
-<h3 id="记录一些效果"><a href="#记录一些效果" class="headerlink" title="记录一些效果:"></a>记录一些效果:</h3><p>1,简单的动画实现返回顶部,或者你想要去到的位置</p>
-<pre><code class="hljs js"><span class="hljs-comment">// 页面返回响应位置</span>
-$(<span class="hljs-string">&quot;.fixedmodular1&quot;</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
-    <span class="hljs-comment">// 返回.main元素的位置</span>
-    <span class="hljs-keyword">let</span> target_top = $(<span class="hljs-string">&quot;.main&quot;</span>).offset().top;
-            <span class="hljs-comment">//设置动画效果,不会中断滚动</span>
-    $(<span class="hljs-string">&quot;html,body&quot;</span>).animate(&#123; <span class="hljs-attr">scrollTop</span>: target_top &#125;, <span class="hljs-number">1000</span>);
-            <span class="hljs-comment">//返回顶部</span>
-           <span class="hljs-comment">//$(&quot;html,body&quot;).animate(&#123; scrollTop: 0&#125;, 1000);</span>
-&#125;)</code></pre>
-
-
-
-<p>感觉这样确实不是很友好,很简单粗暴.</p>
-<p>2,返回顶部的图标,显示隐藏,包括顶部的样式也是同样的套路</p>
-<pre><code class="hljs js">$(<span class="hljs-built_in">window</span>).scroll(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
-    <span class="hljs-keyword">var</span> scrolltop = $(<span class="hljs-built_in">this</span>).scrollTop(); <span class="hljs-comment">//滚动条</span>
-    <span class="hljs-keyword">var</span> windowheight = $(<span class="hljs-built_in">this</span>).height(); <span class="hljs-comment">//可视化窗口高度</span>
-    <span class="hljs-keyword">if</span> (scrolltop &gt;= windowheight) &#123;
-        $(<span class="hljs-string">&#x27;#top&#x27;</span>).show()
-    &#125; <span class="hljs-keyword">else</span> &#123;
-        $(<span class="hljs-string">&#x27;#top&#x27;</span>).hide()
+              <pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">dateFormat</span>(<span class="hljs-params">fmt, date</span>) </span>&#123;
+        <span class="hljs-keyword">let</span> ret;
+        <span class="hljs-keyword">let</span> opt = &#123;
+            <span class="hljs-string">&quot;Y+&quot;</span>: date.getFullYear().toString(),        <span class="hljs-comment">// 年</span>
+            <span class="hljs-string">&quot;m+&quot;</span>: (date.getMonth() + <span class="hljs-number">1</span>).toString(),     <span class="hljs-comment">// 月</span>
+            <span class="hljs-string">&quot;d+&quot;</span>: date.getDate().toString(),            <span class="hljs-comment">// 日</span>
+            <span class="hljs-string">&quot;H+&quot;</span>: date.getHours().toString(),           <span class="hljs-comment">// 时</span>
+            <span class="hljs-string">&quot;M+&quot;</span>: date.getMinutes().toString(),         <span class="hljs-comment">// 分</span>
+            <span class="hljs-string">&quot;S+&quot;</span>: date.getSeconds().toString()          <span class="hljs-comment">// 秒</span>
+            <span class="hljs-comment">// 有其他格式化字符需求可以继续添加，必须转化成字符串</span>
+        &#125;;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> k <span class="hljs-keyword">in</span> opt) &#123;
+            ret = <span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(<span class="hljs-string">&quot;(&quot;</span> + k + <span class="hljs-string">&quot;)&quot;</span>).exec(fmt);
+            <span class="hljs-keyword">if</span> (ret) &#123;
+                fmt = fmt.replace(ret[<span class="hljs-number">1</span>], (ret[<span class="hljs-number">1</span>].length == <span class="hljs-number">1</span>) ? (opt[k]) : (opt[k].padStart(ret[<span class="hljs-number">1</span>].length, <span class="hljs-string">&quot;0&quot;</span>)))
+            &#125;;
+        &#125;;
+        <span class="hljs-keyword">return</span> fmt;
     &#125;
-&#125;)</code></pre>
+    <span class="hljs-keyword">let</span> date = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();
+    <span class="hljs-built_in">console</span>.log(dateFormat(<span class="hljs-string">&quot;YYYY-mm-dd HH:MM&quot;</span>, date));
 
+<span class="hljs-keyword">let</span> newTime = dateFormat(<span class="hljs-string">&quot;YYYY-mm-dd HH:MM&quot;</span>, date);</code></pre>
 
-
-<p>3,返回顶部的操作</p>
-<pre><code class="hljs js"><span class="hljs-keyword">var</span> timer = <span class="hljs-literal">null</span>
-$(<span class="hljs-string">&#x27;#top&#x27;</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
-    timer = <span class="hljs-built_in">setInterval</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
-        <span class="hljs-keyword">var</span> osTop = <span class="hljs-built_in">document</span>.documentElement.scrollTop||<span class="hljs-built_in">document</span>.body.scrollTop;
-        <span class="hljs-keyword">var</span> ispeed = <span class="hljs-built_in">Math</span>.floor(-osTop / <span class="hljs-number">6</span>);
-        <span class="hljs-comment">//获取滚动条距离顶部的高度</span>
-        <span class="hljs-built_in">document</span>.documentElement.scrollTop = <span class="hljs-built_in">document</span>.body.scrollTop = osTop + ispeed;
-        <span class="hljs-keyword">if</span> (osTop == <span class="hljs-number">0</span>) &#123;
-            <span class="hljs-built_in">clearInterval</span>(timer);
-        &#125;
-    &#125;, <span class="hljs-number">30</span>);
-&#125;)
-<span class="hljs-comment">//在滚动的过程中滑动鼠标中止滚动,停到当前滚动的位置</span>
-
-<span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">&#x27;mousewheel&#x27;</span>, mouseScrollMove,<span class="hljs-literal">false</span>)
-
-
-
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mouseScrollMove</span>(<span class="hljs-params">e</span>) </span>&#123;
-
-   <span class="hljs-keyword">var</span> eM = e.wheelDelta || e.detail;
-
-   <span class="hljs-keyword">var</span> moveLen = <span class="hljs-built_in">Math</span>.max(<span class="hljs-number">-1</span>, <span class="hljs-built_in">Math</span>.min(<span class="hljs-number">1</span>, eM));
-
-   <span class="hljs-keyword">if</span> (moveLen &lt; <span class="hljs-number">0</span>) &#123; <span class="hljs-comment">//向下滚动</span>
-
-       <span class="hljs-built_in">clearInterval</span>(timer);
-
-   &#125; <span class="hljs-keyword">else</span> &#123; <span class="hljs-comment">//向上滚动</span>
-
-       <span class="hljs-built_in">clearInterval</span>(timer);
-
-   &#125;
-
-&#125;</code></pre>
-
-
-
+<p>转载至：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/thunderLL/p/10986727.html">https://www.cnblogs.com/thunderLL/p/10986727.html</a></p>
 
             </div>
             <hr>
@@ -311,7 +262,7 @@ $(<span class="hljs-string">&#x27;#top&#x27;</span>).click(<span class="hljs-fun
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E5%B0%8F%E6%A0%97%E5%AD%90/">小栗子</a>
+                      <a class="hover-with-bg" href="/categories/%E5%A4%87%E5%BF%98%E5%BD%95/">备忘录</a>
                     
                   </div>
                 
@@ -319,7 +270,7 @@ $(<span class="hljs-string">&#x27;#top&#x27;</span>).click(<span class="hljs-fun
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E5%B0%8F%E6%A0%97%E5%AD%90/">小栗子</a>
+                      <a class="hover-with-bg" href="/tags/%E5%A4%87%E5%BF%98%E5%BD%95/">备忘录</a>
                     
                   </div>
                 
@@ -332,9 +283,9 @@ $(<span class="hljs-string">&#x27;#top&#x27;</span>).click(<span class="hljs-fun
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/09/29/%E6%96%87%E5%AD%97%E7%AB%96%E5%90%91%E6%8E%92%E5%88%97%E6%A0%B7%E5%BC%8F/">
+                      <a href="/2020/10/06/%E9%98%BB%E6%AD%A2%E4%BA%8B%E4%BB%B6%E5%86%92%E6%B3%A1/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">文字竖向排列样式</span>
+                        <span class="hidden-mobile">阻止事件冒泡</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -342,8 +293,8 @@ $(<span class="hljs-string">&#x27;#top&#x27;</span>).click(<span class="hljs-fun
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/09/29/A%E7%BD%91%E7%AB%99%E7%9A%84%E7%99%BB%E9%99%86%E8%B7%B3%E8%BD%AC%E5%88%B0B%E7%BD%91%E7%AB%99/">
-                        <span class="hidden-mobile">A网站的登陆跳转到B网站</span>
+                      <a href="/2020/10/06/css%E5%A4%9A%E8%A1%8C%E6%96%87%E6%9C%AC%E6%BA%A2%E5%87%BA%E9%9A%90%E8%97%8F-%E6%98%BE%E7%A4%BA%E7%9C%81%E7%95%A5%E5%8F%B7/">
+                        <span class="hidden-mobile">css多行文本溢出隐藏,显示省略号</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -508,7 +459,7 @@ $(<span class="hljs-string">&#x27;#top&#x27;</span>).click(<span class="hljs-fun
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "鼠标滚轮事件小demo&nbsp;",
+        "获取当前时间格式化&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 60,

@@ -172,6 +172,198 @@
     
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
+        <a href="/2020/10/06/%E4%B8%8B%E6%8B%89%E5%88%B7%E6%96%B0%E5%8A%A0%E8%BD%BD%E6%95%B0%E6%8D%AE%EF%BC%8C%E7%AD%9B%E9%80%89%E6%9D%A1%E4%BB%B6%E7%82%B9%E5%87%BB%E5%8A%A0%E8%BD%BD%E5%AF%B9%E5%BA%94%E6%95%B0%E6%8D%AE%EF%BC%8C%E6%90%9C%E7%B4%A2input%E6%A1%86%E5%BE%97%E5%88%B0%E5%AF%B9%E5%BA%94%E6%95%B0%E6%8D%AE/">下拉刷新加载数据，筛选条件点击加载对应数据，搜索input框得到对应数据</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/10/06/%E4%B8%8B%E6%8B%89%E5%88%B7%E6%96%B0%E5%8A%A0%E8%BD%BD%E6%95%B0%E6%8D%AE%EF%BC%8C%E7%AD%9B%E9%80%89%E6%9D%A1%E4%BB%B6%E7%82%B9%E5%87%BB%E5%8A%A0%E8%BD%BD%E5%AF%B9%E5%BA%94%E6%95%B0%E6%8D%AE%EF%BC%8C%E6%90%9C%E7%B4%A2input%E6%A1%86%E5%BE%97%E5%88%B0%E5%AF%B9%E5%BA%94%E6%95%B0%E6%8D%AE/">
+          
+          
+            
+          
+          下拉刷新加载数据，筛选条件点击加载对应数据，搜索input框得到对应数据移动端页面的下拉刷新，用到jquery和layui的弹窗，layui的下拉刷新配合上条件筛选有点难搞，所以没有用，原生js写的，有用到的话可以采纳html部分：
+&lt;div class=&quot;seo_Box&quot;&gt;
+                &lt;input class=&quot;case_se
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-10-06 12:58" pubdate>
+              2020-10-06
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E5%B0%8F%E6%A0%97%E5%AD%90/">小栗子</a>
+            
+              <a href="/tags/layui/">layui</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2020/10/06/%E9%98%BB%E6%AD%A2%E4%BA%8B%E4%BB%B6%E5%86%92%E6%B3%A1/">阻止事件冒泡</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/10/06/%E9%98%BB%E6%AD%A2%E4%BA%8B%E4%BB%B6%E5%86%92%E6%B3%A1/">
+          
+          
+            
+          
+          阻止事件冒泡子元素点击事件中添加阻止冒泡事件的方法：在点击子元素的时候不会触发父元素的事件
+//点击子元素跳转页面
+      $(&#x27;.ziDom&#x27;).bind(&quot;click&quot;, function () &#123;
+           stopPropagation()
+      &#125;);
+
+// 阻止冒泡
+    function stopP
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-10-06 12:53" pubdate>
+              2020-10-06
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E5%A4%87%E5%BF%98%E5%BD%95/">备忘录</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E5%A4%87%E5%BF%98%E5%BD%95/">备忘录</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2020/10/06/%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E6%97%B6%E9%97%B4%E6%A0%BC%E5%BC%8F%E5%8C%96/">获取当前时间格式化</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/10/06/%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E6%97%B6%E9%97%B4%E6%A0%BC%E5%BC%8F%E5%8C%96/">
+          
+          
+            
+          
+          function dateFormat(fmt, date) &#123;
+        let ret;
+        let opt = &#123;
+            &quot;Y+&quot;: date.getFullYear().toString(),        // 年
+            &quot;m+&quot;: (date.getMonth() + 1)
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-10-06 12:51" pubdate>
+              2020-10-06
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E5%A4%87%E5%BF%98%E5%BD%95/">备忘录</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E5%A4%87%E5%BF%98%E5%BD%95/">备忘录</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2020/10/06/css%E5%A4%9A%E8%A1%8C%E6%96%87%E6%9C%AC%E6%BA%A2%E5%87%BA%E9%9A%90%E8%97%8F-%E6%98%BE%E7%A4%BA%E7%9C%81%E7%95%A5%E5%8F%B7/">css多行文本溢出隐藏,显示省略号</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/10/06/css%E5%A4%9A%E8%A1%8C%E6%96%87%E6%9C%AC%E6%BA%A2%E5%87%BA%E9%9A%90%E8%97%8F-%E6%98%BE%E7%A4%BA%E7%9C%81%E7%95%A5%E5%8F%B7/">
+          
+          
+            
+          
+          单行文本溢出隐藏：
+overflow: hidden;单行文本溢出隐藏显示省略号：
+white-space: nowrap;overflow: hidden;text-overflow: ellipsis;多行文本溢出隐藏显示省略号：
+text-overflow: -o-ellipsis-lastline;overflow: hidden;text-overflow: ellipsis;displ
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-10-06 12:49" pubdate>
+              2020-10-06
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E5%A4%87%E5%BF%98%E5%BD%95/">备忘录</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
         <a href="/2020/10/01/vue%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/">面试总结</a>
       </h1>
 
@@ -357,6 +549,13 @@ $(&quot;.fi
           </div>
         
         
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E5%B0%8F%E6%A0%97%E5%AD%90/">小栗子</a>
+            
+          </div>
+        
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
@@ -457,174 +656,11 @@ coo
     </article>
   </div>
 
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        <a href="/2020/09/22/%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/">深浅拷贝</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2020/09/22/%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/">
-          
-          
-            
-          
-          深浅拷贝:赋值当我们把一个对象赋值给一个新的变量时，赋的其实是该对象的在栈中的地址，而不是堆中的数据。也就是两个对象指向的是同一个存储空间，无论哪个对象发生改变，其实都是改变的存储空间的内容，因此，两个对象是联动的。
-是赋值是将某一数值或对象赋给某个变量的过程，分为下面 2 部分
-基本数据类型：赋值，赋值之后两个变量互不影响
-引用数据类型：赋址，两个变量具有相同的引用，指向同一个对象，相互之间有影
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-09-22 23:35" pubdate>
-              2020-09-22
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/">知识点总结</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        <a href="/2020/09/19/uni-app%E6%80%BB%E7%BB%93/">uni-app总结</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2020/09/19/uni-app%E6%80%BB%E7%BB%93/">
-          
-          
-            
-          
-          uniapp学习1,创建项目hbuilderX创建项目,输入小程序id,微信开发者工具设置安全选项,建立连接
-2,样式不生效问题:
-下载uniapp-hello文件,(gitHub)复制uni.css文件到自己的项目
-同时在app.vue文件引入css模块
-@import url(“./common/uni.css”);
-同其他ui框架一样,会编译报错,缺少文件报错,找到static文件下面的相对
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-09-19 23:30" pubdate>
-              2020-09-19
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        <a href="/2020/09/18/jeecg-boot%E6%80%BB%E7%BB%93/">jeecg-boot总结</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2020/09/18/jeecg-boot%E6%80%BB%E7%BB%93/">
-          
-          
-            
-          
-          jeecgBoot总结源码文件解读:1.登录页面代码位置src\components\layouts\UserLayout.vue
-src/views/user/Login.vue
-
-2.首页logo修改src/components/tools/Logo.vue
-
-3.图片预览路径public/index.html
-&lt;!-- 全局配置 --&gt;
-&lt;script&gt;
-  wind
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-09-18 23:28" pubdate>
-              2020-09-18
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        <a href="/2020/09/18/vue%E4%B8%AD%E8%B7%AF%E7%94%B1%E8%B7%B3%E8%BD%AC%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/">vue中路由跳转传递参数的三种方式</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2020/09/18/vue%E4%B8%AD%E8%B7%AF%E7%94%B1%E8%B7%B3%E8%BD%AC%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/">
-          
-          
-            
-          
-          vue中路由跳转传递参数的三种方式日常业务中，路由跳转的同时传递参数是比较常见的，传参的方式有三种：
-1）通过动态路由方式//路由配置文件中 配置动态路由{     path: ‘/detail/:id’,     name: ‘Detail’,     component: Detail   }//跳转时页面var id = 1;this.$router.push(‘/detail/‘ + id
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-09-18 00:15" pubdate>
-              2020-09-18
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/vue/">vue</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
 
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="iconfont icon-arrowright"></i></a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="iconfont icon-arrowright"></i></a>
     </span>
   </nav>
   
