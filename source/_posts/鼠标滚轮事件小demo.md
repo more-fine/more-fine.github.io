@@ -2,6 +2,7 @@
 title: 鼠标滚轮事件小demo
 date: 2020-09-29 23:12:46
 tags: [小栗子]
+categories: [小栗子]
 ---
 
 ## [鼠标滚轮事件小demo](https://www.cnblogs.com/MrXXD/p/13298188.html)
