@@ -103,5 +103,5 @@ theme: Fluid
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/more-fine/more-fine.github.io.git,master
-  coding: git@git.coding.net:more-fine/more-fine.git,master
+  repo: git@github.com:more-fine/more-fine.github.io.git
+  branch: master
