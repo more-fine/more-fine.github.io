@@ -1,0 +1,44 @@
+search:
+  title: 搜索
+  keyword: 请输入关键字
+  status:
+    success: v
+    error: x
+
+postTotal: "%d 篇博客文章   By __ Mr Xu."
+
+paginator:
+  pre: 上一页
+  next: 下一页
+
+post:
+  toc: 目录
+  pre: 上一篇
+  next: 下一篇
+
+home:
+  title: 首页
+
+archive:
+  title: 归档
+  subtitle: 前进一步如果没有用，就再前进一点！
+
+tag:
+  title: 标签
+  subtitle: 航行需要方向，这些都是你前进的航标！
+
+category:
+  title: 分类
+  subtitle: 技术需要专研，打磨需要时间！
+
+about:
+  title: 关于
+  subtitle: 欢迎来到大东主页！
+
+page404:
+  title: 页面走丢啦~
+  subtitle: 不好意思啦, 当前页面找不到啦...
+
+links:
+  title: 友链
+  subtitle: 常用网站

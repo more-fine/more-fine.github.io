@@ -3,17 +3,18 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
+title: more-fine
+subtitle: 生命的奖赏远在旅途终点,而非起点附近!
 description: ''
 keywords:
-author: John Doe
-language: en
+author: Mr Xu
+language: zh-Hans
 timezone: ''
 
 # URL
-## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: http://more-fine.github.io
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -29,7 +30,6 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
-
 # Writing
 new_post_name: :title.md # File name of new posts
 default_layout: post
@@ -97,11 +97,11 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: jekyll-theme-leap-day
+theme: Fluid
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: git@github.com:more-fine/more-fine.github.io.git
-  branch: master 
+  repo: https://github.com/more-fine/more-fine.github.io.git,master
+  coding: git@git.coding.net:more-fine/more-fine.git,master
