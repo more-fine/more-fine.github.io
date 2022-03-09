@@ -23,5 +23,5 @@ categories: [备忘录]
 </p>
 ```
 
-![angular使用ngRepeat报错](/img/angular报错.png)
+![angular使用ngRepeat报错](/img/2021/angular报错.png)
 

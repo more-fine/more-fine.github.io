@@ -31,28 +31,24 @@ npm run serve
 
 ## 具体步骤：
 
-![2.png](/img/2.png)
+![2.png](/img/2021/2.png)
 
  
 
 
-![img](/img/3.png)
-
- 
-
- 
-
-![img](/img/4.png)
+![img](/img/2021/3.png)
 
  
 
  
 
-![img](/img/5.png)
+![img](/img/2021/4.png)
 
  
 
  
+
+![img](/img/2021/5.png)
 
  
 
@@ -60,7 +56,11 @@ npm run serve
 
  
 
-![img](/img/6.png)
+ 
+
+ 
+
+![img](/img/2021/6.png)
 
  
 
@@ -76,7 +76,7 @@ npm run serve
 
  
 
-![img](/img/7.png)
+![img](/img/2021/7.png)
 
  
 
@@ -84,18 +84,18 @@ npm run serve
 
  
 
-![img](/img/8.png)
+![img](/img/2021/8.png)
 
 
 
 
 
-![img](/img/9.png)
+![img](/img/2021/9.png)
 
 
-![img](/img/10.png)
+![img](/img/2021/10.png)
 
- ![img](/img/11.png)
+ ![img](/img/2021/11.png)
 
  
 

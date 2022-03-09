@@ -11,11 +11,11 @@ categories: [备忘录]
 
 **图1:**
 
-![](/img/echarts2.png)
+![](/img/2021/echarts2.png)
 
 **图2:**
 
-![](/img/echarts1.png)
+![](/img/2021/echarts1.png)
 
 **需求:**
 
@@ -23,7 +23,7 @@ categories: [备忘录]
 
 **代码(及解决方案):**
 
-![](/img/echarts3.png)
+![](/img/2021/echarts3.png)
 
 **解决方案入下:**
 

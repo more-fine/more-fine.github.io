@@ -953,8 +953,6 @@ CMD:
 
 父组件的beforcreated先进行,created,beforMounted在进行子组件中的所有生命周期,再进行父组件的mounted再往下执行
 
-![img](https://img-blog.csdnimg.cn/20190614190854661.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JlbmJlbjUxMzYyNA==,size_16,color_FFFFFF,t_70)
-
 
 
 ### 47.什么是BFC？
