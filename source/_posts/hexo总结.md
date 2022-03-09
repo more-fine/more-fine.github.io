@@ -45,9 +45,22 @@ cd more-fine.github.io/
 5,下载依赖:
 npm install
 npm install hexo-deployer-git --save
+
+此时需要切换分支，到master，然后git pull更新public文件
+此时肯出现错误：
+Your local changes to the following files would be overwritten by checkout
+
+需要git clean -f //强制清除文件
+或者git checkout -f <branch> 强制切换分支
+此时：在桌面上新建一个文件夹，public，将master分支上的文件copy到public文件里面，然后切换到hexo分支下，然后将pulice剪切到hexo分支下根目录中
+    此时可以进行写博客啦，接下来的操作就没有什么问题了
+    
+写完博客生成部署，提交代码，这些操作是在hexo分支上进行的
+    
 6,生成，部署(换电脑的时候可能会丢失图片)
 hexo g 
 hexo d
+
 开始新的博客书写:(newpage博客的名字)
 hexo new newpage
 此时会在source/_posts文件夹里面生成.md的文件,直接打开编辑
