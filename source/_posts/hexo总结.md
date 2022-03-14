@@ -7,6 +7,8 @@ categories: [备忘录]
 
 ### hexo 总结
 
+#### 安装使用：
+
 本文参考博客:https://blog.csdn.net/sinat_37781304/article/details/82729029	博主总结的还是相当棒的,在这里也小总结一下
 
 按照博主的总结,部署的时候,http://yourname(xxx).github.io这样的网址打开是没有东西的,后来就花几块买了个.top的域名,部署成功了.
@@ -35,7 +37,7 @@ git config --global user.email "yourgithubemail"
 设置ssh key
 
 2,安装node
-npm install nodejs 
+npm install nodejs
 npm install npm
 3,安装hexo
 npm install hexo-cli -g
@@ -76,3 +78,10 @@ git pull
 10,如果部署到了服务器,那么只需要在同步到远端之后再执行一次6的步骤,两分钟就能再次在你的网址上看到更新的博客啦.
 ```
 
+#### 报错解决：
+
+**写hexo博客时报错Template render error: (unknown path)出现的原因及解决方法**
+
+有可能是你写的md文件，出现hexo无法编译的字符，如`{{}}`，要进行引用符号的处理。如:`{{}}`
+
+https://blog.csdn.net/kuashijidexibao/article/details/105517937
