@@ -291,8 +291,6 @@ for...of不能循环普通的对象,需要通过object,keys()搭配使用
 
 **页面的组件通过Dispatch 来调用Vuex的Actions 进行Actions逻辑处理数据，将处理好的数据通过commit 进行Mutations 中的数据逻辑处理,并且修改state中的存储的数据，state 是响应式的，只要state中的数据发生修改，会重新渲染组件.**
 
-
-
 **vuex中的五种属性:**
 
 分别是 State、 Getter、Mutation 、Action、 Module
@@ -1134,6 +1132,118 @@ if（window.localStorage）{
 存：localStorage.setItem(“arr”,JSON.stringify(data.body.data)),需要转换成字符串，不能直接存对象，切记
 
 取：JSON.parse(localStorage.arr)
+
+
+
+## 滴滴面试题
+
+### 1，执行顺序：
+
+```js
+async function async1(){
+	console.log('async1 start')//2
+	await async2()
+	console.log('async1 end')//6
+}
+async function async2(){
+	console.log('async2')//3
+}
+console.log('script start')//1
+setTimeout(function() {
+	console.log('setTimeout')//8
+},0)
+async1()
+new Promise(function(resolve) {
+	console.log('promise1')//4
+	resolve()
+}).then(function(){
+	console.log('promise2')//7
+})
+console.log('script end')//5
+```
+
+### 2,常见的数据类型
+
+基本数据类型：undefined，string，number，boolean,null
+
+引用数据类型：obj，array,function
+
+### 3，闭包的理解，用途及注意事项：
+
+函数执行时创建了一个内部函数，这个内部函数作为返回值，或以某种方式保留下来（属性），之后才会调用，这就会形成了闭包。
+
+特点：
+
+1，一个闭包就是当一个函数返回时，一个没有释放资源的栈区。
+
+2，作为一个函数变量的一个引用，当函数返回时，其处于激活状态。
+
+场景：
+
+1，匿名自执行函数
+
+我们创建了一个匿名的函数，并立即执行它，**由于外部无法引用它内部的变量，因此在函数执行完后会立刻释放资源，关键是不污染全局对象**。
+
+```
+(function() {
+var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+today = new Date(),
+msg = 'Today is ' + days[today.getDay()] + ', ' + today.getDate();
+alert(msg);
+} ());
+```
+
+2，结果缓存
+
+我们开发中会碰到很多情况，设想我们有一个处理过程很耗时的函数对象，每次调用都会花费很长时间，那么我们就需要将计算出来的值存储起来，当调用这个函数的时候，首先在缓存中查找，如果找不到，则进行计算，然后更新缓存并返回值，如果找到了，直接返回查找到的值即可。**闭包正是可以做到这一点，因为它不会释放外部的引用，从而函数内部的值可以得以保留。**
+
+优点
+ 1.可以读取函数内部的变量
+ 2.可以让这些局部变量保存在内存中，实现变量数据共享。
+
+缺点
+ 1.由于闭包会使得函数中的变量都被保存在内存中，内存消耗很大，所以不能滥用闭包，否则会造成网页的性能问题，在IE中可能导致内存泄露。解决方法是，在退出函数之前，将不使用的局部变量全部删除。
+ 2.闭包会在父函数外部，改变父函数内部变量的值。所以，如果你把父函数当作对象（object）使用，把闭包当作它的公用方法（Public Method），把内部变量当作它的私有属性（private value），这时一定要小心，不要随便改变父函数内部变量的值。
+
+https://www.cnblogs.com/xuniannian/p/7452086.html
+
+### 4,垃圾回收机制:
+
+https://www.jianshu.com/p/23f8249886c6
+
+### 5,协商缓存,强缓存
+
+https://www.jianshu.com/p/9c95db596df5
+
+### 6,微任务,宏任务:
+
+### 7,浏览器渲染过程:
+
+### 8,es6新增:
+
+https://www.jianshu.com/p/0120580f39aa
+
+### 9,怎么封装组件的:
+
+### 10,打包:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # 小程序总结
 
