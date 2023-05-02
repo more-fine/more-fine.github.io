@@ -1,0 +1,743 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-Hans" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="Mr Xu">
+  <meta name="keywords" content="">
+  <title>vacation知识点总结 - more-fine</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_6peoq002giu.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.0.2"></head>
+
+
+<body>
+  <header style="height: 50vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>大东!</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                我的
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/index.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+  <div class="mt-3 post-meta">
+    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+    <time datetime="2020-09-18 00:15" pubdate>
+      2020-09-18 00:15
+    </time>
+  </div>
+
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3.9k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      43
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">vacation知识点总结</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2 hours ago
+                
+              </p>
+            
+            <div class="markdown-body" id="post-body">
+              <h1 id="第二次"><a href="#第二次" class="headerlink" title="第二次"></a>第二次</h1><h3 id="七、flex布局"><a href="#七、flex布局" class="headerlink" title="七、flex布局"></a>七、flex布局</h3><p>回答思路：</p>
+<p>1、flex的父元素的六个属性：</p>
+<p>​        ①display   =&gt;    flex;</p>
+<p>​        ②flex-direction  =&gt;  决定主轴的方向，它包括row, row-reverse, column, column四个值，默认是row，从左向右排列元素</p>
+<p>​        ③flex-wrap  =&gt;  它有三个值：wrap（空间不足时换行），nowrap（空间不足时也换行，会挤在一起,这也是默认值），wrap-reverse(换行，但是第一行在下面)</p>
+<p>​        ④flex-flow =&gt;flex-direction 和flex-wrap的简写，属性是【flex-direction，flex-wrap】的属性值</p>
+<p>​        ⑤justify-content =&gt;  flex-start  、 flex-end  、 center 、 space-between  、 space-around</p>
+<p>​        ⑥align-items  =&gt; flex-start   、 flex-end 、 center 、baseline  、 stretch </p>
+<p>项目元素（子元素）的六个属性：</p>
+<ul>
+<li><code>order</code></li>
+<li><code>flex-grow</code></li>
+<li><code>flex-shrink</code></li>
+<li><code>flex-basis</code></li>
+<li><code>flex</code></li>
+<li><code>align-self</code></li>
+</ul>
+<p>2、工作中写flex布局遇到的问题：</p>
+<h1 id="第三次"><a href="#第三次" class="headerlink" title="第三次"></a>第三次</h1><h1 id="第四次"><a href="#第四次" class="headerlink" title="第四次"></a>第四次</h1><h2 id="19、cookie和-sessionStorage和-localStorage的区别："><a href="#19、cookie和-sessionStorage和-localStorage的区别：" class="headerlink" title="19、cookie和 sessionStorage和 localStorage的区别："></a>19、<code>cookie</code>和 <code>sessionStorage</code>和<code> localStorage</code>的区别：</h2><h3 id="回答问题的思路："><a href="#回答问题的思路：" class="headerlink" title="回答问题的思路："></a>回答问题的思路：</h3><h4 id="共同点："><a href="#共同点：" class="headerlink" title="共同点："></a>共同点：</h4><p>都保存在浏览器端，且是同源的（顺便解释一下同源：域名、协议、端口号相同）</p>
+<h4 id="不同点："><a href="#不同点：" class="headerlink" title="不同点："></a>不同点：</h4><h5 id="存储大小不同："><a href="#存储大小不同：" class="headerlink" title="存储大小不同："></a>存储大小不同：</h5><p>cookie大小一般4k，sessionStorage一般5M，localStorage一般为5M</p>
+<h5 id="有效期不同："><a href="#有效期不同：" class="headerlink" title="有效期不同："></a>有效期不同：</h5><p>cookie:设置有效期之前有效，当超过有效期之后会失效。  localstorage:永久有效，除非你进行手动删除 </p>
+<p>sessionStorage:当前会话有效，关闭浏览器会失效</p>
+<h5 id="sessionStorage和localStorage的作用域的区别详情："><a href="#sessionStorage和localStorage的作用域的区别详情：" class="headerlink" title="sessionStorage和localStorage的作用域的区别详情："></a>sessionStorage和localStorage的作用域的区别详情：</h5><p>不同浏览器无法共享localStorage和sessionStorage中的信息。</p>
+<p>相同浏览器的不同页面间可以共享相同的localStorage（页面属于相同域名和端口），但是不同页面或标签页面无法共享sessionStorage的信息。</p>
+<h3 id="带入项目："><a href="#带入项目：" class="headerlink" title="带入项目："></a>带入项目：</h3><p>window.location.href跳转页面的时候会丢失cookie,不是其他的什么原因，而是需要设置cookie作用域的路径path</p>
+<p>localhost使用出现的问题：</p>
+<p>localStorage和sessionStorage兼容到ie8，判断浏览器是否支持：</p>
+<pre><code class="hljs html">if（window.localStorage）&#123;
+    alert(&quot;浏览器支持localStorage&quot;)
+&#125;</code></pre>
+
+<p>存：localStorage.setItem(“arr”,JSON.stringify(data.body.data)),需要转换成字符串，不能直接存对象，切记</p>
+<p>取：JSON.parse(localStorage.arr)</p>
+<h2 id="20、0-1-0-2-0-3怎么处理"><a href="#20、0-1-0-2-0-3怎么处理" class="headerlink" title="20、0.1+0.2!=0.3怎么处理"></a>20、0.1+0.2!=0.3怎么处理</h2><p>机器精度—误差范围，一般为2-52</p>
+<p>考察js中的数值的理解程度</p>
+<p>解决方案：</p>
+<p>快速说出因为js的浮点数运算不精确的问题，说出两种解决浮点数问题的方案</p>
+<p>涉及、扩展：</p>
+<p>方法1：通过toFixed（num）方法来保留小数，计算结果不精确</p>
+<p>方法2：把计算的数值升级，乘以10的n次方，转换成计算机能够识别的精确的整数，再降幂，推荐使用。</p>
+<h2 id="21、数组的常用方法："><a href="#21、数组的常用方法：" class="headerlink" title="21、数组的常用方法："></a>21、数组的常用方法：</h2><p>①　push( ) 添加：向数组末位添加一个会多个值。unshift（）向数组开头添加一个或多个值。<br>②　pop( ) 删除：删除数组中最后一个值。shift（）删除数组第一个值。<br>③　indexOf（）查找：查找数组中是否有某一个值，存在返回其下标，不存在返回-1.<br> lastIndexOf()查找最后一个重复，返回其下标值。<br>④　join()转换：把数组转换为字符串，括号内填写连接符，默认逗号隔开。<br>⑤　sort()排序：从大到小或从小到大，字符串从a-z；<br>⑥　concat()拼接：将两个数组拼接在一起形成一个新的数组。<br>⑦　reverse()反转：将数组值反序排列。<br>⑧　forEach()遍历：遍历数组，每个元素都执行回调函数。<br>⑨　splice（x,n，z）添加/修改/删除：从下标x（包含x），{从第几个开始删除，删除几个，替换}  删除n个值（值为为0实现添                加），添加z值。删除几个添加几个对应的值实现修改。<br>⑩　filter（）查找到符合条件的值，返回新的数组。<br>⑪　find（）返回第一个符合条件的数组值。<br>⑫　findIndex（）返回第一个符合条件数组值的下标。<br>⑬　include（）查找：能查到返回true，不存在返回false。（Ie不支持）<br>⑭　every() 验证数组中的每个值是否都符合条件，是为true，一个不符合，返回false。<br>⑮　fill() 修改：使用一个值来替换任意值，包括开头，不包括结束。<br>⑯　Array.isArray() 检测是否是数组。<br>⑰　map（）处理数组的每一个值，返回处理后的结果。<br>⑱　some() 检测数组中是否有一个值符合条件，是返回true，全部都不符合，返回false。</p>
+<h2 id="22、new对象的四个过程"><a href="#22、new对象的四个过程" class="headerlink" title="22、new对象的四个过程"></a>22、new对象的四个过程</h2><p>1、创建一个空对象</p>
+<pre><code class="hljs dart"><span class="hljs-keyword">var</span> obj = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>();</code></pre>
+
+<p>2、让person中的this指向obj，并执行person的函数体</p>
+<pre><code class="hljs nim"><span class="hljs-keyword">var</span> <span class="hljs-literal">result</span> = person.call(obj);</code></pre>
+
+<p>3、设置原型链，将obj的<code>__proto__</code>成员指向了person函数对象的prototype成员对象</p>
+<pre><code class="hljs ini"><span class="hljs-attr">obj.__proto__</span> = person.prototype<span class="hljs-comment">;</span></code></pre>
+
+<p>4、判断person的返回值类型，如果是值类型，返回obj。如果是引用类型，就是返回这个引用类型的对象。</p>
+<pre><code class="hljs isbl"><span class="hljs-function"><span class="hljs-title">if</span>(<span class="hljs-title">typeof</span>(<span class="hljs-variable"><span class="hljs-class">result</span></span>)==<span class="hljs-string">&quot;object&quot;</span>)&#123;</span>
+<span class="hljs-function">    <span class="hljs-variable">person</span> = <span class="hljs-variable"><span class="hljs-class">result</span></span></span>
+<span class="hljs-function">&#125;<span class="hljs-variable"><span class="hljs-keyword">else</span></span>&#123;</span>
+<span class="hljs-function">    <span class="hljs-variable">person</span> = <span class="hljs-variable">obj</span></span>
+<span class="hljs-function">&#125;</span></code></pre>
+
+<h3 id="涉及、扩展"><a href="#涉及、扩展" class="headerlink" title="涉及、扩展"></a>涉及、扩展</h3><p>1，构造函数的写法</p>
+<p>2，构造函数中的this指向，指向当前实例化的对象</p>
+<p>3，prototype  <code>__proto__</code> 是什么？</p>
+<p>prototype：每个函数都有的一个prototype属性，该属性是一个指针，指向一个对象。而这个对象的用途式包括由特定类型的所有实例共享的属性和方法。使用这个对象的好处就是可以让所有的实录i对象共享它所拥有的属性和方法。</p>
+<p><code>__proto__</code> :每个实例化对象都有一个<code>__proto__</code>属性，用于指向构造函数的原型对象，<code>__proto__</code> 属性实在调用构造函数创建的实例对象时产生的。 </p>
+<h3 id="遇到的问题："><a href="#遇到的问题：" class="headerlink" title="遇到的问题："></a>遇到的问题：</h3><p>构造函数与一个普通函数并无不同，如果你故意不使用new，或者忘记用new，都会出现奇怪的现象。</p>
+<p>构造函数自身有返回值</p>
+<p>简单总结：</p>
+<p>显式的返回值是以下的值：undefined、null 、 boolean 、number等基础类型，并不会代替new式调用的默认行为</p>
+<p>但是显式返回的值：{}，[],RegExp,Date,Function,均会代替new调用的默认返回值this</p>
+<h2 id="23、JS的继承"><a href="#23、JS的继承" class="headerlink" title="23、JS的继承"></a>23、JS的继承</h2><p>①原型链继承<br>重点：让新实例的原型等于父类的实例。<br>　　　　特点：1、实例可继承的属性有：实例的构造函数的属性，父类构造函数属性，父类原型的属性。（新实例不会继承父类实例的属性！）<br>　　　　缺点：1、新实例无法向父类构造函数传参。<br>　　　　　　　2、继承单一。<br>　　　　　　　3、所有新实例都会共享父类实例的属性。（原型上的属性是共享的，一个实例修改了原型属性，另一个实例的原型属性也会被修改！）<br>②二、借用构造函数继承<br>　　　　重点：用.call()和.apply()将父类构造函数引入子类函数（在子类函数中做了父类函数的自执行（复制））<br>　　　　特点：1、只继承了父类构造函数的属性，没有继承父类原型的属性。<br>　　　　　　　2、解决了原型链继承缺点1、2、3。<br>　　　　　　　3、可以继承多个构造函数属性（call多个）。<br>　　　　　　　4、在子实例中可向父实例传参。<br>　　　　缺点：1、只能继承父类构造函数的属性。<br>　　　　　　　2、无法实现构造函数的复用。（每次用每次都要重新调用）<br>　　　　　　　3、每个新实例都有父类构造函数的副本，臃肿。<br>③　三、组合继承（组合原型链继承和借用构造函数继承）（常用）<br>　　　　重点：结合了两种模式的优点，传参和复用<br>　　　　特点：1、可以继承父类原型上的属性，可以传参，可复用。<br>　　　　　　　2、每个新实例引入的构造函数属性是私有的。<br>　　　　缺点：调用了两次父类构造函数（耗内存），子类的构造函数会代替原型上的那个父类构造函数。<br>④　四、原型式继承<br>　　　　重点：用一个函数包装一个对象，然后返回这个函数的调用，这个函数就变成了个可以随意增添属性的实例或对象。object.create()就是这个原理。<br>　　　　特点：类似于复制一个对象，用函数来包装。<br>　　　　缺点：1、所有实例都会继承原型上的属性。<br>　　　　　　　2、无法实现复用。（新实例属性都是后面添加的）<br>⑤寄生式继承<br>　　　　重点：就是给原型式继承外面套了个壳子。<br>　　　　优点：没有创建自定义类型，因为只是套了个壳子返回对象（这个），这个函数顺理成章就成了创建的新对象。<br>　　　　缺点：没用到原型，无法复用。<br>⑥寄生组合式继承（常用）<br>　　　　寄生：在函数内返回对象然后调用<br>　　　　组合：1、函数的原型等于另一个实例。2、在函数中用apply或者call引入另一个构造函数，可传参　<br>　　　　<br>　　　　重点：修复了组合继承的问题</p>
+<h2 id="24、get和post的区别"><a href="#24、get和post的区别" class="headerlink" title="24、get和post的区别"></a>24、get和post的区别</h2><ol>
+<li>get是不安全的，因为在传输过程，数据被放在请求的URL中post的所有操作对用户来说都是不可见的。</li>
+<li>get传送的数据量较小，这主要是因为受URL长度限制；post传送的数据量较大，一般被默认为不受限制。</li>
+<li>get限制form表单的数据集的值必须为ASCII字符；而post支持整个ISO10646字符集。</li>
+<li>get执行效率却比post方法好。get是form提交的默认方法。 收起  </li>
+</ol>
+<h1 id="第五次"><a href="#第五次" class="headerlink" title="第五次"></a>第五次</h1><h1 id="第六次"><a href="#第六次" class="headerlink" title="第六次"></a>第六次</h1><h2 id="31、性能优化"><a href="#31、性能优化" class="headerlink" title="31、性能优化"></a>31、性能优化</h2><h3 id="1、分析题目：回答"><a href="#1、分析题目：回答" class="headerlink" title="1、分析题目：回答"></a>1、分析题目：回答</h3><p>网站的性能优化，如何做优化，用户体验度</p>
+<h3 id="2、面试官员想要的答案："><a href="#2、面试官员想要的答案：" class="headerlink" title="2、面试官员想要的答案："></a>2、面试官员想要的答案：</h3><p>对网页性能的优化</p>
+<p>通过哪些方式进行优化</p>
+<p>如何减轻服务器的压力的</p>
+<h3 id="3-回答该问题思路"><a href="#3-回答该问题思路" class="headerlink" title="3.回答该问题思路"></a>3.回答该问题思路</h3><pre><code class="hljs angelscript">一、 内容层面
+    <span class="hljs-number">1</span>、DNS解析优化(DNS缓存、减少DNS查找、keep-alive. 适当的主机域名)
+    <span class="hljs-number">2</span>、避免惠害向，(还是需要的)
+    <span class="hljs-number">3</span>、切分到多个域名
+    <span class="hljs-number">4</span>、杜绝<span class="hljs-number">404</span>
+二、网络传输阶段
+<span class="hljs-number">1.</span>减少传输过程中实体的大小
+    <span class="hljs-number">1</span>)缓存
+    <span class="hljs-number">2</span>) cookie优化
+    <span class="hljs-number">3</span>)文件压缩(Accept- Encoding: g-zip)
+<span class="hljs-number">2</span>、减少请求的次数
+    <span class="hljs-number">1</span>、文件适当的合并
+    <span class="hljs-number">2</span>、雪碧图
+    <span class="hljs-number">3</span>、<span class="hljs-number">1</span>异步加载(并发,requirejs)
+    <span class="hljs-number">4</span>、预加载、延后加载、按需加载上
+三、渲染阶段
+<span class="hljs-number">1</span>、js放底部，  css放顶部<span class="hljs-number">2</span>、减少重绘和回流
+<span class="hljs-number">3</span>、合理使用Viewport等meta头部<span class="hljs-number">4</span>、减少dom节点<span class="hljs-number">5</span>、BigPipe
+四、脚本执行阶段
+  <span class="hljs-number">1</span>、缓存节点，尽量减少节点的查找
+  <span class="hljs-number">2</span>、减少节点的操作(innerHTML)
+  <span class="hljs-number">3</span>、避免无谓的循环，<span class="hljs-keyword">break</span>、 <span class="hljs-keyword">continue</span>、 <span class="hljs-keyword">return</span>的适 当使用    
+  <span class="hljs-number">4</span>、事件委托</code></pre>
+
+<h3 id="4、涉及、扩展的知识点"><a href="#4、涉及、扩展的知识点" class="headerlink" title="4、涉及、扩展的知识点"></a>4、涉及、扩展的知识点</h3><p>回答：性能优化、项目的工程化、前期项目的构建</p>
+<h3 id="5、带入项目，使用场景"><a href="#5、带入项目，使用场景" class="headerlink" title="5、带入项目，使用场景"></a>5、带入项目，使用场景</h3><p><img src="/img/2021/22.png" srcset="/img/loading.gif" alt="img"></p>
+<h3 id="6、使用过程中可能出现的问题？以及如何解决？"><a href="#6、使用过程中可能出现的问题？以及如何解决？" class="headerlink" title="6、使用过程中可能出现的问题？以及如何解决？"></a>6、使用过程中可能出现的问题？以及如何解决？</h3><p>回答：复用组件时，有可能出现互相影响的情况，</p>
+<p>解决：降低耦合度（高内聚，低耦合思想），高度解耦</p>
+<h2 id="32、对MVC和MVVM的理解"><a href="#32、对MVC和MVVM的理解" class="headerlink" title="32、对MVC和MVVM的理解"></a>32、对MVC和MVVM的理解</h2><p>1、编程中共有28中设计模式，其中MVC最为经典</p>
+<p>例：工厂模式、单例模式、观察者模式等</p>
+<p>2、M：Model（数据层）V：View（视图层-页面）C：Controller（控制器）-就是一个作用域对象。</p>
+<p>3、MVVM：M：代表Model、V：代表View、VM：代表ViewModel</p>
+<p>4、VM就是讲视图（view）和数据层（model）连接起来，实现了数据双向绑定</p>
+<p>5、MVC体现产品为Angular框架，MVVM体现产品为Vue框架</p>
+<h3 id="扩展知识点："><a href="#扩展知识点：" class="headerlink" title="扩展知识点："></a>扩展知识点：</h3><p>1、 模块化思想</p>
+<p>例：AMD、CMD、CommonJS、ES6 Module等</p>
+<p>2、设计模式</p>
+<p>3、模块化编程，集中管理</p>
+<p>4、数据双向绑定</p>
+<p>例：Vue数据双向绑定原理：数据劫持</p>
+<p>Angular数据双向绑定原理：脏检查模式</p>
+<p>5、带入项目，使用场景</p>
+<p><img src="/img/2021/23.png" srcset="/img/loading.gif"></p>
+<h2 id="33、Vue2双向数据绑定原理"><a href="#33、Vue2双向数据绑定原理" class="headerlink" title="33、Vue2双向数据绑定原理"></a>33、Vue2双向数据绑定原理</h2><p>Vue采用数据劫持结合发布者-订阅者模式的方式，通过Object.defineProperty劫持data属性的setter、getter，在数据变动时发布消息给订阅者，触发相应的监听回调。</p>
+<p>1、          Object.defineProperty()</p>
+<p>Object.defineProperty()方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性，并返回这个对象。</p>
+<p>   Get：</p>
+<p>​      一个给属性提供getter的方法，如果没有getter则为undefined。当访问该属性时，该方法会被执行，方法执行时没有参数传入，但是会传入this对象（由于继承关系，这里的this并不一定是定义该属性的对象）。默认为undefined。</p>
+<p>Set：</p>
+<p>  一个给属性提供setter的方法，如果没有setter则为undefined。当属性值修改时，触发执行该方法。该方法将接受唯一参数，即该属性新的参数值。默认为undefined。</p>
+<h3 id="扩展知识点：-1"><a href="#扩展知识点：-1" class="headerlink" title="扩展知识点："></a>扩展知识点：</h3><p>1、vue双向绑定</p>
+<p><img src="/img/2021/clip_image002.jpg" srcset="/img/loading.gif"></p>
+<p>具体步骤：</p>
+<p><img src="/img/2021/clip_image004.jpg" srcset="/img/loading.gif"></p>
+<p>2、vue3核心原理Proxy（es6）</p>
+<p><img src="/img/2021/clip_image006.jpg" srcset="/img/loading.gif"></p>
+<p>3、          使用过程中可能会出现的问题，以及如何解决？</p>
+<p>Object.defineProperty()只能对属性进行数据劫持，不能对整个对象进行劫持，同理无法对数组进行劫持</p>
+<p>解决方案：vue提供了Vue.set(object,propertyName,value)/vm.$set(object,propertyName,value),来实现为对象添加响应属性。</p>
+<h2 id="34、v-model双向绑定原理"><a href="#34、v-model双向绑定原理" class="headerlink" title="34、v-model双向绑定原理"></a>34、v-model双向绑定原理</h2><p>v-model指令可以在表单<code>&lt;input&gt;</code>、<code>&lt;textarea&gt;</code>及<code>&lt;select&gt;</code>元素上创建双向数据绑定。它会根据控件类型自动选取正确的方法来更新元素。但v-model本质上不是语法糖。</p>
+<p>完整写法：<code>&lt;input v-bind:value=&quot;&quot; v-on:input=&quot;&quot;/&gt;</code></p>
+<p>v-model会忽略所有表单元素的value、checked、selected特性的初始值，而总是将Vue实例的数据作为数据来源。你应该通过JavaScript在组件的data选项中声明初始值。</p>
+<p>v-model在内部为不同的输入元素使用不同的属性并抛出不同的事件：</p>
+<p>text和textarea元素使用value属性和input事件</p>
+<p>checkbox和radio使用checked属性和change事件</p>
+<p>select字段将value作为prop并将change作为事件</p>
+<h3 id="扩展知识点：-2"><a href="#扩展知识点：-2" class="headerlink" title="扩展知识点："></a>扩展知识点：</h3><p>1、          修饰符</p>
+<p>v-model.lazy只有在input输入框发生一个blur时才触发</p>
+<p>v-model.trim将用户输入的前后的空格去掉</p>
+<p>v-model.number将用户输入的字符串转换成number</p>
+<p>带入项目，使用场景</p>
+<p><img src="/img/2021/clip_image008.jpg" srcset="/img/loading.gif"></p>
+<p><img src="/img/2021/clip_image010.jpg" srcset="/img/loading.gif"></p>
+<p><img src="/img/2021/clip_image012.jpg" srcset="/img/loading.gif"></p>
+<h2 id="35、vue的生命周期"><a href="#35、vue的生命周期" class="headerlink" title="35、vue的生命周期"></a>35、vue的生命周期</h2><p>vue实例从创建到销毁的过程，就是生命周期。也就是从开始创建、初始化数据、编译模板、挂载Dom-&gt;渲染、更新-&gt;渲染、销毁等一系列过程，称之为vue生命周期。</p>
+<h3 id="扩展知识点：-3"><a href="#扩展知识点：-3" class="headerlink" title="扩展知识点："></a>扩展知识点：</h3><p><img src="/img/2021/clip_image014.jpg" srcset="/img/loading.gif"></p>
+<h3 id="带入项目，使用场景"><a href="#带入项目，使用场景" class="headerlink" title="带入项目，使用场景"></a>带入项目，使用场景</h3><p><img src="/img/2021/clip_image016.jpg" srcset="/img/loading.gif"></p>
+<h3 id="使用过程中可能会出现的问题，以及如何解决？"><a href="#使用过程中可能会出现的问题，以及如何解决？" class="headerlink" title="使用过程中可能会出现的问题，以及如何解决？"></a>使用过程中可能会出现的问题，以及如何解决？</h3><p><img src="/img/2021/clip_image018.jpg" srcset="/img/loading.gif"></p>
+<h2 id="36、组件data为什么返回函数"><a href="#36、组件data为什么返回函数" class="headerlink" title="36、组件data为什么返回函数"></a>36、组件data为什么返回函数</h2><p>如果是对象，对象是对同一地址的引用，而不是独立存在的。会造成数据污染。如果写成函数的话，那么他们有一个作用域的概念在里面，相互隔阂，不受影响。每一次都是新的数据。</p>
+<p>1、Data数据如何绑定到view：</p>
+<p>v-model：主要提供了两个功能，view层输入值影响data的属性值，data属性值发生改变会更新view层的数值变化。</p>
+<p>2、为什么使用组件</p>
+<p>1）组件比应用程序小，比类大，如果接口相同还可以替换原来组件。可实现无缝升级。</p>
+<p>2）组件功能是独立的，可以重复使用。</p>
+<p>3）减少代码量，使得代码更容易维护。</p>
+<p>4）是可扩展的html元素，也是Vue实例。</p>
+<p>5）可以接受相同的选项对象（除了一些根级特有的选项）并提供相同的生命周期钩子。</p>
+<p>3、如何创建组件</p>
+<p>全局组件  局部组件</p>
+<p>脚手架：.vue独立组件</p>
+<p>4、          组件通信</p>
+<p><img src="/img/2021/clip_image020.jpg" srcset="/img/loading.gif"></p>
+<h1 id="第七次"><a href="#第七次" class="headerlink" title="第七次"></a>第七次</h1>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/">知识点总结</a>
+                    
+                  </div>
+                
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/09/18/jeecg-boot%E6%80%BB%E7%BB%93/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">jeecg-boot总结</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/09/18/vue%E4%B8%AD%E8%B7%AF%E7%94%B1%E8%B7%B3%E8%BD%AC%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/">
+                        <span class="hidden-mobile">vue中路由跳转传递参数的三种方式</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">请输入关键字</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <!-- <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> -->
+      <a href="http://xuxd.top/" target="_blank" rel="nofollow noopener"><span>主页</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="http://xuxd.top/categories/" target="_blank" rel="nofollow noopener">
+        <span>分类</span></a>
+    </div>
+    
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "vacation知识点总结&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 60,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript">
+      //定义获取词语下标
+      var a_idx = 0;
+      jQuery(document).ready(function ($) {
+        //点击body时触发事件
+        $("body").click(function (e) {
+          //需要显示的词语
+          var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善");
+          //设置词语给span标签
+          var $i = $("<span/>").text(a[a_idx]);
+          //下标等于原来下标+1  余 词语总数
+          a_idx = (a_idx + 1) % a.length;
+          //获取鼠标指针的位置，分别相对于文档的左和右边缘。
+          //获取x和y的指针坐标
+          var x = e.pageX, y = e.pageY;
+          //在鼠标的指针的位置给$i定义的span标签添加css样式
+          $i.css({
+            "z-index": 999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "color": rand_color()
+          });
+          // 随机颜色
+          function rand_color() {
+            return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+          }
+          //在body添加这个标签
+          $("body").append($i);
+          //animate() 方法执行 CSS 属性集的自定义动画。
+          //该方法通过CSS样式将元素从一个状态改变为另一个状态。CSS属性值是逐渐改变的，这样就可以创建动画效果。
+          //详情请看http://www.w3school.com.cn/jquery/effect_animate.asp
+          $i.animate({
+            //将原来的位置向上移动180
+            "top": y - 180,
+            "opacity": 0
+            //1500动画的速度
+          }, 1500, function () {
+            //时间到了自动删除
+            $i.remove();
+          });
+        });
+      })
+      ;
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

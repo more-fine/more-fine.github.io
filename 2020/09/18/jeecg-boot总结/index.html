@@ -1,0 +1,1531 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-Hans" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="Mr Xu">
+  <meta name="keywords" content="">
+  <title>jeecg-boot总结 - more-fine</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_6peoq002giu.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.0.2"></head>
+
+
+<body>
+  <header style="height: 50vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>大东!</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                我的
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/index.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+  <div class="mt-3 post-meta">
+    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+    <time datetime="2020-09-18 23:28" pubdate>
+      2020-09-18 23:28
+    </time>
+  </div>
+
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      5.4k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      94
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">jeecg-boot总结</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2 hours ago
+                
+              </p>
+            
+            <div class="markdown-body" id="post-body">
+              <h1 id="jeecgBoot总结"><a href="#jeecgBoot总结" class="headerlink" title="jeecgBoot总结"></a>jeecgBoot总结</h1><h2 id="源码文件解读"><a href="#源码文件解读" class="headerlink" title="源码文件解读:"></a>源码文件解读:</h2><h3 id="1-登录页面代码位置"><a href="#1-登录页面代码位置" class="headerlink" title="1.登录页面代码位置"></a>1.登录页面代码位置</h3><pre><code class="hljs reasonml">src\components\layouts\<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">UserLayout</span>.</span></span>vue
+src/views/user/<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Login</span>.</span></span>vue</code></pre>
+
+<h3 id="2-首页logo修改"><a href="#2-首页logo修改" class="headerlink" title="2.首页logo修改"></a>2.首页logo修改</h3><pre><code class="hljs awk">src<span class="hljs-regexp">/components/</span>tools/Logo.vue</code></pre>
+
+<h3 id="3-图片预览路径"><a href="#3-图片预览路径" class="headerlink" title="3.图片预览路径"></a>3.图片预览路径</h3><pre><code class="hljs dust"><span class="xml">public/index.html</span>
+<span class="xml"><span class="hljs-comment">&lt;!-- 全局配置 --&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span></span>
+<span class="xml">  window._CONFIG = </span><span class="hljs-template-variable">&#123;&#125;</span><span class="xml">;</span>
+<span class="xml">  window._CONFIG[&#x27;imgDomainURL&#x27;] = &#x27;http://localhost:8080/jeecg-boot/sys/common/view&#x27;;</span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span>
+<span class="xml">图文访问路径： http://127.0.0.1:8080/jeecg-boot/sys/common/view/user/h.jpg</span></code></pre>
+
+<h3 id="4-首页报表"><a href="#4-首页报表" class="headerlink" title="4.首页报表"></a>4.首页报表</h3><pre><code class="hljs awk">src<span class="hljs-regexp">/views/</span>dashboard/*
+src<span class="hljs-regexp">/views/</span>dashboard/Analysis.vue</code></pre>
+
+<h3 id="5-登录退出逻辑"><a href="#5-登录退出逻辑" class="headerlink" title="5.登录退出逻辑"></a>5.登录退出逻辑</h3><pre><code class="hljs awk"><span class="hljs-number">1</span>.登录页面： src<span class="hljs-regexp">/views/u</span>ser/Login.vue
+<span class="hljs-number">2</span>.相关API定义位置： src<span class="hljs-regexp">/api/i</span>ndex.js（很多无用的删掉）
+                   src<span class="hljs-regexp">/api/i</span>ndex.js
+                   src<span class="hljs-regexp">/api/</span>login.js
+                   src<span class="hljs-regexp">/api/m</span>anage.js
+<span class="hljs-number">3</span>.左侧菜单加载页面：src<span class="hljs-regexp">/components/m</span>enu
+              src<span class="hljs-regexp">/utils/u</span>til.js
+              src/permission.js
+<span class="hljs-number">4</span>.隐藏路由配置
+   用途： 如果那个组件不想在菜单上配置，但有需要路由跳转，则需要在这个地方配置路由。
+   src<span class="hljs-regexp">/config/</span>router.config.js
+   对象： constantRouterMap
+<span class="hljs-number">5</span>. 接口:   <span class="hljs-regexp">/sys/</span>login        登录接口
+           <span class="hljs-regexp">/sys/</span>permission/queryByUser  获取用户信息接口（首页菜单）</code></pre>
+
+<h3 id="6-首页风格设置"><a href="#6-首页风格设置" class="headerlink" title="6.首页风格设置"></a>6.首页风格设置</h3><p>src/defaultSettings.js</p>
+<h3 id="7-首页样式自定义（-统一修改样式-）"><a href="#7-首页样式自定义（-统一修改样式-）" class="headerlink" title="7.首页样式自定义（ 统一修改样式 ）"></a>7.首页样式自定义（ 统一修改样式 ）</h3><p>src\assets\less\common.less</p>
+<h2 id="自定义组件"><a href="#自定义组件" class="headerlink" title="自定义组件"></a>自定义组件</h2><h3 id="1-JDictSelectTag字典标签"><a href="#1-JDictSelectTag字典标签" class="headerlink" title="1.JDictSelectTag字典标签"></a>1.JDictSelectTag字典标签</h3><p>提供了一个标签实现下拉和radio组件。JDictSelectTag 标签： 用于表单的标签使用，比如通过性别字典编码：sex，可以直接渲染出下拉组件。</p>
+<pre><code class="hljs js"><span class="hljs-comment">//第一步：</span>
+<span class="hljs-keyword">import</span> JAreaLinkage <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@/components/jeecg/JAreaLinkage&#x27;</span>
+<span class="hljs-comment">//导出：</span>
+components: &#123;JAreaLinkage&#125;,
+
+<span class="hljs-comment">//运用标签</span>
+    <span class="hljs-comment">//查询：</span>
+    <span class="hljs-comment">//type=&quot;radio&quot;单选框，不写就是下拉选择</span>
+    <span class="hljs-comment">//v-model=&quot;queryParam.onShelves&quot;查询字典表</span>
+        &lt;j-dict-select-tag
+                type=<span class="hljs-string">&quot;radio&quot;</span>
+                v-model=<span class="hljs-string">&quot;queryParam.onShelves&quot;</span>
+                placeholder=<span class="hljs-string">&quot;请选择状态&quot;</span>
+                dictCode=<span class="hljs-string">&quot;goods_on_shelves&quot;</span>
+              /&gt;
+    <span class="hljs-comment">//添加</span>
+    <span class="hljs-comment">//:triggerChange=&quot;true&quot;定义值可以被更改</span>
+    <span class="hljs-comment">//v-decorator=&quot;[&#x27;status&#x27;,  &#123;&#125;]&quot;绑定值===v-model</span>
+        &lt;j-dict-select-tag
+            v-decorator=<span class="hljs-string">&quot;[&#x27;status&#x27;,  &#123;&#125;]&quot;</span>
+            :triggerChange=<span class="hljs-string">&quot;true&quot;</span>
+            placeholder=<span class="hljs-string">&quot;当前状态&quot;</span>
+            dictCode=<span class="hljs-string">&quot;website_news_status&quot;</span>
+          /&gt;</code></pre>
+
+<h3 id="2，时间引用"><a href="#2，时间引用" class="headerlink" title="2，时间引用"></a>2，时间引用</h3><pre><code class="hljs js"><span class="hljs-comment">//导入</span>
+<span class="hljs-keyword">import</span> pick <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;lodash.pick&#x27;</span>
+<span class="hljs-keyword">import</span> moment <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;moment&#x27;</span>
+<span class="hljs-comment">//使用,createTime往后端传的字段</span>
+&lt;a-date-picker showTime format=<span class="hljs-string">&quot;YYYY-MM-DD HH:mm:ss&quot;</span> v-decorator=<span class="hljs-string">&quot;[ &#x27;createTime&#x27;, &#123;&#125;]&quot;</span> /&gt;
+
+ <span class="hljs-comment">//edit方法里面修改时间格式</span>
+    <span class="hljs-comment">// 时间格式化,输出到页面</span>
+     <span class="hljs-built_in">this</span>.form.setFieldsValue(&#123; <span class="hljs-attr">createTime</span>: <span class="hljs-built_in">this</span>.model.createTime ? moment(<span class="hljs-built_in">this</span>.model.createTime) : <span class="hljs-literal">null</span> &#125;)</code></pre>
+
+<h3 id="3，富文本编辑器"><a href="#3，富文本编辑器" class="headerlink" title="3，富文本编辑器"></a>3，富文本编辑器</h3><h4 id="第一种：quillEdit"><a href="#第一种：quillEdit" class="headerlink" title="第一种：quillEdit"></a>第一种：quillEdit</h4><pre><code class="hljs js"><span class="hljs-comment">//引用：</span>
+<span class="hljs-keyword">import</span> quillEdit <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@/components/quillEdit&#x27;</span>
+<span class="hljs-comment">//导出：</span>
+components: &#123; quillEdit&#125;,
+<span class="hljs-comment">//使用:</span>
+    &lt;a-form-item :labelCol=<span class="hljs-string">&quot;labelCol&quot;</span> :wrapperCol=<span class="hljs-string">&quot;wrapperCol&quot;</span> label=<span class="hljs-string">&quot;文章内容&quot;</span>&gt;
+          &lt;quillEdit ref=<span class="hljs-string">&quot;quillEditForm&quot;</span> v-decorator=<span class="hljs-string">&quot;[&#x27;deltaContent&#x27;, &#123;&#125;]&quot;</span> @change=<span class="hljs-string">&quot;getEdit&quot;</span>&gt;&lt;/quillEdit&gt;
+        &lt;/a-form-item&gt;
+<span class="hljs-comment">//触发富文本事件的方法：</span>
+getEdit(value, valuestr) &#123;
+      <span class="hljs-built_in">console</span>.log(valuestr, value)
+      <span class="hljs-built_in">this</span>.model.deltaContent = <span class="hljs-built_in">JSON</span>.stringify(value)
+      <span class="hljs-built_in">this</span>.model.content = valuestr
+ &#125;,
+<span class="hljs-comment">//edit方法中</span>
+<span class="hljs-keyword">if</span> (record.id) &#123;
+        <span class="hljs-comment">// this.imageUrl = record.shopBossImg //编辑时改变给当前imageUrl变量</span>
+        <span class="hljs-comment">// this.imageUrl2 = record.headFiles</span>
+        <span class="hljs-keyword">let</span> id = record.id
+        <span class="hljs-keyword">let</span> that = <span class="hljs-built_in">this</span>
+        <span class="hljs-built_in">this</span>.axios(&#123;
+          url: <span class="hljs-string">&#x27;/admin/websiteNews/queryById?id=&#x27;</span> + id,
+          method: <span class="hljs-string">&#x27;get&#x27;</span>
+        &#125;)
+          .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>&#123;
+            <span class="hljs-comment">//  setTimeout(hide, 0);</span>
+            <span class="hljs-comment">// console.log(that.model, &#x27;this.model&#x27;)</span>
+            <span class="hljs-comment">// console.log(res.result.summary)</span>
+            that.summary = res.result.summary <span class="hljs-comment">//新闻摘要</span>
+            that.keywords = res.result.keywords <span class="hljs-comment">//新闻关键字</span>
+            that.description = res.result.description <span class="hljs-comment">//新闻描述</span>
+            <span class="hljs-comment">// console.log(res, &#x27;res=====&#x27;)</span>
+            <span class="hljs-keyword">let</span> fleg = <span class="hljs-built_in">JSON</span>.stringify(res.result) == <span class="hljs-string">&#x27;&#123;&#125;&#x27;</span>
+            <span class="hljs-keyword">if</span> (!fleg &amp;&amp; res.result.content != <span class="hljs-string">&#x27;&#x27;</span>) &#123;
+              <span class="hljs-comment">// console.log(111)</span>
+              res.result.deltaContent = <span class="hljs-built_in">JSON</span>.parse(res.result.deltaContent)
+              <span class="hljs-comment">//富文本赋值</span>
+              that.$refs.quillEditForm.edit(res.result.deltaContent)
+            &#125;
+          &#125;)
+          .catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>) </span>&#123;
+            <span class="hljs-built_in">console</span>.log(err)
+          &#125;)
+      &#125; <span class="hljs-keyword">else</span> &#123;
+        <span class="hljs-keyword">let</span> that = <span class="hljs-built_in">this</span>
+        that.summary = <span class="hljs-string">&#x27;&#x27;</span>
+        that.keywords = <span class="hljs-string">&#x27;&#x27;</span>
+        that.description = <span class="hljs-string">&#x27;&#x27;</span>
+        <span class="hljs-comment">// that.$refs.quillEditForm.edit(&#x27;record.deltaContent&#x27;)</span>
+      &#125;
+
+<span class="hljs-comment">//提交时赋值</span>
+formData.deltaContent = <span class="hljs-built_in">JSON</span>.stringify(<span class="hljs-built_in">this</span>.model.deltaContent) <span class="hljs-comment">//内容</span></code></pre>
+
+<p><strong>编辑器引入的js二次封装，解决图片上传base64格式，太耗性能问题，改用图片路径的格式存储：</strong>代码如下</p>
+<pre><code class="hljs js">&lt;template&gt;
+  &lt;div&gt;
+    &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">&quot;quill-editor&quot;</span>&gt;&lt;/div&gt;
+    &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">&quot;quill-editor-imgUpload&quot;</span>&gt;
+      &lt;a-upload
+        name=<span class="hljs-string">&quot;file&quot;</span>
+        :data=<span class="hljs-string">&quot;upData&quot;</span>
+        :multiple=<span class="hljs-string">&quot;false&quot;</span>
+        action=<span class="hljs-string">&quot;/admin/files/add&quot;</span>
+        @change=<span class="hljs-string">&quot;handleChange&quot;</span>
+      &gt;
+        &lt;a-button id=<span class="hljs-string">&quot;checkImg&quot;</span> display=<span class="hljs-string">&quot;none&quot;</span>&gt;&lt;/a-button&gt;
+      &lt;/a-upload&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+<span class="hljs-keyword">import</span> Quill <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;quill&#x27;</span>
+<span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;quill/dist/quill.snow.css&#x27;</span>
+<span class="hljs-comment">//富文本图片拼接路径域名</span>
+<span class="hljs-comment">// var dataUrl = &quot;http://admin.hongtianjiaju.com/&quot;;//线上</span>
+<span class="hljs-keyword">var</span> dataUrl = <span class="hljs-string">&quot;http://192.168.3.68:8085/&quot;</span><span class="hljs-comment">//线下</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;
+  name: <span class="hljs-string">&#x27;editor&#x27;</span>,
+  props: &#123;
+    value: <span class="hljs-built_in">Object</span>
+  &#125;,
+  data() &#123;
+    <span class="hljs-keyword">return</span> &#123;
+      upData: &#123;
+        <span class="hljs-comment">//展示图片</span>
+        subjectType: <span class="hljs-string">&#x27;08&#x27;</span>,
+        fileType: <span class="hljs-string">&#x27;1&#x27;</span>,
+        fileSubpath: <span class="hljs-string">&#x27;quill&#x27;</span> <span class="hljs-comment">//图片路径</span>
+      &#125;,
+      quill:<span class="hljs-literal">null</span>,
+      options: &#123;
+        theme: <span class="hljs-string">&#x27;snow&#x27;</span>,
+        modules: &#123;
+            toolbar: [
+              [<span class="hljs-string">&#x27;bold&#x27;</span>, <span class="hljs-string">&#x27;italic&#x27;</span>, <span class="hljs-string">&#x27;underline&#x27;</span>, <span class="hljs-string">&#x27;strike&#x27;</span>],
+              [<span class="hljs-string">&#x27;blockquote&#x27;</span>, <span class="hljs-string">&#x27;code-block&#x27;</span>],
+              [&#123; <span class="hljs-string">&#x27;header&#x27;</span>: <span class="hljs-number">1</span> &#125;, &#123; <span class="hljs-string">&#x27;header&#x27;</span>: <span class="hljs-number">2</span> &#125;],
+              [&#123; <span class="hljs-string">&#x27;list&#x27;</span>: <span class="hljs-string">&#x27;ordered&#x27;</span> &#125;, &#123; <span class="hljs-string">&#x27;list&#x27;</span>: <span class="hljs-string">&#x27;bullet&#x27;</span> &#125;],
+              [&#123; <span class="hljs-string">&#x27;script&#x27;</span>: <span class="hljs-string">&#x27;sub&#x27;</span> &#125;, &#123; <span class="hljs-string">&#x27;script&#x27;</span>: <span class="hljs-string">&#x27;super&#x27;</span> &#125;],
+              [&#123; <span class="hljs-string">&#x27;indent&#x27;</span>: <span class="hljs-string">&#x27;-1&#x27;</span> &#125;, &#123; <span class="hljs-string">&#x27;indent&#x27;</span>: <span class="hljs-string">&#x27;+1&#x27;</span> &#125;],
+              [&#123; <span class="hljs-string">&#x27;direction&#x27;</span>: <span class="hljs-string">&#x27;rtl&#x27;</span> &#125;],
+              [&#123; <span class="hljs-string">&#x27;size&#x27;</span>: [<span class="hljs-string">&#x27;small&#x27;</span>, <span class="hljs-literal">false</span>, <span class="hljs-string">&#x27;large&#x27;</span>, <span class="hljs-string">&#x27;huge&#x27;</span>] &#125;],
+              [&#123; <span class="hljs-string">&#x27;header&#x27;</span>: [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-literal">false</span>] &#125;],
+              [&#123; <span class="hljs-string">&#x27;color&#x27;</span>: [] &#125;, &#123; <span class="hljs-string">&#x27;background&#x27;</span>: [] &#125;],
+              [&#123; <span class="hljs-string">&#x27;font&#x27;</span>: [] &#125;],
+              [&#123; <span class="hljs-string">&#x27;align&#x27;</span>: [] &#125;],
+              [<span class="hljs-string">&#x27;clean&#x27;</span>],
+              [<span class="hljs-string">&#x27;link&#x27;</span>, <span class="hljs-string">&#x27;image&#x27;</span>, <span class="hljs-string">&#x27;video&#x27;</span>]
+            ]
+          &#125;,
+          placeholder: <span class="hljs-string">&#x27;请输入商品详情...&#x27;</span>
+      &#125;
+    &#125;
+  &#125;,
+
+
+  methods:&#123;
+    gobacke()&#123;
+      <span class="hljs-keyword">let</span> that=<span class="hljs-built_in">this</span>
+      <span class="hljs-keyword">if</span>(that.formName!=<span class="hljs-string">&#x27;&#x27;</span>)&#123;
+          that.$router.push(&#123;<span class="hljs-attr">name</span>:that.formName&#125;)
+      &#125;<span class="hljs-keyword">else</span>&#123;
+          <span class="hljs-built_in">window</span>.history.go(<span class="hljs-number">-1</span>)
+      &#125;
+    &#125;,
+
+    edit(item)&#123;
+       <span class="hljs-built_in">this</span>.quill.setContents(item)
+    &#125;,
+
+    handleChange(info) &#123;
+      <span class="hljs-keyword">if</span> (info.file.status !== <span class="hljs-string">&#x27;uploading&#x27;</span>) &#123;
+        <span class="hljs-built_in">console</span>.log(info.file, info.fileList);
+      &#125;
+      <span class="hljs-keyword">if</span> (info.file.status === <span class="hljs-string">&#x27;done&#x27;</span>) &#123;
+        <span class="hljs-built_in">this</span>.$message.success(<span class="hljs-string">`<span class="hljs-subst">$&#123;info.file.name&#125;</span> 上传成功`</span>);
+        <span class="hljs-comment">// 获取富文本组件实例</span>
+        <span class="hljs-keyword">let</span> quill = <span class="hljs-built_in">this</span>.quill
+        <span class="hljs-comment">// 如果上传成功</span>
+        <span class="hljs-comment">// 获取光标所在位置</span>
+        <span class="hljs-keyword">let</span> length = quill.getSelection().index;
+        <span class="hljs-comment">// 插入图片，res为服务器返回的图片链接地址</span>
+        <span class="hljs-keyword">if</span> (!!info.file.response) &#123;
+          <span class="hljs-comment">//如果存在这个参数显示</span>
+          <span class="hljs-keyword">let</span> response = info.file.response
+          <span class="hljs-comment">//取出图片路径赋值显示</span>
+          quill.insertEmbed(length, <span class="hljs-string">&#x27;image&#x27;</span>,dataUrl+response.result.fileUrl)
+        &#125;
+        <span class="hljs-comment">// 调整光标到最后</span>
+        quill.setSelection(length + <span class="hljs-number">1</span>)
+      &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (info.file.status === <span class="hljs-string">&#x27;error&#x27;</span>) &#123;
+        <span class="hljs-built_in">this</span>.$message.error(<span class="hljs-string">`<span class="hljs-subst">$&#123;info.file.name&#125;</span> 上传失败`</span>);
+      &#125;
+    &#125;,
+
+  &#125;,
+
+  mounted() &#123;
+    <span class="hljs-keyword">let</span> quillEditor = <span class="hljs-built_in">this</span>.$el.querySelector(<span class="hljs-string">&#x27;.quill-editor&#x27;</span>)
+    <span class="hljs-built_in">this</span>.quill = <span class="hljs-keyword">new</span> Quill(quillEditor, <span class="hljs-built_in">this</span>.options);
+    <span class="hljs-built_in">this</span>.quill.setContents(<span class="hljs-built_in">this</span>.value)
+
+    <span class="hljs-built_in">this</span>.quill.on(<span class="hljs-string">&#x27;text-change&#x27;</span>, <span class="hljs-function">() =&gt;</span> &#123;
+      <span class="hljs-built_in">this</span>.$emit(<span class="hljs-string">&#x27;change&#x27;</span>, <span class="hljs-built_in">this</span>.quill.getContents(),<span class="hljs-built_in">this</span>.quill.container.firstChild.innerHTML)
+    &#125;);
+
+    <span class="hljs-keyword">var</span> toolbar = <span class="hljs-built_in">this</span>.quill.getModule(<span class="hljs-string">&#x27;toolbar&#x27;</span>);
+    toolbar.addHandler(<span class="hljs-string">&#x27;image&#x27;</span>, <span class="hljs-function">()=&gt;</span>&#123;
+      <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;checkImg&quot;</span>).click();
+    &#125;);
+  &#125;
+&#125;
+&lt;/script&gt;
+
+&lt;style scoped=<span class="hljs-string">&quot;scoped&quot;</span>&gt;
+  .quill-editor&#123;
+    height: <span class="hljs-number">500</span>px;
+  &#125;
+
+  .quill-editor-imgUpload &#123;
+    display: none;
+  &#125;
+
+
+&lt;/style&gt;
+</code></pre>
+
+<h4 id="第二种：JEditor"><a href="#第二种：JEditor" class="headerlink" title="第二种：JEditor"></a>第二种：JEditor</h4><pre><code class="hljs js"><span class="hljs-comment">//引入</span>
+<span class="hljs-keyword">import</span> JEditor <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@/components/jeecg/JEditor&#x27;</span>
+<span class="hljs-comment">//导出：</span>
+components: &#123;
+    editor: JEditor
+  &#125;,
+
+
+<span class="hljs-comment">//添加方法</span>
+add() &#123;
+      <span class="hljs-built_in">this</span>.edit(&#123;&#125;)
+    &#125;,
+<span class="hljs-comment">//编辑方法</span>
+edit(record) &#123;
+      <span class="hljs-comment">//////////////////////////////////////////</span>
+      <span class="hljs-built_in">this</span>.findNewsCategoryList()
+      <span class="hljs-built_in">this</span>.form.resetFields()
+      <span class="hljs-built_in">this</span>.model = <span class="hljs-built_in">Object</span>.assign(&#123;&#125;, record)
+      <span class="hljs-built_in">this</span>.visible = <span class="hljs-literal">true</span>
+      <span class="hljs-built_in">this</span>.$nextTick(<span class="hljs-function">() =&gt;</span> &#123;
+        <span class="hljs-built_in">this</span>.form.setFieldsValue(
+          pick(
+            <span class="hljs-built_in">this</span>.model,
+            <span class="hljs-string">&#x27;title&#x27;</span>,
+            <span class="hljs-string">&#x27;categoryId&#x27;</span>,
+            <span class="hljs-string">&#x27;summary&#x27;</span>,
+            <span class="hljs-string">&#x27;thumbnail&#x27;</span>,
+            <span class="hljs-string">&#x27;browseCount&#x27;</span>,
+            <span class="hljs-string">&#x27;keywords&#x27;</span>,
+            <span class="hljs-string">&#x27;description&#x27;</span>,
+            <span class="hljs-string">&#x27;status&#x27;</span>,
+            <span class="hljs-string">&#x27;content&#x27;</span>
+          )
+        )
+        <span class="hljs-comment">//时间格式化</span>
+      &#125;)
+      <span class="hljs-keyword">if</span> (record == <span class="hljs-literal">null</span>) &#123;
+        <span class="hljs-comment">// 新增新闻</span>
+        <span class="hljs-built_in">this</span>.model.thumbnail = <span class="hljs-built_in">this</span>.picUrl
+      &#125; <span class="hljs-keyword">else</span> &#123;
+        <span class="hljs-comment">// 修改新闻</span>
+        <span class="hljs-built_in">this</span>.picUrl = <span class="hljs-built_in">this</span>.model.thumbnail
+      &#125;
+
+      <span class="hljs-keyword">if</span> (record.id) &#123;
+        <span class="hljs-keyword">let</span> id = record.id
+        <span class="hljs-keyword">let</span> that = <span class="hljs-built_in">this</span>
+        <span class="hljs-built_in">this</span>.axios(&#123;
+          url: <span class="hljs-string">&#x27;/admin/news/queryById?id=&#x27;</span> + id,
+          method: <span class="hljs-string">&#x27;get&#x27;</span>
+        &#125;)
+          .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>&#123;
+            that.summary = res.result.summary <span class="hljs-comment">//新闻摘要</span>
+            that.description = res.result.description <span class="hljs-comment">//seo描述</span>
+            that.keywords = res.result.keywords <span class="hljs-comment">//seo</span>
+            that.model.content = res.result.content <span class="hljs-comment">//内容</span>
+            <span class="hljs-comment">// console.log(that.model)</span>
+          &#125;)
+          .catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>) </span>&#123;
+            <span class="hljs-built_in">console</span>.log(err)
+          &#125;)
+      &#125; <span class="hljs-keyword">else</span> &#123;
+        <span class="hljs-keyword">let</span> that= <span class="hljs-built_in">this</span>;
+        that.summary = <span class="hljs-string">&#x27;&#x27;</span> <span class="hljs-comment">//新闻摘要</span>
+        that.description = <span class="hljs-string">&#x27;&#x27;</span> <span class="hljs-comment">//seo描述</span>
+        that.keywords = <span class="hljs-string">&#x27;&#x27;</span> <span class="hljs-comment">//seo</span>
+        that.model.content = record.content <span class="hljs-comment">//seo</span>
+      &#125;
+    &#125;,
+</code></pre>
+
+<p><strong>JEditor富文本js文件：解决base64存储太大问题二次封装：代码如下</strong></p>
+<h3 id="4，图片上传引用"><a href="#4，图片上传引用" class="headerlink" title="4，图片上传引用"></a>4，图片上传引用</h3><pre><code class="hljs js">&lt;!-- 图片上传 --&gt;
+        &lt;a-form-item :labelCol=<span class="hljs-string">&quot;labelCol&quot;</span> :wrapperCol=<span class="hljs-string">&quot;wrapperCol&quot;</span> label=<span class="hljs-string">&quot;图片&quot;</span>&gt;
+          &lt;a-upload
+            name=<span class="hljs-string">&quot;file&quot;</span>
+            list-type=<span class="hljs-string">&quot;picture-card&quot;</span>
+            <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">&quot;avatar-uploader&quot;</span>
+            :show-upload-list=<span class="hljs-string">&quot;false&quot;</span>
+            action=<span class="hljs-string">&quot;/admin/files/add&quot;</span>
+            :before-upload=<span class="hljs-string">&quot;beforeUpload&quot;</span>
+            @change=<span class="hljs-string">&quot;handleChange&quot;</span>
+          &gt;
+            &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">&quot;imageUrlshow&quot;</span>&gt;
+              &lt;img v-<span class="hljs-keyword">if</span>=<span class="hljs-string">&quot;imageUrl&quot;</span> :src=<span class="hljs-string">&quot;imageUrl&quot;</span> alt=<span class="hljs-string">&quot;avatar&quot;</span> width=<span class="hljs-string">&quot;200px&quot;</span> /&gt;
+              &lt;div v-<span class="hljs-keyword">else</span>&gt;
+                &lt;a-icon :type=<span class="hljs-string">&quot;loading ? &#x27;loading&#x27; : &#x27;plus&#x27;&quot;</span> /&gt;
+                &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">&quot;ant-upload-text&quot;</span>&gt;上传&lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/a-upload&gt;
+&lt;/a-form-item&gt;
+
+
+data()&#123;
+    imageUrl: <span class="hljs-string">&#x27;&#x27;</span>, <span class="hljs-comment">//存放img显示的变量</span>
+    loading: <span class="hljs-literal">false</span>, <span class="hljs-comment">//正在加载</span>
+&#125;,
+handleChange(info) &#123;
+      <span class="hljs-comment">//change事件,图片上传中,上传成功,失败都会调用</span>
+      <span class="hljs-keyword">if</span> (info.file.status === <span class="hljs-string">&#x27;uploading&#x27;</span>) &#123;
+        <span class="hljs-comment">//正在上传时</span>
+        <span class="hljs-built_in">this</span>.loading = <span class="hljs-literal">true</span> <span class="hljs-comment">//显示加载状态</span>
+        <span class="hljs-keyword">return</span>
+      &#125;
+      <span class="hljs-keyword">if</span> (!!info.file.response) &#123;
+        <span class="hljs-comment">//如果存在这个参数显示</span>
+        <span class="hljs-built_in">console</span>.log(info)
+        <span class="hljs-keyword">let</span> response = info.file.response
+        <span class="hljs-built_in">this</span>.imageUrl = response.result.fileUrl <span class="hljs-comment">//取出图片路径赋值显示</span>
+        <span class="hljs-built_in">this</span>.model.userHead = response.result.fileUrl
+        <span class="hljs-built_in">this</span>.loading = <span class="hljs-literal">false</span>
+      &#125;
+&#125;,
+beforeUpload(file) &#123;
+      <span class="hljs-comment">//图片上传前的回调函数</span>
+      <span class="hljs-keyword">const</span> isJpgOrPng = file.type === <span class="hljs-string">&#x27;image/jpeg&#x27;</span> || file.type === <span class="hljs-string">&#x27;image/png&#x27;</span> || file.type === <span class="hljs-string">&#x27;image/gif&#x27;</span>
+      <span class="hljs-keyword">if</span> (!isJpgOrPng) &#123;
+        <span class="hljs-built_in">this</span>.$message.error(<span class="hljs-string">&#x27;头像图片只能上传jpg或者是png,gif的图片!&#x27;</span>)
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+      &#125;
+      <span class="hljs-keyword">const</span> isLt2M = file.size / <span class="hljs-number">1024</span> / <span class="hljs-number">1024</span> &lt; <span class="hljs-number">2</span>
+      <span class="hljs-keyword">if</span> (!isLt2M) &#123;
+        <span class="hljs-built_in">this</span>.$message.error(<span class="hljs-string">&#x27;头像图片不能超过2MB!&#x27;</span>)
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+      &#125;
+&#125;,
+edit(record) &#123;
+   <span class="hljs-comment">// console.log(record)</span>
+   <span class="hljs-built_in">this</span>.imageUrl = record.userHead <span class="hljs-comment">//修改时赋值</span>
+
+    that.model = <span class="hljs-built_in">Object</span>.assign(&#123;&#125;, record)
+      that.$nextTick(<span class="hljs-function">() =&gt;</span> &#123;
+        that.form.setFieldsValue(
+          pick(
+            <span class="hljs-built_in">this</span>.model,
+            <span class="hljs-string">&#x27;userHead&#x27;</span>
+          )<span class="hljs-comment">//userHead向后台传的图片变量</span>
+        )
+      &#125;)
+&#125;
+</code></pre>
+
+<h3 id="5，表格常用属性"><a href="#5，表格常用属性" class="headerlink" title="5，表格常用属性"></a>5，表格常用属性</h3><pre><code class="hljs js">&#123;
+         title: <span class="hljs-string">&#x27;问题&#x27;</span>,
+         align: <span class="hljs-string">&quot;center&quot;</span>,
+         dataIndex: <span class="hljs-string">&#x27;title&#x27;</span>,
+         ellipsis: <span class="hljs-literal">true</span>,<span class="hljs-comment">//溢出隐藏显示...</span>
+         width:<span class="hljs-string">&#x27;20%&#x27;</span>,
+       &#125;,
+</code></pre>
+
+<h3 id="6-文本域"><a href="#6-文本域" class="headerlink" title="6,文本域"></a>6,文本域</h3><pre><code class="hljs js">&lt;a-textarea style=<span class="hljs-string">&quot;height:150px;&quot;</span> placeholder=<span class="hljs-string">&quot;请输入问题回答&quot;</span> v-decorator=<span class="hljs-string">&quot;[&#x27;content&#x27;, &#123;&#125; ]&quot;</span> /&gt;
+</code></pre>
+
+<h3 id="7-单选框特殊性"><a href="#7-单选框特殊性" class="headerlink" title="7.单选框特殊性"></a>7.单选框特殊性</h3><pre><code class="hljs js"><span class="hljs-comment">//Form 表单开发特殊性</span>
+<span class="hljs-comment">//v-decorator 属性</span>
+<span class="hljs-comment">//针对特殊控件： select、radio、checkbox</span>
+
+&lt;a-radio-group buttonStyle=<span class="hljs-string">&quot;solid&quot;</span> v-decorator=<span class="hljs-string">&quot;[ &#x27;status&#x27;, &#123;&#x27;initialValue&#x27;:0&#125;]&quot;</span>&gt;
+    &lt;a-radio-button :value=<span class="hljs-string">&quot;0&quot;</span>&gt;正常&lt;/a-radio-button&gt;
+    &lt;a-radio-button :value=<span class="hljs-string">&quot;-1&quot;</span>&gt;停止&lt;/a-radio-button&gt;
+&lt;/a-radio-group&gt;
+<span class="hljs-comment">//注意： 此处的默认值只能通过&#123;&#x27;initialValue&#x27;:0&#125; 这样的设置，不能通过属性。</span>
+<span class="hljs-comment">//表单编辑赋值操作：</span>
+
+<span class="hljs-built_in">this</span>.$nextTick(<span class="hljs-function">() =&gt;</span> &#123;
+    <span class="hljs-built_in">this</span>.form.setFieldsValue(pick(<span class="hljs-built_in">this</span>.model,<span class="hljs-string">&#x27;description&#x27;</span>,<span class="hljs-string">&#x27;status&#x27;</span>));
+&#125;);
+</code></pre>
+
+<h3 id="8，省市区三级联动"><a href="#8，省市区三级联动" class="headerlink" title="8，省市区三级联动"></a>8，省市区三级联动</h3><pre><code class="hljs js"><span class="hljs-comment">//引入</span>
+<span class="hljs-keyword">import</span> JAreaLinkage <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@comp/jeecg/JAreaLinkage&#x27;</span>
+<span class="hljs-comment">//导出</span>
+components: &#123;
+    JAreaLinkage
+&#125;,
+&lt;!-- 位置 --&gt;
+&lt;a-form-item :labelCol=<span class="hljs-string">&quot;labelCol&quot;</span> :wrapperCol=<span class="hljs-string">&quot;wrapperCol&quot;</span> label=<span class="hljs-string">&quot;位置&quot;</span>&gt;
+    &lt;!-- 省市县级联 --&gt;
+    &lt;j-area-linkage v-decorator=<span class="hljs-string">&quot;[&#x27;location&#x27;, &#123;&#125;]&quot;</span> type=<span class="hljs-string">&quot;select&quot;</span> /&gt;
+&lt;/a-form-item&gt;
+
+
+
+</code></pre>
+
+<h3 id="9，时间选择器"><a href="#9，时间选择器" class="headerlink" title="9，时间选择器"></a>9，时间选择器</h3><pre><code class="hljs js">&lt;a-form-item :labelCol=<span class="hljs-string">&quot;labelCol&quot;</span> :wrapperCol=<span class="hljs-string">&quot;wrapperCol&quot;</span> label=<span class="hljs-string">&quot;创建时间&quot;</span>&gt;
+     &lt;a-date-picker showTime format=<span class="hljs-string">&quot;YYYY-MM-DD HH:mm:ss&quot;</span> v-decorator=<span class="hljs-string">&quot;[ &#x27;createTime&#x27;, &#123;&#125;]&quot;</span> /&gt;
+&lt;/a-form-item&gt;
+<span class="hljs-comment">//添加</span>
+add() &#123;
+   <span class="hljs-built_in">this</span>.edit(&#123;&#125;)
+&#125;,
+edit(record) &#123;<span class="hljs-comment">//编辑时调用的函数</span>
+  <span class="hljs-built_in">this</span>.imageUrl = record.thumbnail <span class="hljs-comment">//编辑时改变给当前imageUrl变量</span>
+  <span class="hljs-built_in">this</span>.form.resetFields()
+  <span class="hljs-built_in">this</span>.model = <span class="hljs-built_in">Object</span>.assign(&#123;&#125;, record)
+  <span class="hljs-comment">// console.log(this.model, &#x27;this.model&#x27;)</span>
+
+      <span class="hljs-built_in">this</span>.visible = <span class="hljs-literal">true</span>
+      <span class="hljs-built_in">this</span>.$nextTick(<span class="hljs-function">() =&gt;</span> &#123;
+        <span class="hljs-built_in">this</span>.form.setFieldsValue(
+          pick(
+            <span class="hljs-built_in">this</span>.model,
+            <span class="hljs-string">&#x27;title&#x27;</span>,
+            <span class="hljs-string">&#x27;categoryType&#x27;</span>,
+            <span class="hljs-string">&#x27;summary&#x27;</span>,
+            <span class="hljs-string">&#x27;thumbnail&#x27;</span>
+          )
+        )
+        <span class="hljs-comment">////////////////////////////////////////////////////////////</span>
+        <span class="hljs-comment">// 时间格式化,输出到页面</span>
+        <span class="hljs-built_in">this</span>.form.setFieldsValue(&#123; <span class="hljs-attr">createTime</span>: <span class="hljs-built_in">this</span>.model.createTime ? moment(<span class="hljs-built_in">this</span>.model.createTime) : <span class="hljs-literal">null</span> &#125;)
+      &#125;)
+    &#125;,
+<span class="hljs-comment">//表单验证</span>
+handleOk() &#123;
+      <span class="hljs-keyword">const</span> that = <span class="hljs-built_in">this</span>
+      <span class="hljs-comment">// 触发表单验证</span>
+      <span class="hljs-built_in">this</span>.form.validateFields(<span class="hljs-function">(<span class="hljs-params">err, values</span>) =&gt;</span> &#123;
+        <span class="hljs-keyword">if</span> (!err) &#123;
+          that.confirmLoading = <span class="hljs-literal">true</span>
+          <span class="hljs-comment">// console.log(this.model)</span>
+          <span class="hljs-keyword">let</span> httpurl = <span class="hljs-string">&#x27;&#x27;</span>
+          <span class="hljs-keyword">let</span> method = <span class="hljs-string">&#x27;&#x27;</span>
+          <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">this</span>.model.id) &#123;
+            httpurl += <span class="hljs-built_in">this</span>.url.add
+            method = <span class="hljs-string">&#x27;post&#x27;</span>
+          &#125; <span class="hljs-keyword">else</span> &#123;
+            httpurl += <span class="hljs-built_in">this</span>.url.edit
+            method = <span class="hljs-string">&#x27;put&#x27;</span>
+          &#125;
+
+          <span class="hljs-keyword">let</span> formData = <span class="hljs-built_in">Object</span>.assign(<span class="hljs-built_in">this</span>.model, values)
+
+          <span class="hljs-comment">// 时间格式化</span>
+          formData.createTime = formData.createTime ? formData.createTime.format(<span class="hljs-string">&#x27;YYYY-MM-DD HH:mm:ss&#x27;</span>) : <span class="hljs-literal">null</span>
+
+         httpAction(httpurl, formData, method)
+            .then(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> &#123;
+              <span class="hljs-keyword">if</span> (res.success) &#123;
+                that.$message.success(res.message)
+                that.$emit(<span class="hljs-string">&#x27;ok&#x27;</span>)
+              &#125; <span class="hljs-keyword">else</span> &#123;
+                that.$message.warning(res.message)
+              &#125;
+            &#125;)
+            .finally(<span class="hljs-function">() =&gt;</span> &#123;
+              that.confirmLoading = <span class="hljs-literal">false</span>
+              that.close()
+            &#125;)
+        &#125;
+      &#125;)
+    &#125;,
+</code></pre>
+
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h1 id="ant-design-vue总结"><a href="#ant-design-vue总结" class="headerlink" title="ant-design-vue总结"></a>ant-design-vue总结</h1><h2 id="input常用"><a href="#input常用" class="headerlink" title="input常用"></a>input常用</h2><h3 id="1，文本域"><a href="#1，文本域" class="headerlink" title="1，文本域"></a>1，文本域</h3><pre><code class="hljs js">&lt;a-textarea style=<span class="hljs-string">&quot;height:150px;&quot;</span> placeholder=<span class="hljs-string">&quot;请输入问题回答&quot;</span> v-decorator=<span class="hljs-string">&quot;[&#x27;content&#x27;, &#123;&#125; ]&quot;</span> /&gt;
+</code></pre>
+
+<h3 id="2，input"><a href="#2，input" class="headerlink" title="2，input"></a>2，input</h3><pre><code class="hljs js">&lt;a-input placeholder=<span class="hljs-string">&quot;请输入人员数量&quot;</span> v-decorator=<span class="hljs-string">&quot;[&#x27;personNumber&#x27;, &#123;&#125;]&quot;</span> /&gt;
+</code></pre>
+
+<h3 id="3，单选框-配合jeecg-boot"><a href="#3，单选框-配合jeecg-boot" class="headerlink" title="3，单选框//配合jeecg-boot"></a>3，单选框//配合jeecg-boot</h3><pre><code class="hljs js"><span class="hljs-comment">//编辑时赋值，修改</span>
+&lt;a-form-item :labelCol=<span class="hljs-string">&quot;labelCol&quot;</span> :wrapperCol=<span class="hljs-string">&quot;wrapperCol&quot;</span> label=<span class="hljs-string">&quot;状态&quot;</span>&gt;
+    &lt;a-radio-group v-decorator=<span class="hljs-string">&quot;[&#x27;status&#x27;, &#123;&#125;]&quot;</span> &gt; 
+       &lt;a-radio  :value=<span class="hljs-string">&quot;0&quot;</span>&gt;正常&lt;/a-radio&gt;
+       &lt;a-radio :value=<span class="hljs-string">&quot;1&quot;</span>&gt;关闭&lt;/a-radio&gt;
+     &lt;/a-radio-group&gt;
+&lt;/a-form-item&gt;
+</code></pre>
+
+
+
+<h3 id="3，插槽使用，插入自定义显示内容"><a href="#3，插槽使用，插入自定义显示内容" class="headerlink" title="3，插槽使用，插入自定义显示内容"></a>3，插槽使用，插入自定义显示内容</h3><pre><code class="hljs js"><span class="hljs-comment">//columns变量，绑定表格的标题及属性</span>
+&lt;a-table
+        ref=<span class="hljs-string">&quot;table&quot;</span>
+        size=<span class="hljs-string">&quot;middle&quot;</span>
+        bordered
+        rowKey=<span class="hljs-string">&quot;id&quot;</span>
+        :columns=<span class="hljs-string">&quot;columns&quot;</span>
+        :dataSource=<span class="hljs-string">&quot;dataSource&quot;</span>
+        :pagination=<span class="hljs-string">&quot;ipagination&quot;</span>
+        :loading=<span class="hljs-string">&quot;loading&quot;</span>
+        :rowSelection=<span class="hljs-string">&quot;&#123;selectedRowKeys: selectedRowKeys, onChange: onSelectChange&#125;&quot;</span>
+        @change=<span class="hljs-string">&quot;handleTableChange&quot;</span>
+      &gt;
+       <span class="hljs-comment">//插槽显示img，通过slot绑定插槽，slot-scope携带插槽内引用的数据</span>
+        &lt;img
+          style=<span class="hljs-string">&quot;width:34px;heigth:42px&quot;</span>
+          slot=<span class="hljs-string">&quot;pic&quot;</span>
+          slot-scope=<span class="hljs-string">&quot;text, record&quot;</span>
+          :src=<span class="hljs-string">&quot;record.shopBossImg&quot;</span>
+        /&gt;
+        <span class="hljs-comment">//插槽显示操作按钮方法</span>
+        &lt;div style=<span class="hljs-string">&quot;min-width: 100px&quot;</span> slot=<span class="hljs-string">&quot;action&quot;</span> slot-scope=<span class="hljs-string">&quot;text, record&quot;</span>&gt;
+          &lt;a @click=<span class="hljs-string">&quot;handleEdit(record)&quot;</span>&gt;编辑&lt;/a&gt;&amp;nbsp;
+          &lt;a-popconfirm title=<span class="hljs-string">&quot;确定删除吗?&quot;</span> @confirm=<span class="hljs-string">&quot;() =&gt; handleDelete(record.id)&quot;</span>&gt;
+            &lt;a&gt;删除&lt;/a&gt;
+          &lt;/a-popconfirm&gt;
+
+&lt;!--   <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">a-divider</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;vertical&quot;</span> /&gt;</span></span><span class="hljs-comment">//一条竖线分割按钮的</span>
+         &lt;a-dropdown&gt;
+           &lt;a <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">&quot;ant-dropdown-link&quot;</span>&gt;
+             更多
+             &lt;a-icon type=<span class="hljs-string">&quot;down&quot;</span> /&gt;
+           &lt;/a&gt;
+           &lt;a-menu slot=<span class="hljs-string">&quot;overlay&quot;</span>&gt;
+             &lt;a-menu-item&gt;--&gt;
+               &lt;a-popconfirm title=<span class="hljs-string">&quot;确定删除吗?&quot;</span> @confirm=<span class="hljs-string">&quot;() =&gt; handleDelete(record.id)&quot;</span>&gt;
+                 &lt;a&gt;删除&lt;/a&gt;
+                &lt;/a-popconfirm&gt;
+             &lt;/a-menu-item&gt;
+           &lt;/a-menu&gt;
+         &lt;/a-dropdown&gt;--&gt;
+        &lt;/div&gt;
+&lt;/a-table&gt;
+
+
+
+data()&#123;
+    <span class="hljs-keyword">return</span>&#123;
+        columns: [
+        &#123;<span class="hljs-comment">//表格第一列前的序号</span>
+          title: <span class="hljs-string">&#x27;#&#x27;</span>,
+          dataIndex: <span class="hljs-string">&#x27;&#x27;</span>,
+          key: <span class="hljs-string">&#x27;rowIndex&#x27;</span>,
+          width: <span class="hljs-number">60</span>,
+          align: <span class="hljs-string">&#x27;center&#x27;</span>,
+          customRender: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">t, r, index</span>) </span>&#123;
+            <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseInt</span>(index) + <span class="hljs-number">1</span>
+          &#125;
+        &#125;,
+        &#123;
+          title: <span class="hljs-string">&#x27;头像&#x27;</span>,
+          align: <span class="hljs-string">&#x27;center&#x27;</span>,
+          dataIndex: <span class="hljs-string">&#x27;shopBossImg&#x27;</span>,
+          key: <span class="hljs-string">&#x27;pic&#x27;</span>,
+          scopedSlots: &#123; <span class="hljs-attr">customRender</span>: <span class="hljs-string">&#x27;pic&#x27;</span> &#125;
+        &#125;,
+        &#123;<span class="hljs-comment">//action插槽名称</span>
+          title: <span class="hljs-string">&#x27;操作&#x27;</span>,
+          width: <span class="hljs-number">150</span>,
+          dataIndex: <span class="hljs-string">&#x27;action&#x27;</span>,
+          align: <span class="hljs-string">&#x27;center&#x27;</span>,
+          scopedSlots: &#123; <span class="hljs-attr">customRender</span>: <span class="hljs-string">&#x27;action&#x27;</span> &#125;
+        &#125;,
+         &#123;
+            title: <span class="hljs-string">&#x27;支付渠道&#x27;</span>,
+            align: <span class="hljs-string">&quot;center&quot;</span>,
+            dataIndex: <span class="hljs-string">&#x27;payChannel&#x27;</span>,
+            customRender: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">text</span>) </span>&#123;
+              <span class="hljs-keyword">if</span> (text == <span class="hljs-number">1</span>) &#123;
+                <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;微信支付&#x27;</span>
+              &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (text == <span class="hljs-number">2</span>) &#123;
+                <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;支付宝支付&#x27;</span>
+              &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (text == <span class="hljs-number">3</span>) &#123;
+                <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;线下支付&#x27;</span>
+              &#125; 
+            &#125;
+          &#125;,
+      ],
+    &#125;
+&#125;
+</code></pre>
+
+<h3 id="4，显示头像的展示"><a href="#4，显示头像的展示" class="headerlink" title="4，显示头像的展示"></a>4，显示头像的展示</h3><p>参数为空自动显示默认头像的img</p>
+<pre><code class="hljs js">&lt;a-avatar src=<span class="hljs-string">&quot;图片路径&quot;</span> /&gt;
+</code></pre>
+
+<h3 id="5，金额格式化"><a href="#5，金额格式化" class="headerlink" title="5，金额格式化"></a>5，金额格式化</h3><pre><code class="hljs js">&lt;div <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">&quot;pressNum&quot;</span> slot=<span class="hljs-string">&quot;factoryPrice&quot;</span> slot-scope=<span class="hljs-string">&quot;text, record&quot;</span>&gt;
+          &lt;!-- <span class="hljs-comment">//商品出厂价 --&gt;</span>
+          &lt;a-statistic valueStyle=<span class="hljs-string">&quot;font-size:16px;&quot;</span> :precision=<span class="hljs-string">&quot;2&quot;</span> :value=<span class="hljs-string">&quot;record.factoryPrice&quot;</span> /&gt;
+          &lt;!-- <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>元<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span> --&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h3 id="6，模态框调用，父子组件传值，以及逻辑业务处理demo"><a href="#6，模态框调用，父子组件传值，以及逻辑业务处理demo" class="headerlink" title="6，模态框调用，父子组件传值，以及逻辑业务处理demo"></a>6，模态框调用，父子组件传值，以及逻辑业务处理demo</h3><p><strong>预览时：</strong>引入子组件，进行父===》子组件的传值，查找数据 ，进行渲染，ref方法传值</p>
+<p><strong>点击发货请求时：</strong>调用模态框进行逻辑业务处理 </p>
+<p><strong>父组件：</strong></p>
+<pre><code class="hljs vue">&lt;template&gt;
+  &lt;a-card :bordered&#x3D;&quot;false&quot;&gt;
+    &lt;!-- 查询区域 --&gt;
+    &lt;div class&#x3D;&quot;table-page-search-wrapper&quot;&gt;
+      &lt;a-form layout&#x3D;&quot;inline&quot;&gt;
+        &lt;a-row :gutter&#x3D;&quot;24&quot;&gt;
+          &lt;a-col :md&#x3D;&quot;6&quot; :sm&#x3D;&quot;8&quot;&gt;
+            &lt;a-form-item label&#x3D;&quot;订单编号&quot;&gt;
+              &lt;a-input placeholder&#x3D;&quot;订单编号&quot; v-model&#x3D;&quot;queryParam.orderNo&quot;&gt;&lt;&#x2F;a-input&gt;
+            &lt;&#x2F;a-form-item&gt;
+          &lt;&#x2F;a-col&gt;
+          &lt;a-col :md&#x3D;&quot;6&quot; :sm&#x3D;&quot;8&quot;&gt;
+            &lt;a-form-item label&#x3D;&quot;收货人电话&quot;&gt;
+              &lt;a-input placeholder&#x3D;&quot;请输入手机号&quot; v-model&#x3D;&quot;queryParam.consigneeTelephone&quot;&gt;&lt;&#x2F;a-input&gt;
+            &lt;&#x2F;a-form-item&gt;
+          &lt;&#x2F;a-col&gt;
+          &lt;a-col :md&#x3D;&quot;6&quot; :sm&#x3D;&quot;8&quot;&gt;
+            &lt;a-form-item label&#x3D;&quot;订单状态&quot;&gt;
+              &lt;j-dict-select-tag
+                v-model&#x3D;&quot;queryParam.orderGoodsStatus&quot;
+                placeholder&#x3D;&quot;当前状态&quot;
+                dictCode&#x3D;&quot;order_status &quot;
+              &#x2F;&gt;
+            &lt;&#x2F;a-form-item&gt;
+          &lt;&#x2F;a-col&gt;
+
+          &lt;a-col :md&#x3D;&quot;6&quot; :sm&#x3D;&quot;8&quot;&gt;
+            &lt;span style&#x3D;&quot;float: left;overflow: hidden;&quot; class&#x3D;&quot;table-page-search-submitButtons&quot;&gt;
+              &lt;a-button type&#x3D;&quot;primary&quot; @click&#x3D;&quot;searchQuery&quot; icon&#x3D;&quot;search&quot;&gt;查询&lt;&#x2F;a-button&gt;
+              &lt;a-button
+                type&#x3D;&quot;primary&quot;
+                @click&#x3D;&quot;searchReset&quot;
+                icon&#x3D;&quot;reload&quot;
+                style&#x3D;&quot;margin-left: 8px&quot;
+              &gt;重置&lt;&#x2F;a-button&gt;
+            &lt;&#x2F;span&gt;
+          &lt;&#x2F;a-col&gt;
+        &lt;&#x2F;a-row&gt;
+      &lt;&#x2F;a-form&gt;
+    &lt;&#x2F;div&gt;
+    &lt;!-- 查询区域end --&gt;
+
+    &lt;!-- table区域-begin --&gt;
+    &lt;div&gt;
+      &lt;a-table
+        ref&#x3D;&quot;table&quot;
+        size&#x3D;&quot;middle&quot;
+        bordered
+        rowKey&#x3D;&quot;id&quot;
+        :columns&#x3D;&quot;columns&quot;
+        :dataSource&#x3D;&quot;dataSource&quot;
+        :pagination&#x3D;&quot;ipagination&quot;
+        :loading&#x3D;&quot;loading&quot;
+        @change&#x3D;&quot;handleTableChange&quot;
+      &gt;
+        &lt;img
+          style&#x3D;&quot;width:50px;heigth:50px&quot;
+          slot&#x3D;&quot;files&quot;
+          slot-scope&#x3D;&quot;text, record&quot;
+          :src&#x3D;&quot;record.files[0].fileUrl&quot;
+        &#x2F;&gt;
+
+        &lt;!-- 插槽按钮 --&gt;
+        &lt;span slot&#x3D;&quot;action&quot; slot-scope&#x3D;&quot;text, record&quot;&gt;
+          &lt;!-- 查看详情按钮 --&gt;
+          &lt;a @click&#x3D;&quot;orderView(record)&quot;&gt;详情&lt;&#x2F;a&gt;
+          &lt;!-- 发货按钮 --&gt;
+          &lt;span&gt;
+            &lt;a-divider type&#x3D;&quot;vertical&quot; &#x2F;&gt;
+            &lt;a @click&#x3D;&quot;deliverShow(record)&quot;&gt;发货&lt;&#x2F;a&gt;
+          &lt;&#x2F;span&gt;
+        &lt;&#x2F;span&gt;
+      &lt;&#x2F;a-table&gt;
+    &lt;&#x2F;div&gt;
+    &lt;!-- table区域-end --&gt;
+
+
+    &lt;!-- 模态弹框 --&gt;
+    &lt;a-modal
+      :title&#x3D;&quot;itemObj.orderNo&quot;
+      width&#x3D;&quot;416px&quot;
+      :visible&#x3D;&quot;deliverWin&quot;
+      :closable&#x3D;&quot;false&quot;
+      @ok&#x3D;&quot;handleOk&quot;
+      :confirmLoading&#x3D;&quot;confirmLoading&quot;
+      @cancel&#x3D;&quot;handleCancel&quot;
+    &gt;
+      &lt;a-form :form&#x3D;&quot;form&quot; :label-col&#x3D;&quot;&#123; span: 5 &#125;&quot; :wrapper-col&#x3D;&quot;&#123; span: 19 &#125;&quot;&gt;
+        &lt;a-form-item label&#x3D;&quot;物流公司&quot;&gt;
+          &lt;a-input
+            placeholder&#x3D;&quot;请输入物流公司名称&quot;
+            v-decorator&#x3D;&quot;[&#39;logisticsCompany&#39;, &#123; rules: [&#123; required: true, message: &#39;请输入物流公司名称!&#39; &#125;] &#125;]&quot;
+          &#x2F;&gt;
+        &lt;&#x2F;a-form-item&gt;
+
+        &lt;a-form-item label&#x3D;&quot;物流单号&quot;&gt;
+          &lt;a-input
+            placeholder&#x3D;&quot;请输入物流单号&quot;
+            v-decorator&#x3D;&quot;[&#39;logisticsNo&#39;, &#123; rules: [&#123; required: true, message: &#39;请输入物流公司单号!&#39; &#125;] &#125;]&quot;
+          &#x2F;&gt;
+        &lt;&#x2F;a-form-item&gt;
+
+        &lt;a-form-item label&#x3D;&quot;物流备注&quot;&gt;
+          &lt;a-textarea placeholder&#x3D;&quot;请输入物流备注&quot; v-decorator&#x3D;&quot;[&#39;logisticsRemark&#39;, &#123;  &#125;]&quot; &#x2F;&gt;
+        &lt;&#x2F;a-form-item&gt;
+      &lt;&#x2F;a-form&gt;
+    &lt;&#x2F;a-modal&gt;
+    &lt;!-- 模态弹框end --&gt;
+     &lt;!--子组件的调用--&gt;
+    &lt;details-model ref&#x3D;&quot;detailsView&quot;&gt;&lt;&#x2F;details-model&gt;
+  &lt;&#x2F;a-card&gt;
+&lt;&#x2F;template&gt;
+
+&lt;script&gt;
+import Vue from &#39;vue&#39;
+import &#123; JeecgListMixin &#125; from &#39;@&#x2F;mixins&#x2F;JeecgListMixin&#39;
+import &#123; USER_INFO &#125; from &#39;@&#x2F;store&#x2F;mutation-types&#39;
+&#x2F;&#x2F;子组件的引入
+import detailsModel from &#39;.&#x2F;modules&#x2F;detailsModel&#39;
+export default &#123;
+  name: &#39;&#39;,
+  mixins: [JeecgListMixin],
+  components: &#123;
+    &#x2F;&#x2F;子组件的挂载
+    detailsModel
+  &#125;,
+
+  data() &#123;
+    return &#123;
+      description: &#39;&#39;,
+      disableMixinCreated: true,
+      userInfo: &#123;&#125;,
+      confirmLoading: false,
+      form: this.$form.createForm(this, &#123;&#125;),
+      itemObj: &#123;&#125;,
+      deliverWin: false,
+      &#x2F;&#x2F; 表单数据，部分省略
+      columns: [
+        &#123;
+          title: &#39;订单编号&#39;,
+          align: &#39;center&#39;,
+          dataIndex: &#39;orderNo&#39;
+        &#125;,
+
+        &#123;
+          title: &#39;下单人&#39;,
+          align: &#39;center&#39;,
+          dataIndex: &#39;sysAccountName&#39;
+        &#125;
+      ],
+      url: &#123;
+        list: &#39;&#x2F;admin&#x2F;caseInfo&#x2F;list&#39;,
+        delete: &#39;&#x2F;admin&#x2F;caseInfo&#x2F;delete&#39;,
+        deleteBatch: &#39;&#x2F;admin&#x2F;caseInfo&#x2F;deleteBatch&#39;,
+        exportXlsUrl: &#39;admin&#x2F;caseInfo&#x2F;exportXls&#39;,
+        importExcelUrl: &#39;admin&#x2F;caseInfo&#x2F;importExcel&#39;
+      &#125;
+    &#125;
+  &#125;,
+  computed: &#123;
+    importExcelUrl: function() &#123;
+      return &#96;$&#123;window._CONFIG[&#39;domianURL&#39;]&#125;&#x2F;$&#123;this.url.importExcelUrl&#125;&#96;
+    &#125;
+  &#125;,
+  methods: &#123;
+    deliverShow(item) &#123;
+      this.itemObj &#x3D; item
+      this.form.resetFields()
+      this.deliverWin &#x3D; true
+    &#125;,
+
+    orderView(item) &#123;
+      this.$refs.detailsView.view(item)
+    &#125;,
+
+    handleOk(e) &#123;&#x2F;&#x2F;确认按钮的事件，给后台传递数据
+      var newDate &#x3D; new Date()
+
+      var year &#x3D; newDate.getFullYear()
+      var month &#x3D; newDate.getMonth() &lt; 10 ? &#39;0&#39; + (newDate.getMonth() + 1) : newDate.getMonth() + 1
+      var day &#x3D; newDate.getDate() &lt; 10 ? &#39;0&#39; + newDate.getDate() : newDate.getDate()
+
+      var h &#x3D; newDate.getHours() &lt; 10 ? &#39;0&#39; + newDate.getHours() : newDate.getHours()
+      var m &#x3D; newDate.getMinutes() &lt; 10 ? &#39;0&#39; + newDate.getMinutes() : newDate.getMinutes()
+
+      var s &#x3D; newDate.getSeconds() &lt; 10 ? &#39;0&#39; + newDate.getSeconds() : newDate.getSeconds()
+
+      e.preventDefault()
+      this.form.validateFields((err, values) &#x3D;&gt; &#123;
+        if (!err) &#123;
+          values.id &#x3D; this.itemObj.id
+          values.orderGoodsStatus &#x3D; 2
+          values.deliveryTime &#x3D; year + &#39;-&#39; + month + &#39;-&#39; + day + &#39; &#39; + h + &#39;:&#39; + m + &#39;:&#39; + s
+          const hide &#x3D; this.$message.loading(&#39;正在提交物流信息..&#39;, 0)
+          this.confirmLoading &#x3D; true
+          var that &#x3D; this
+          this.axios(&#123;
+            url: &#39;&#x2F;admin&#x2F;bsOrderGoods&#x2F;send&#39;,
+            method: &#39;put&#39;,
+            data: values
+          &#125;)
+            .then(function(res) &#123;
+              setTimeout(hide, 0)
+              if (res.success) &#123;
+                that.$message.success(&#39;物流信息提交成功&#39;)
+                that.deliverWin &#x3D; false
+                that.searchQuery()
+
+                that.confirmLoading &#x3D; false
+              &#125;
+            &#125;)
+            .catch(function(err) &#123;
+              setTimeout(hide, 0)
+              that.confirmLoading &#x3D; false
+              console.log(err)
+            &#125;)
+        &#125;
+      &#125;)
+    &#125;,
+
+    handleCancel() &#123;
+      this.deliverWin &#x3D; false
+    &#125;,
+
+    getOrder() &#123;
+      this.url.list &#x3D; &#39;&#x2F;admin&#x2F;bsOrderGoods&#x2F;list&#39; 
+      this.searchQuery()
+    &#125;
+  &#125;,
+
+  mounted() &#123;
+    this.userInfo &#x3D; Vue.ls.get(USER_INFO)
+  console.log(this.userInfo,&#39;this.userInfo&#39;)
+    this.getOrder()
+  &#125;,
+
+  beforeRouteEnter(to, from, next) &#123;
+    console.log(to, from, next)
+    &#x2F;&#x2F; 注意，在路由进入之前，组件实例还未渲染，所以无法获取this实例，只能通过vm来访问组件实例
+    next(vm &#x3D;&gt; &#123;
+      if (!!from) &#123;
+        vm.userInfo &#x3D; Vue.ls.get(USER_INFO)
+        vm.getOrder()
+      &#125;
+    &#125;)
+  &#125;
+&#125;
+&lt;&#x2F;script&gt;
+&lt;style scoped&gt;
+&#x2F;* 引入css文件*&#x2F;
+@import &#39;~@assets&#x2F;less&#x2F;common.less&#39;;
+&lt;&#x2F;style&gt;
+
+</code></pre>
+
+<p><strong>子组件：</strong></p>
+<pre><code class="hljs vue"></code></pre>
+
+<h3 id="7，input必选，以及提示"><a href="#7，input必选，以及提示" class="headerlink" title="7，input必选，以及提示"></a>7，input必选，以及提示</h3><pre><code class="hljs js">&lt;a-input placeholder=<span class="hljs-string">&quot;请输入物流单号&quot;</span> v-decorator=<span class="hljs-string">&quot;[&#x27;logisticsNo&#x27;, &#123; rules: [&#123; required: true, message: &#x27;请输入物流公司单号!&#x27; &#125;] &#125;]&quot;</span>
+/&gt;
+
+<span class="hljs-comment">//第二种</span>
+&lt;a-form-item :labelCol=<span class="hljs-string">&quot;labelCol&quot;</span> :wrapperCol=<span class="hljs-string">&quot;wrapperCol&quot;</span> label=<span class="hljs-string">&quot;案例标题&quot;</span>&gt;
+   &lt;a-input placeholder=<span class="hljs-string">&quot;请输入案例标题&quot;</span> v-decorator=<span class="hljs-string">&quot;[&#x27;title&#x27;, validatorRules.title]&quot;</span> /&gt;
+&lt;/a-form-item&gt;
+validatorRules: &#123;
+   title: &#123;
+       rules: [
+         &#123;
+           required: <span class="hljs-literal">true</span>,
+           message: <span class="hljs-string">&#x27;请输入案例标题!&#x27;</span>
+          &#125;
+       ]
+   &#125;,
+&#125;
+</code></pre>
+
+<h3 id="8，图片预览"><a href="#8，图片预览" class="headerlink" title="8，图片预览"></a>8，图片预览</h3><pre><code class="hljs js"><span class="hljs-comment">//预览的组件，ant框架</span>
+&lt;a-modal :visible=<span class="hljs-string">&quot;previewVisible&quot;</span> :footer=<span class="hljs-string">&quot;null&quot;</span> @cancel=<span class="hljs-string">&quot;yulanVisible&quot;</span>&gt;
+    &lt;img alt=<span class="hljs-string">&quot;example&quot;</span> style=<span class="hljs-string">&quot;width: 100%&quot;</span> :src=<span class="hljs-string">&quot;previewImage&quot;</span> /&gt;
+&lt;/a-modal&gt;
+yulanVisible() &#123;
+  <span class="hljs-built_in">this</span>.previewVisible = <span class="hljs-literal">false</span>;
+&#125;,
+handlePreview()&#123;<span class="hljs-comment">//绑定a-upload图片上传的事件@preview=&quot;handlePreview&quot;</span>
+  <span class="hljs-comment">//预览图片时的回调函数</span>
+  <span class="hljs-comment">// console.log(file)</span>
+  <span class="hljs-built_in">this</span>.previewImage = file.url
+  <span class="hljs-built_in">this</span>.previewVisible = <span class="hljs-literal">true</span>
+&#125;
+</code></pre>
+
+<h3 id="9，删除——确定按钮"><a href="#9，删除——确定按钮" class="headerlink" title="9，删除——确定按钮"></a>9，删除——确定按钮</h3><pre><code class="hljs js"><span class="hljs-comment">//更多滑过显示删除，点击删除有弹出二次确认</span>
+&lt;a-divider type=<span class="hljs-string">&quot;vertical&quot;</span> /&gt;
+          &lt;a-dropdown&gt;
+            &lt;!-- <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;ant-dropdown-link&quot;</span>&gt;</span>更多 <span class="hljs-tag">&lt;<span class="hljs-name">a-icon</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;down&quot;</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span> --&gt;
+            &lt;!-- <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">a-menu</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;overlay&quot;</span>&gt;</span> --&gt;</span>
+              &lt;!-- &lt;a-menu-item&gt; --&gt;
+                &lt;a-popconfirm title=&quot;确定删除吗?&quot; @confirm=&quot;() =&gt; handleDelete(record.id)&quot;&gt;
+                  &lt;a&gt;删除&lt;/a&gt;
+                &lt;/a-popconfirm&gt;
+<span class="xml">              <span class="hljs-comment">&lt;!-- &lt;/a-menu-item&gt; --&gt;</span></span>
+<span class="xml">            <span class="hljs-comment">&lt;!-- &lt;/a-menu&gt;</span></span> --&gt;
+          &lt;/a-dropdown&gt;
+</code></pre>
+
+
+
+<h3 id="10-vue引入组件"><a href="#10-vue引入组件" class="headerlink" title="10,vue引入组件"></a>10,vue引入组件</h3><pre><code class="hljs js"><span class="hljs-comment">//点击事件弹出模态框record传递参数</span>
+&lt;a @click=<span class="hljs-string">&quot;orderView(record)&quot;</span>&gt;详情&lt;/a&gt;
+<span class="hljs-comment">//引入</span>
+<span class="hljs-keyword">import</span> detailsModel <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./modules/detailsModel&#x27;</span>
+<span class="hljs-comment">//导出：</span>
+components: &#123;
+    detailsModel,
+&#125;,
+
+<span class="hljs-comment">//引用</span>
+&lt;details-model ref=<span class="hljs-string">&quot;detailsView&quot;</span>&gt;&lt;/details-model&gt;
+
+methods:&#123;
+    orderView(item) &#123;
+      <span class="hljs-built_in">this</span>.$refs.detailsView.view(item)
+    &#125;,
+&#125;
+</code></pre>
+
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/09/19/uni-app%E6%80%BB%E7%BB%93/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">uni-app总结</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/09/18/vacation_%E9%9D%A2%E8%AF%95%E9%A2%98/">
+                        <span class="hidden-mobile">vacation知识点总结</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">请输入关键字</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <!-- <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> -->
+      <a href="http://xuxd.top/" target="_blank" rel="nofollow noopener"><span>主页</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="http://xuxd.top/categories/" target="_blank" rel="nofollow noopener">
+        <span>分类</span></a>
+    </div>
+    
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "jeecg-boot总结&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 60,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript">
+      //定义获取词语下标
+      var a_idx = 0;
+      jQuery(document).ready(function ($) {
+        //点击body时触发事件
+        $("body").click(function (e) {
+          //需要显示的词语
+          var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善");
+          //设置词语给span标签
+          var $i = $("<span/>").text(a[a_idx]);
+          //下标等于原来下标+1  余 词语总数
+          a_idx = (a_idx + 1) % a.length;
+          //获取鼠标指针的位置，分别相对于文档的左和右边缘。
+          //获取x和y的指针坐标
+          var x = e.pageX, y = e.pageY;
+          //在鼠标的指针的位置给$i定义的span标签添加css样式
+          $i.css({
+            "z-index": 999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "color": rand_color()
+          });
+          // 随机颜色
+          function rand_color() {
+            return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+          }
+          //在body添加这个标签
+          $("body").append($i);
+          //animate() 方法执行 CSS 属性集的自定义动画。
+          //该方法通过CSS样式将元素从一个状态改变为另一个状态。CSS属性值是逐渐改变的，这样就可以创建动画效果。
+          //详情请看http://www.w3school.com.cn/jquery/effect_animate.asp
+          $i.animate({
+            //将原来的位置向上移动180
+            "top": y - 180,
+            "opacity": 0
+            //1500动画的速度
+          }, 1500, function () {
+            //时间到了自动删除
+            $i.remove();
+          });
+        });
+      })
+      ;
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

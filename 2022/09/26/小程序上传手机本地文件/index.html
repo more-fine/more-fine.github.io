@@ -1,0 +1,924 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-Hans" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="Mr Xu">
+  <meta name="keywords" content="">
+  <title>小程序上传手机本地文件 - more-fine</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_6peoq002giu.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.0.2"></head>
+
+
+<body>
+  <header style="height: 50vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>大东!</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                我的
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/index.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+  <div class="mt-3 post-meta">
+    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+    <time datetime="2022-09-26 21:53" pubdate>
+      2022-09-26 21:53
+    </time>
+  </div>
+
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.2k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      37
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">小程序上传手机本地文件</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2 hours ago
+                
+              </p>
+            
+            <div class="markdown-body" id="post-body">
+              <h3 id="小程序上传手机本地文件"><a href="#小程序上传手机本地文件" class="headerlink" title="小程序上传手机本地文件"></a>小程序上传手机本地文件</h3><p><strong>需求：</strong></p>
+<p>上传操作，两种tap，一种是调取微信api方法，就不用赘述了，主要是第二种：调取手机文件管理，上传文件，文件包含.word，.doc，.docx，.xls，.xlsx，.excel，.pdf，.ofd这些文件</p>
+<p><strong>具体实现：</strong></p>
+<p>使用的微信原生api，通过webview标签实现，外链一个h5页面，h5通过input的属性进行上传文件，文件上传逻辑及接口在h5进行书写（这里很关键，），上传完成，只需要将上传成功的文件id和name（需要的参数）传入小程序，就可以实现此功能了。</p>
+<p><strong>注意事项：</strong></p>
+<p>1，webview的src链接需要配置域名，不然没法调试，而且只对企业用户开放</p>
+<p>2，上传逻辑及接口在h5进行书写，如果在小程序端写，上传后的文件需要转成base64，通过wx.miniProgram.postMessage({data: myData });传给小程序，再进行接口对接，内存会炸掉，可能这个文件转base64后的大小有几M大小，比原文件还大，开发的时候遇到了，后来又统一改了一遍</p>
+<p><strong>遇到问题：</strong></p>
+<p>刚开始做的时候，还是打开了百度，毕竟没有做过，了解到webView标签可以实现此功能：</p>
+<p>附链接：<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/web-view.html">https://developers.weixin.qq.com/miniprogram/dev/component/web-view.html</a></p>
+<p>过程中：</p>
+<p>看到了很多人遇到的问题，当然自己也同样遇到很多问题，感兴趣可以看一下，当然本人也是在此得到一些启发：</p>
+<p>1，<a target="_blank" rel="noopener" href="https://blog.csdn.net/EEstefan/article/details/121588424">https://blog.csdn.net/EEstefan/article/details/121588424</a></p>
+<p>2，<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_37970097/article/details/115793051">https://blog.csdn.net/qq_37970097/article/details/115793051</a></p>
+<p>过程中的心酸不再赘述，可能在做此功能的你也很苦恼，在此我也是做一下记录，希望能给你一点启发，话不多说，看看具体代码吧，具体逻辑具体分析吧，看需要上传什么类型的文件，可以进行修改</p>
+<p><strong>具体代码：</strong></p>
+<p><strong>1，小程序内新建的webview页面</strong>，作为点击上传跳转的页面，打开h5链接</p>
+<pre><code class="hljs wxml">&lt;web-view src&#x3D;&quot;&#123;&#123;url&#125;&#125;&quot; bindmessage&#x3D;&quot;handleMessage&quot;&gt;&lt;&#x2F;web-view&gt;</code></pre>
+
+<pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123; host, imgHost &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;../../../../utils/config&quot;</span>
+<span class="hljs-keyword">var</span> app = getApp()
+Page(&#123;
+
+    <span class="hljs-comment">/**</span>
+<span class="hljs-comment">     * 页面的初始数据</span>
+<span class="hljs-comment">     */</span>
+    data: &#123;
+        url:<span class="hljs-string">&#x27;&#x27;</span>,
+        token:wx.getStorageSync(<span class="hljs-string">&#x27;token&#x27;</span>),
+    &#125;,
+    handleMessage(data)&#123;
+        <span class="hljs-keyword">let</span> toolsUploadType = wx.getStorageSync(<span class="hljs-string">&#x27;toolsUploadType&#x27;</span>);
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;返回数据：&#x27;</span>, data);
+        <span class="hljs-keyword">let</span> res = &#123; ...data.detail.data[<span class="hljs-number">0</span>] &#125;
+        wx.setStorageSync(<span class="hljs-string">&#x27;picName&#x27;</span>, res.name)
+        <span class="hljs-keyword">let</span> type = res.type.split(<span class="hljs-string">&#x27;/&#x27;</span>)[<span class="hljs-number">1</span>];
+        <span class="hljs-keyword">let</span> nameType = res.name.substr(res.name.length<span class="hljs-number">-4</span>,res.name.length<span class="hljs-number">-1</span>);
+        <span class="hljs-keyword">if</span>(nameType == <span class="hljs-string">&#x27;.doc&#x27;</span>||nameType == <span class="hljs-string">&#x27;.xls&#x27;</span>||nameType == <span class="hljs-string">&#x27;.txt&#x27;</span>)&#123;
+            nameType = nameType.split(<span class="hljs-string">&#x27;.&#x27;</span>)[<span class="hljs-number">1</span>]
+        &#125;
+        <span class="hljs-keyword">let</span> obj = &#123;<span class="hljs-attr">type</span>:type.length&lt;<span class="hljs-number">5</span>?type:nameType,<span class="hljs-attr">size</span>:res.size&#125;
+        wx.setStorageSync(<span class="hljs-string">&#x27;localInfo&#x27;</span>, obj)
+        <span class="hljs-keyword">if</span>((toolsUploadType == <span class="hljs-string">&#x27;word&#x27;</span>&amp;&amp;(type==<span class="hljs-string">&#x27;docx&#x27;</span>||type==<span class="hljs-string">&#x27;msword&#x27;</span>||nameType==<span class="hljs-string">&#x27;docx&#x27;</span>||nameType==<span class="hljs-string">&#x27;doc&#x27;</span>))||
+        (toolsUploadType == <span class="hljs-string">&#x27;xlsx&#x27;</span>&amp;&amp;(type==<span class="hljs-string">&#x27;xls&#x27;</span>||type==<span class="hljs-string">&#x27;xlsx&#x27;</span>||type==<span class="hljs-string">&#x27;excel&#x27;</span>||nameType==<span class="hljs-string">&#x27;xlsx&#x27;</span>||nameType==<span class="hljs-string">&#x27;xls&#x27;</span>))||
+        (toolsUploadType == <span class="hljs-string">&#x27;txt&#x27;</span>&amp;&amp;(type==<span class="hljs-string">&#x27;plain&#x27;</span>||nameType==<span class="hljs-string">&#x27;txt&#x27;</span>)))&#123;
+            toolsUploadType = type
+            <span class="hljs-keyword">if</span>(nameType==<span class="hljs-string">&#x27;docx&#x27;</span>||nameType==<span class="hljs-string">&#x27;doc&#x27;</span>||nameType==<span class="hljs-string">&#x27;xls&#x27;</span>||nameType==<span class="hljs-string">&#x27;xlsx&#x27;</span>||nameType==<span class="hljs-string">&#x27;txt&#x27;</span>)&#123;
+                toolsUploadType = nameType
+            &#125;
+            wx.setStorageSync(<span class="hljs-string">&#x27;toolsUploadType&#x27;</span>, toolsUploadType)
+        &#125;
+        <span class="hljs-keyword">if</span>(res.size/<span class="hljs-number">1048576</span>&lt;=<span class="hljs-number">5</span>&amp;&amp;(type==toolsUploadType||nameType==toolsUploadType))&#123;
+            <span class="hljs-comment">// wx.setStorageSync(&#x27;localPdfData&#x27;, res)</span>
+            app.globalData.localPdfData = res
+            <span class="hljs-comment">// wx.navigateBack(&#123; delta: 1 &#125;);</span>
+            <span class="hljs-comment">// 跳转上传页</span>
+        &#125;
+    &#125;,
+    <span class="hljs-comment">/**</span>
+<span class="hljs-comment">     * 生命周期函数--监听页面加载</span>
+<span class="hljs-comment">     */</span>
+    onLoad: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">options</span>) </span>&#123;
+        <span class="hljs-keyword">let</span> toolsUploadType = wx.getStorageSync(<span class="hljs-string">&#x27;toolsUploadType&#x27;</span>);
+        <span class="hljs-keyword">let</span> sourceType = wx.getStorageSync(<span class="hljs-string">&#x27;sourceType&#x27;</span>);
+        <span class="hljs-keyword">let</span> abilityId = wx.getStorageSync(<span class="hljs-string">&#x27;abilityId&#x27;</span>);
+        <span class="hljs-keyword">let</span> token = <span class="hljs-built_in">this</span>.data.token;
+        <span class="hljs-built_in">this</span>.setData(&#123;
+            <span class="hljs-comment">// url: imgHost+&#x27;/lawsuit/pdfToolPage/getDocPdf.html&#x27;</span>
+            url:<span class="hljs-string">`<span class="hljs-subst">$&#123;imgHost&#125;</span>/lawsuit/pdfToolPage/getDocPdf.html?host=<span class="hljs-subst">$&#123;host&#125;</span>&amp;abilityId=<span class="hljs-subst">$&#123;abilityId&#125;</span>&amp;sourceType=<span class="hljs-subst">$&#123;sourceType&#125;</span>&amp;fileType=<span class="hljs-subst">$&#123;toolsUploadType&#125;</span>&amp;token=<span class="hljs-subst">$&#123;token&#125;</span>&amp;timestamp=<span class="hljs-subst">$&#123;<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime()&#125;</span>`</span>
+        &#125;)
+        <span class="hljs-comment">//console.log(this.data.url)</span>
+    &#125;
+&#125;)</code></pre>
+
+<p><strong>2,h5页面：</strong>（此页面作为一个链接，要存放在服务器上）</p>
+<pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>本地文件<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span>
+        * &#123;
+            margin: 0;
+            padding: 0;
+        &#125;
+
+<span class="css">        <span class="hljs-selector-class">.title</span> &#123;</span>
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        &#125;
+
+        p &#123;
+            font-size: 12px;
+            margin-bottom: 50px;
+        &#125;
+
+<span class="css">        <span class="hljs-selector-class">.web_wiew</span> &#123;</span>
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            padding-top: 80px;
+        &#125;
+
+<span class="css">        <span class="hljs-selector-class">.resume-look-bottom</span> <span class="hljs-selector-tag">button</span> &#123;</span>
+            width: 283px;
+            height: 45px;
+<span class="css">            <span class="hljs-selector-tag">background</span>: <span class="hljs-selector-id">#1989Fa</span>;</span>
+            border: none;
+<span class="css">            <span class="hljs-selector-tag">color</span>: <span class="hljs-selector-id">#fff</span>;</span>
+            border-radius: 40px;
+        &#125;
+<span class="css">        <span class="hljs-selector-class">.loading_box</span>&#123;</span>
+            margin: auto;
+            position: relative;
+            text-align: center;
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            padding-top: 10px;
+<span class="css">            <span class="hljs-selector-tag">color</span>: <span class="hljs-selector-id">#fff</span>;</span>
+            font-size: 12px;
+            box-sizing: border-box;
+        &#125;
+<span class="css">        <span class="hljs-selector-class">.loading_box</span><span class="hljs-selector-class">.none</span>&#123;</span>
+            display: none;
+        &#125;
+<span class="css">        <span class="hljs-selector-class">.loading</span> &#123;</span>
+            width: 40px; height: 40px;
+            margin: auto;
+            position: relative;
+        &#125;
+<span class="css">        <span class="hljs-selector-class">.loading</span><span class="hljs-selector-pseudo">::before</span> &#123;</span>
+            content: &quot;&quot;;
+            width: 4px; height: 4px;
+            border-radius: 100%;
+<span class="css">            <span class="hljs-selector-tag">color</span>: <span class="hljs-selector-tag">rgba</span>(255, 255, 255, <span class="hljs-selector-class">.4</span>);</span>
+<span class="css">            <span class="hljs-selector-tag">box-shadow</span>: 0 <span class="hljs-selector-tag">-10px</span> <span class="hljs-selector-tag">rgba</span>(255, 255, 255,<span class="hljs-selector-class">.9</span>),    <span class="hljs-comment">/* top */</span></span>
+<span class="css">                10<span class="hljs-selector-tag">px</span> 0<span class="hljs-selector-tag">px</span>,                  <span class="hljs-comment">/* right */</span></span>
+<span class="css">                0 10<span class="hljs-selector-tag">px</span>,                    <span class="hljs-comment">/* bottom */</span></span>
+<span class="css">                <span class="hljs-selector-tag">-10px</span> 0 <span class="hljs-selector-tag">rgba</span>(255, 255, 255<span class="hljs-selector-class">.7</span>),    <span class="hljs-comment">/* left */</span></span>
+
+<span class="css">                <span class="hljs-selector-tag">-7px</span> <span class="hljs-selector-tag">-7px</span> <span class="hljs-selector-tag">rgba</span>(255, 255, 255,<span class="hljs-selector-class">.8</span>),  <span class="hljs-comment">/* left-top */</span></span>
+<span class="css">                7<span class="hljs-selector-tag">px</span> <span class="hljs-selector-tag">-7px</span> <span class="hljs-selector-tag">rgba</span>(255, 255, 255,1),    <span class="hljs-comment">/* right-top */</span></span>
+<span class="css">                7<span class="hljs-selector-tag">px</span> 7<span class="hljs-selector-tag">px</span>,                   <span class="hljs-comment">/* right-bottom */</span></span>
+<span class="css">                <span class="hljs-selector-tag">-7px</span> 7<span class="hljs-selector-tag">px</span>;                  <span class="hljs-comment">/* left-bottom */</span></span>
+            animation: spin 1s steps(8) infinite;
+<span class="css">            <span class="hljs-comment">/* center */</span></span>
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            margin: auto;
+        &#125;
+<span class="css">        <span class="hljs-keyword">@keyframes</span> spin &#123;</span>
+<span class="css">            0% &#123; <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotate</span>(<span class="hljs-number">0deg</span>); &#125;</span>
+<span class="css">            100% &#123; <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotate</span>(<span class="hljs-number">360deg</span>); &#125;</span>
+        &#125;
+    <span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;http://code.jquery.com/jquery-2.1.4.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-comment">&lt;!--此处jquery直接copy的内容放在了这里，链接引入没有试--&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>                                  
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://res.wx.qq.com/open/js/jweixin-1.3.2.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;web_wiew&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;resunme&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title&quot;</span>&gt;</span>怎么上传本机文件？<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>点击下方按钮→点击文件管理→选择文件<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title&quot;</span>&gt;</span>上传的文件大小？<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>支持上传5M以内的文件<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;resume-look-bottom&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 92%;&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;file&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;file&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: none;&quot;</span> /&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;upload&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;cu-btn&quot;</span>&gt;</span>
+                    上传本机文件
+                <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;loading_box none&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;loading&quot;</span>&gt;</span>            
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;margin: 10px auto;&quot;</span>&gt;</span>加载中...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span>
+<span class="javascript">        <span class="hljs-comment">// 获取小程序传递过来的参数</span></span>
+<span class="javascript">        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getSearchString</span>(<span class="hljs-params">Url</span>) </span>&#123;</span>
+<span class="javascript">            <span class="hljs-keyword">var</span> str = Url;</span>
+            str = str.substring(1, str.length);
+<span class="javascript">            <span class="hljs-keyword">var</span> arr = str.split(<span class="hljs-string">&quot;&amp;&quot;</span>);</span>
+<span class="javascript">            <span class="hljs-keyword">var</span> obj = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>();</span>
+<span class="javascript">            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; arr.length; i++) &#123;</span>
+<span class="javascript">                <span class="hljs-keyword">var</span> tmp_arr = arr[i].split(<span class="hljs-string">&quot;=&quot;</span>);</span>
+<span class="javascript">                obj[<span class="hljs-built_in">decodeURIComponent</span>(tmp_arr[<span class="hljs-number">0</span>])] = <span class="hljs-built_in">decodeURIComponent</span>(tmp_arr[<span class="hljs-number">1</span>]);</span>
+            &#125;
+<span class="javascript">            <span class="hljs-keyword">return</span> obj;</span>
+        &#125;
+<span class="javascript">        <span class="hljs-keyword">var</span> search = <span class="hljs-built_in">window</span>.location.search;</span>
+<span class="javascript">        <span class="hljs-built_in">console</span>.log(search,<span class="hljs-string">&quot;wechatData&quot;</span>)</span>
+<span class="javascript">        <span class="hljs-keyword">var</span> wechatData = getSearchString(search); </span>
+<span class="javascript">        <span class="hljs-built_in">console</span>.log(wechatData,<span class="hljs-string">&quot;wechatData&quot;</span>)</span>
+<span class="javascript">        <span class="hljs-comment">// 选择文件</span></span>
+<span class="javascript">        <span class="hljs-keyword">const</span> Upload = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&#x27;upload&#x27;</span>);</span>
+<span class="javascript">        Upload.onclick = <span class="hljs-function">() =&gt;</span> &#123;</span>
+            oFile.click();
+        &#125;;
+<span class="javascript">        <span class="hljs-comment">// 监听文件上传</span></span>
+<span class="javascript">        <span class="hljs-keyword">const</span> oFile = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&#x27;file&#x27;</span>);</span>
+<span class="javascript">        oFile.onchange = <span class="hljs-function">() =&gt;</span> &#123;</span>
+<span class="javascript">            <span class="hljs-comment">// console.log(oFile.files[0],oFile.files[0].arrayBuffer, &#x27;123123&#x27;)</span></span>
+<span class="javascript">            <span class="hljs-keyword">var</span> myData = &#123;</span>
+<span class="javascript">                filename: oFile.files[<span class="hljs-number">0</span>].name.split(<span class="hljs-string">&#x27;.&#x27;</span>)[<span class="hljs-number">0</span>],</span>
+                size: oFile.files[0].size,
+                name: oFile.files[0].name,
+                lastModified: oFile.files[0].lastModified,
+                type: oFile.files[0].type,
+                webkitRelativePath: oFile.files[0].webkitRelativePath
+            &#125;;
+<span class="javascript">            <span class="hljs-comment">// let sendData = JSON.stringify(fd)</span></span>
+<span class="javascript">            <span class="hljs-comment">// console.log(sendData, &#x27;sendData&#x27;)</span></span>
+<span class="javascript">            <span class="hljs-comment">// 转base64</span></span>
+<span class="javascript">            fileToBase64(oFile.files[<span class="hljs-number">0</span>]).then(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> &#123;</span>
+<span class="javascript">                <span class="hljs-built_in">console</span>.log(res, <span class="hljs-string">&quot;res&quot;</span>)</span>
+<span class="javascript">                myData[<span class="hljs-string">&#x27;fileBase&#x27;</span>] = <span class="hljs-string">&#x27;&#x27;</span>;</span>
+<span class="javascript">                <span class="hljs-built_in">console</span>.log(myData, <span class="hljs-string">&#x27;myDataee&#x27;</span>)</span>
+<span class="javascript">                <span class="hljs-comment">// wx.miniProgram.postMessage(&#123;</span></span>
+<span class="javascript">                <span class="hljs-comment">//     data: myData</span></span>
+<span class="javascript">                <span class="hljs-comment">// &#125;);</span></span>
+                if(isConform())&#123;
+                    createTempFile(res);
+<span class="javascript">                &#125;<span class="hljs-keyword">else</span>&#123;</span>
+                    goWechatApplet()
+                &#125;
+            &#125;)
+<span class="javascript">            <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isConform</span>(<span class="hljs-params"></span>)</span>&#123;</span>
+<span class="javascript">                <span class="hljs-keyword">let</span> toolsUploadType = wechatData.fileType;</span>
+<span class="javascript">                <span class="hljs-keyword">let</span> type = myData.type.split(<span class="hljs-string">&#x27;/&#x27;</span>)[<span class="hljs-number">1</span>];</span>
+                if(!type)&#123;
+<span class="javascript">                    type = <span class="hljs-string">&#x27;ofd&#x27;</span></span>
+<span class="javascript">                    myData.type = <span class="hljs-string">&#x27;/ofd&#x27;</span>;</span>
+                &#125;
+<span class="javascript">                <span class="hljs-keyword">let</span> nameType = myData.name.substr(myData.name.length<span class="hljs-number">-4</span>,myData.name.length<span class="hljs-number">-1</span>);</span>
+<span class="javascript">                <span class="hljs-keyword">if</span>(nameType == <span class="hljs-string">&#x27;.doc&#x27;</span>||nameType == <span class="hljs-string">&#x27;.xls&#x27;</span>||nameType == <span class="hljs-string">&#x27;.txt&#x27;</span>)&#123;</span>
+<span class="javascript">                    nameType = nameType.split(<span class="hljs-string">&#x27;.&#x27;</span>)[<span class="hljs-number">1</span>]</span>
+                &#125;
+<span class="javascript">                <span class="hljs-keyword">if</span>((toolsUploadType == <span class="hljs-string">&#x27;word&#x27;</span>&amp;&amp;(type==<span class="hljs-string">&#x27;docx&#x27;</span>||type==<span class="hljs-string">&#x27;msword&#x27;</span>||nameType==<span class="hljs-string">&#x27;docx&#x27;</span>||nameType==<span class="hljs-string">&#x27;doc&#x27;</span>))||</span>
+<span class="javascript">                (toolsUploadType == <span class="hljs-string">&#x27;xlsx&#x27;</span>&amp;&amp;(type==<span class="hljs-string">&#x27;xls&#x27;</span>||type==<span class="hljs-string">&#x27;xlsx&#x27;</span>||type==<span class="hljs-string">&#x27;excel&#x27;</span>||nameType==<span class="hljs-string">&#x27;xlsx&#x27;</span>||nameType==<span class="hljs-string">&#x27;xls&#x27;</span>))||</span>
+<span class="javascript">                (toolsUploadType == <span class="hljs-string">&#x27;txt&#x27;</span>&amp;&amp;(type==<span class="hljs-string">&#x27;plain&#x27;</span>||nameType==<span class="hljs-string">&#x27;txt&#x27;</span>)))&#123;</span>
+                    toolsUploadType = type
+<span class="javascript">                    <span class="hljs-keyword">if</span>(nameType==<span class="hljs-string">&#x27;docx&#x27;</span>||nameType==<span class="hljs-string">&#x27;doc&#x27;</span>||nameType==<span class="hljs-string">&#x27;xls&#x27;</span>||nameType==<span class="hljs-string">&#x27;xlsx&#x27;</span>||nameType==<span class="hljs-string">&#x27;txt&#x27;</span>)&#123;</span>
+                        toolsUploadType = nameType
+                    &#125;
+                    wechatData.fileType = toolsUploadType
+                &#125;
+
+                if(type==toolsUploadType||nameType==toolsUploadType)&#123;
+<span class="javascript">                    myData[<span class="hljs-string">&#x27;isConform&#x27;</span>] = <span class="hljs-literal">false</span>;</span>
+<span class="javascript">                    myData[<span class="hljs-string">&#x27;tostText&#x27;</span>] = <span class="hljs-string">&quot;请上传&quot;</span>+toolsUploadType+<span class="hljs-string">&quot;文件！&quot;</span>;</span>
+                    if(myData.size/1048576&gt;5)&#123;
+<span class="javascript">                        myData[<span class="hljs-string">&#x27;tostText&#x27;</span>] = <span class="hljs-string">&quot;请上传5M以内的PDF文件！&quot;</span>;</span>
+<span class="javascript">                        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span></span>
+<span class="javascript">                    &#125;<span class="hljs-keyword">else</span>&#123;</span>
+<span class="javascript">                        myData[<span class="hljs-string">&#x27;isConform&#x27;</span>] = <span class="hljs-literal">true</span>;</span>
+<span class="javascript">                        myData[<span class="hljs-string">&#x27;tostText&#x27;</span>] = <span class="hljs-string">&quot;可以进行上传！&quot;</span>;</span>
+<span class="javascript">                        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span></span>
+                    &#125;
+<span class="javascript">                    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span></span>
+                &#125;
+            &#125;
+<span class="javascript">            <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fileToBase64</span>(<span class="hljs-params">file</span>) </span>&#123;</span>
+<span class="javascript">                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> &#123;</span>
+<span class="javascript">                    <span class="hljs-keyword">const</span> reader = <span class="hljs-keyword">new</span> FileReader()</span>
+<span class="javascript">                    <span class="hljs-keyword">let</span> fileResult = <span class="hljs-string">&#x27;&#x27;</span></span>
+                    reader.readAsDataURL(file)
+<span class="javascript">                    <span class="hljs-comment">// 开始转</span></span>
+<span class="javascript">                    reader.onload = <span class="hljs-function">() =&gt;</span> &#123;</span>
+                        fileResult = reader.result
+                    &#125;
+<span class="javascript">                    <span class="hljs-comment">// 转 失败</span></span>
+<span class="javascript">                    reader.onerror = <span class="hljs-function">(<span class="hljs-params">error</span>) =&gt;</span> &#123;</span>
+                        reject(error)
+                    &#125;
+<span class="javascript">                    <span class="hljs-comment">// 转 结束</span></span>
+<span class="javascript">                    reader.onloadend = <span class="hljs-function">() =&gt;</span> &#123;</span>
+<span class="javascript">                        <span class="hljs-comment">// this.formJar.fileName = file.name</span></span>
+                        resolve(fileResult)
+                    &#125;
+                &#125;)
+            &#125;
+<span class="javascript">            <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createTempFile</span>(<span class="hljs-params">tempFilePaths</span>)</span>&#123;</span>
+<span class="javascript">                $(<span class="hljs-string">&quot;.loading_box&quot;</span>).removeClass(<span class="hljs-string">&quot;none&quot;</span>);</span>
+<span class="javascript">                <span class="hljs-keyword">let</span> params = &#123;<span class="hljs-string">&#x27;fileContent&#x27;</span>:tempFilePaths,<span class="hljs-string">&#x27;fileExt&#x27;</span>:wechatData.fileType&#125;</span>
+<span class="javascript">                <span class="hljs-keyword">let</span>  serverUrl = wechatData.host + <span class="hljs-string">&#x27;/doc/createTempFile&#x27;</span></span>
+<span class="javascript">                <span class="hljs-keyword">if</span>(wechatData.sourceType == <span class="hljs-string">&#x27;pdfOcr&#x27;</span>&amp;&amp;!(wechatData.abilityId == <span class="hljs-string">&#x27;pdf7&#x27;</span>||wechatData.abilityId == <span class="hljs-string">&#x27;pdf8&#x27;</span>))&#123;</span>
+<span class="javascript">                    serverUrl = wechatData.host + <span class="hljs-string">&#x27;/doc/create&#x27;</span></span>
+                    params.fileDisplayName = myData.name;
+                &#125;
+<span class="javascript">                $.ajax(&#123;</span>
+<span class="javascript">                    type: <span class="hljs-string">&quot;post&quot;</span>, <span class="hljs-comment">// 提交方式</span></span>
+<span class="javascript">                    <span class="hljs-comment">// 返回数据类型，*注意如果返回值为String类型则需要去掉此条</span></span>
+<span class="javascript">                    dataType: <span class="hljs-string">&quot;json&quot;</span>,</span>
+<span class="javascript">                    url: serverUrl, <span class="hljs-comment">// 访问路径</span></span>
+                    data:params,
+                    header: &#123;
+<span class="javascript">                        <span class="hljs-string">&#x27;token&#x27;</span>: wechatData.token,</span>
+<span class="javascript">                        <span class="hljs-string">&#x27;content-type&#x27;</span>: <span class="hljs-string">&#x27;application/x-www-form-urlencoded&#x27;</span></span>
+                    &#125;,
+                    timeout: 120000,
+<span class="javascript">                    <span class="hljs-keyword">async</span>:<span class="hljs-literal">true</span>,</span>
+<span class="javascript">                    success(res) &#123; <span class="hljs-comment">// 成功调用的回调函数</span></span>
+<span class="javascript">                        <span class="hljs-keyword">if</span>(res.code==<span class="hljs-string">&quot;000000&quot;</span>)&#123;</span>
+<span class="javascript">                            myData[<span class="hljs-string">&#x27;tostText&#x27;</span>] = <span class="hljs-string">&quot;上传成功！&quot;</span>;</span>
+<span class="javascript">                            myData[<span class="hljs-string">&#x27;resolve&#x27;</span>] = <span class="hljs-literal">true</span>;</span>
+<span class="javascript">                            myData[<span class="hljs-string">&#x27;data&#x27;</span>] = res;</span>
+<span class="javascript">                        &#125;<span class="hljs-keyword">else</span>&#123;</span>
+<span class="javascript">                            myData[<span class="hljs-string">&#x27;data&#x27;</span>] = res;</span>
+<span class="javascript">                            myData[<span class="hljs-string">&#x27;resolve&#x27;</span>] = <span class="hljs-literal">false</span>;</span>
+<span class="javascript">                            myData[<span class="hljs-string">&#x27;tostText&#x27;</span>] = <span class="hljs-string">&quot;上传失败！&quot;</span>;</span>
+                        &#125;
+                        goWechatApplet()
+                    &#125;,
+<span class="javascript">                    error() &#123; <span class="hljs-comment">// 调用失败</span></span>
+<span class="javascript">                        myData[<span class="hljs-string">&#x27;tostText&#x27;</span>] = <span class="hljs-string">&quot;上传失败！&quot;</span>;</span>
+<span class="javascript">                        myData[<span class="hljs-string">&#x27;resolve&#x27;</span>] = <span class="hljs-literal">false</span>;</span>
+                        goWechatApplet()
+                    &#125;
+                &#125;)
+            &#125;
+<span class="javascript">            <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">goWechatApplet</span>(<span class="hljs-params"></span>)</span>&#123;</span>
+<span class="javascript">                <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;</span>
+<span class="javascript">                    $(<span class="hljs-string">&quot;.loading_box&quot;</span>).addClass(<span class="hljs-string">&quot;none&quot;</span>);</span>
+                    wx.miniProgram.postMessage(&#123;
+                        data: myData
+                    &#125;);
+                    wx.miniProgram.navigateBack();
+                &#125;, 800)
+            &#125;
+        &#125;
+    <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/">问题解决</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">小程序</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/02/25/%E7%BD%91%E7%AB%99%E6%94%B6%E8%97%8F/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">网站收藏</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/03/31/sort%E6%8E%92%E5%BA%8F/">
+                        <span class="hidden-mobile">sort排序</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">请输入关键字</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <!-- <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> -->
+      <a href="http://xuxd.top/" target="_blank" rel="nofollow noopener"><span>主页</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="http://xuxd.top/categories/" target="_blank" rel="nofollow noopener">
+        <span>分类</span></a>
+    </div>
+    
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "小程序上传手机本地文件&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 60,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript">
+      //定义获取词语下标
+      var a_idx = 0;
+      jQuery(document).ready(function ($) {
+        //点击body时触发事件
+        $("body").click(function (e) {
+          //需要显示的词语
+          var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善");
+          //设置词语给span标签
+          var $i = $("<span/>").text(a[a_idx]);
+          //下标等于原来下标+1  余 词语总数
+          a_idx = (a_idx + 1) % a.length;
+          //获取鼠标指针的位置，分别相对于文档的左和右边缘。
+          //获取x和y的指针坐标
+          var x = e.pageX, y = e.pageY;
+          //在鼠标的指针的位置给$i定义的span标签添加css样式
+          $i.css({
+            "z-index": 999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "color": rand_color()
+          });
+          // 随机颜色
+          function rand_color() {
+            return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+          }
+          //在body添加这个标签
+          $("body").append($i);
+          //animate() 方法执行 CSS 属性集的自定义动画。
+          //该方法通过CSS样式将元素从一个状态改变为另一个状态。CSS属性值是逐渐改变的，这样就可以创建动画效果。
+          //详情请看http://www.w3school.com.cn/jquery/effect_animate.asp
+          $i.animate({
+            //将原来的位置向上移动180
+            "top": y - 180,
+            "opacity": 0
+            //1500动画的速度
+          }, 1500, function () {
+            //时间到了自动删除
+            $i.remove();
+          });
+        });
+      })
+      ;
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

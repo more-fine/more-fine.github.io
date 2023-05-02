@@ -1,0 +1,3036 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-Hans" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="Mr Xu">
+  <meta name="keywords" content="">
+  <title>vue基础 - more-fine</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_6peoq002giu.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.0.2"></head>
+
+
+<body>
+  <header style="height: 50vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>大东!</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                我的
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/index.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+  <div class="mt-3 post-meta">
+    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+    <time datetime="2020-09-16 20:15" pubdate>
+      2020-09-16 20:15
+    </time>
+  </div>
+
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      8.6k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      149
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">vue基础</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2 hours ago
+                
+              </p>
+            
+            <div class="markdown-body" id="post-body">
+              <h1 id="vue基础"><a href="#vue基础" class="headerlink" title="vue基础"></a>vue基础</h1><h2 id="vue01"><a href="#vue01" class="headerlink" title="vue01"></a>vue01</h2><h3 id="快速学习一个框架的方法"><a href="#快速学习一个框架的方法" class="headerlink" title="快速学习一个框架的方法"></a>快速学习一个框架的方法</h3><p>封装js代码  框架实质</p>
+<p>2遍</p>
+<p>对着文档撸一遍</p>
+<p>用项目提升自己的框架能力</p>
+<p>从新看一遍文档，更深层次对框架有自己的理解</p>
+<h3 id="体验vue"><a href="#体验vue" class="headerlink" title="体验vue"></a>体验vue</h3><pre><code class="hljs vim">var <span class="hljs-keyword">vm</span>=<span class="hljs-keyword">new</span> Vue(&#123;
+    <span class="hljs-keyword">e</span><span class="hljs-variable">l:</span><span class="hljs-string">&quot;#app&quot;</span>,
+    dat<span class="hljs-variable">a:</span>&#123;
+        ms<span class="hljs-variable">g:</span><span class="hljs-string">&quot;hello vue&quot;</span>
+    &#125;
+&#125;)</code></pre>
+
+<h3 id="vue表达式"><a href="#vue表达式" class="headerlink" title="vue表达式"></a>vue表达式</h3><pre><code class="hljs groovy"><span class="hljs-attr">msg:</span><span class="hljs-string">&quot;hello world&quot;</span>,
+<span class="hljs-attr">htmlStr:</span><span class="hljs-string">&quot;&lt;p&gt;我是一个p标签&lt;/p&gt;&quot;</span>,
+<span class="hljs-attr">number:</span><span class="hljs-number">0</span>,
+<span class="hljs-attr">ok:</span><span class="hljs-literal">false</span>,
+<span class="hljs-attr">arrStr:</span><span class="hljs-string">&quot;a,b,c,d&quot;</span></code></pre>
+
+<pre><code class="hljs handlebars"><span class="xml"><span class="hljs-comment">&lt;!-- 插值表达式 --&gt;</span></span>
+<span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">msg</span>&#125;&#125;</span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span></span>
+<span class="xml"><span class="hljs-comment">&lt;!-- 标签能否按照原样输出 --&gt;</span></span>
+<span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">htmlStr</span>&#125;&#125;</span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span></span>
+<span class="xml"><span class="hljs-comment">&lt;!-- js运算表达式 --&gt;</span></span>
+<span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">number</span>+<span class="hljs-number">1</span>&#125;&#125;</span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span></span>
+<span class="xml"><span class="hljs-comment">&lt;!-- bol --&gt;</span></span>
+<span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">ok?&quot;yes&quot;:&quot;no&quot;</span>&#125;&#125;</span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span></span>
+<span class="xml"><span class="hljs-comment">&lt;!-- 字符串的方法 --&gt;</span></span>
+<span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">arrStr.split</span>(<span class="hljs-name">&quot;,&quot;</span>)&#125;&#125;</span></code></pre>
+
+<h3 id="v-html和v-text"><a href="#v-html和v-text" class="headerlink" title="v-html和v-text"></a>v-html和v-text</h3><pre><code class="hljs xml">strHtml:&quot;<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>因为爱情<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>&quot;,
+
+xss:&quot;<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&#x27;alert(1)&#x27;</span>&gt;</span>哇哈哈<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>&quot;</code></pre>
+
+<p>view</p>
+<pre><code class="hljs applescript">&lt;<span class="hljs-keyword">div</span> v-html=<span class="hljs-string">&quot;strHtml&quot;</span>&gt;&lt;/<span class="hljs-keyword">div</span>&gt;&lt;<span class="hljs-keyword">div</span> v-html=<span class="hljs-string">&quot;xss&quot;</span>&gt;&lt;/<span class="hljs-keyword">div</span>&gt;</code></pre>
+
+<p>v-text</p>
+<pre><code class="hljs applescript">strHtml:<span class="hljs-string">&quot;&lt;p&gt;因为爱情&lt;/p&gt;&quot;</span>
+v-<span class="hljs-built_in">text</span>=<span class="hljs-string">&quot;strHtml&quot;</span></code></pre>
+
+<h3 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a>v-bind</h3><pre><code class="hljs avrasm"><span class="hljs-symbol">src:</span><span class="hljs-string">&quot;./4.jpg&quot;</span>,
+
+<span class="hljs-symbol">alt:</span><span class="hljs-string">&quot;美女图片&quot;</span>,
+
+<span class="hljs-symbol">id:</span><span class="hljs-string">&quot;1&quot;</span></code></pre>
+
+<pre><code class="hljs groovy">v-<span class="hljs-attr">bind:</span>src=<span class="hljs-string">&quot;src&quot;</span> v-<span class="hljs-attr">bind:</span>alt=<span class="hljs-string">&quot;alt&quot;</span> v-<span class="hljs-attr">bind:</span>id=<span class="hljs-string">&quot;id&quot;</span></code></pre>
+
+<h3 id="v-style"><a href="#v-style" class="headerlink" title="v-style"></a>v-style</h3><pre><code class="hljs groovy"><span class="hljs-attr">isPink:</span><span class="hljs-literal">true</span>,
+
+<span class="hljs-attr">isFont:</span><span class="hljs-literal">true</span>,
+
+<span class="hljs-attr">color:</span><span class="hljs-string">&quot;pink&quot;</span>,
+
+<span class="hljs-attr">fontSize:</span><span class="hljs-string">&quot;font&quot;</span></code></pre>
+
+<pre><code class="hljs csharp">v-bind:<span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;&#123;pink:isPink,font:isFont&#125;&quot;</span>
+
+v-bind:<span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;[color,fontSize]&quot;</span></code></pre>
+
+<pre><code class="hljs css"><span class="hljs-selector-class">.pink</span>&#123;
+    <span class="hljs-attribute">color</span>: pink;
+&#125;
+<span class="hljs-selector-class">.font</span>&#123;
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+&#125;</code></pre>
+
+<h3 id="v-bind-style"><a href="#v-bind-style" class="headerlink" title="v-bind:style"></a>v-bind:style</h3><pre><code class="hljs css"><span class="hljs-selector-tag">color</span><span class="hljs-selector-pseudo">:&quot;pink&quot;</span>,
+<span class="hljs-selector-tag">fontSize</span><span class="hljs-selector-pseudo">:20</span>,
+<span class="hljs-selector-tag">myColor</span>:&#123;
+<span class="hljs-attribute">color</span>:<span class="hljs-string">&quot;pink&quot;</span>
+&#125;,
+<span class="hljs-selector-tag">myFontSize</span>:&#123;
+<span class="hljs-attribute">fontSize</span>:<span class="hljs-string">&quot;20px&quot;</span>
+&#125;</code></pre>
+
+<pre><code class="hljs groovy">v-<span class="hljs-attr">bind:</span>style=<span class="hljs-string">&quot;&#123;color:color,fontSize:fontSize+&#x27;px&#x27;&#125;&quot;</span>
+
+v-<span class="hljs-attr">bind:</span>style=<span class="hljs-string">&quot;[myColor,myFontSize]&quot;</span></code></pre>
+
+<h3 id="v-bind缩写"><a href="#v-bind缩写" class="headerlink" title="v-bind缩写"></a>v-bind缩写</h3><pre><code class="hljs clojure"><span class="hljs-symbol">:src=</span><span class="hljs-string">&quot;src&quot;</span> <span class="hljs-symbol">:alt=</span><span class="hljs-string">&quot;alt&quot;</span></code></pre>
+
+<h3 id="单向数据绑定"><a href="#单向数据绑定" class="headerlink" title="单向数据绑定"></a>单向数据绑定</h3><pre><code class="hljs handlebars"><span class="xml">msg:&quot;hello world&quot;      </span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">msg</span>&#125;&#125;</span></code></pre>
+
+<h3 id="v-model双向数据绑定"><a href="#v-model双向数据绑定" class="headerlink" title="v-model双向数据绑定"></a>v-model双向数据绑定</h3><pre><code class="hljs routeros">msg:<span class="hljs-string">&quot;hello world&quot;</span>       &lt;input <span class="hljs-attribute">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attribute">v-model</span>=<span class="hljs-string">&quot;msg&quot;</span>&gt;</code></pre>
+
+<h3 id="v-on"><a href="#v-on" class="headerlink" title="v-on"></a>v-on</h3><pre><code class="hljs isbl"><span class="hljs-function"><span class="hljs-title">go</span>()&#123;</span>
+<span class="hljs-function">     <span class="hljs-title">alert</span>(<span class="hljs-string">&quot;发生了什么&quot;</span>);</span>
+<span class="hljs-function">&#125;</span></code></pre>
+
+<pre><code class="hljs routeros">&lt;p v-on:<span class="hljs-attribute">click</span>=<span class="hljs-string">&quot;go&quot;</span>&gt;点我一下&lt;/p&gt; 
+缩写 
+&lt;p @<span class="hljs-attribute">click</span>=<span class="hljs-string">&quot;go&quot;</span>&gt;再点我一下&lt;/p&gt; 
+带默认事件的方法 
+&lt;a <span class="hljs-attribute">href</span>=<span class="hljs-string">&quot;http://www.baidu.com&quot;</span> @click.<span class="hljs-attribute">prevent</span>=<span class="hljs-string">&quot;go&quot;</span>&gt;哈哈哈&lt;/a&gt;</code></pre>
+
+<h3 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h3><pre><code class="hljs avrasm"><span class="hljs-symbol">arr:</span>[<span class="hljs-string">&quot;a&quot;</span>,<span class="hljs-string">&quot;b&quot;</span>,<span class="hljs-string">&quot;c&quot;</span>],
+<span class="hljs-symbol">obj:</span>&#123;
+<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;123&quot;</span>,
+<span class="hljs-string">&quot;age&quot;</span>:<span class="hljs-number">18</span>,
+<span class="hljs-string">&quot;sex&quot;</span>:<span class="hljs-string">&quot;女&quot;</span>
+&#125;</code></pre>
+
+<h3 id="v-show"><a href="#v-show" class="headerlink" title="v-show"></a>v-show</h3><pre><code class="hljs ini"><span class="hljs-attr">v-show</span>=<span class="hljs-string">&quot;isShow&quot;</span></code></pre>
+
+<h3 id="v-if"><a href="#v-if" class="headerlink" title="v-if"></a>v-if</h3><pre><code class="hljs ini"><span class="hljs-attr">v-if</span>=<span class="hljs-string">&quot;isShow&quot;</span></code></pre>
+
+<h3 id="单选框"><a href="#单选框" class="headerlink" title="单选框"></a>单选框</h3><pre><code class="hljs routeros">男: &lt;input <span class="hljs-attribute">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-string">&quot;sex&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-string">&quot;男&quot;</span> <span class="hljs-attribute">v-model</span>=<span class="hljs-string">&quot;sex&quot;</span>&gt;
+女: &lt;input <span class="hljs-attribute">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-string">&quot;sex&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-string">&quot;女&quot;</span> <span class="hljs-attribute">v-model</span>=<span class="hljs-string">&quot;sex&quot;</span>&gt;
+sex:<span class="hljs-string">&quot;男&quot;</span></code></pre>
+
+<h3 id="下拉框"><a href="#下拉框" class="headerlink" title="下拉框"></a>下拉框</h3><pre><code class="hljs pgsql">&lt;<span class="hljs-keyword">select</span> <span class="hljs-type">name</span>=&quot;&quot; id=&quot;&quot; v-model=&quot;selected&quot;&gt;
+&lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>=&quot;-1&quot;&gt;请选择您想呆的城市&lt;/<span class="hljs-keyword">option</span>&gt;
+&lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>=&quot;0&quot;&gt;北京&lt;/<span class="hljs-keyword">option</span>&gt;
+&lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>=&quot;1&quot;&gt;上海&lt;/<span class="hljs-keyword">option</span>&gt;
+&lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>=&quot;2&quot;&gt;深圳&lt;/<span class="hljs-keyword">option</span>&gt;
+&lt;/<span class="hljs-keyword">select</span>&gt;
+
+selected:<span class="hljs-number">-1</span></code></pre>
+
+<h2 id="vue02"><a href="#vue02" class="headerlink" title="vue02"></a>vue02</h2><h3 id="全选反选"><a href="#全选反选" class="headerlink" title="全选反选"></a>全选反选</h3><pre><code class="hljs handlebars"><span class="xml"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span></span>
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span></span>
+
+
+
+<span class="xml">    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span></span>
+
+<span class="xml">        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span></span>
+
+<span class="xml">        <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span></span>
+
+<span class="xml">    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></span>
+
+
+
+<span class="xml">    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span>
+
+<span class="xml">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span></span>
+
+<span class="xml">            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;checkAnti&quot;</span>&gt;</span>反选<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span>
+
+<span class="xml">            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;checkAll&quot;</span>&gt;</span>全选<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span>
+
+<span class="xml">            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;checkNone&quot;</span>&gt;</span>全不选<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span> 喜好:</span>
+
+<span class="xml">            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;item in inputArr&quot;</span>&gt;</span></span>
+
+<span class="xml">                </span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">item.text</span>&#125;&#125;</span><span class="xml"> : <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;item.checked&quot;</span>&gt;</span></span>
+
+<span class="xml">            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+
+<span class="xml">        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+
+<span class="xml">    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span>
+
+<span class="xml">    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;vue.js&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span>
+
+<span class="xml">    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span>&gt;</span></span>
+
+<span class="xml">        new Vue(&#123;</span>
+
+<span class="xml">            el: &quot;#app&quot;,</span>
+
+<span class="xml">            data: &#123;</span>
+
+
+
+<span class="xml">                inputArr: [&#123;</span>
+
+<span class="xml">                        text: &#x27;足球&#x27;,</span>
+
+<span class="xml">                        checked: true</span>
+
+<span class="xml">                    &#125;,</span>
+
+<span class="xml">                    &#123;</span>
+
+<span class="xml">                        text: &#x27;篮球&#x27;,</span>
+
+<span class="xml">                        checked: false</span>
+
+<span class="xml">                    &#125;,</span>
+
+<span class="xml">                    &#123;</span>
+
+<span class="xml">                        text: &#x27;羽毛球&#x27;,</span>
+
+<span class="xml">                        checked: false</span>
+
+<span class="xml">                    &#125;,</span>
+
+<span class="xml">                    &#123;</span>
+
+<span class="xml">                        text: &#x27;游泳&#x27;,</span>
+
+<span class="xml">                        checked: false</span>
+
+<span class="xml">                    &#125;,</span>
+
+<span class="xml">                ],</span>
+
+
+
+<span class="xml">            &#125;,</span>
+
+<span class="xml">            methods: &#123;</span>
+
+<span class="xml">                checkNone() &#123;</span>
+
+<span class="xml">                    this.inputArr.forEach(item =&gt; &#123;</span>
+
+<span class="xml">                        item.checked = false;</span>
+
+<span class="xml">                    &#125;);</span>
+
+<span class="xml">                &#125;,</span>
+
+<span class="xml">                checkAll() &#123;</span>
+
+<span class="xml">                    this.inputArr.forEach(item =&gt; &#123;</span>
+
+<span class="xml">                        item.checked = true;</span>
+
+<span class="xml">                    &#125;);</span>
+
+<span class="xml">                &#125;,</span>
+
+<span class="xml">                checkAnti() &#123;</span>
+
+<span class="xml">                    this.inputArr.forEach(item =&gt; &#123;</span>
+
+<span class="xml">                        item.checked = !item.checked;</span>
+
+<span class="xml">                    &#125;);</span>
+
+<span class="xml">                &#125;</span>
+
+<span class="xml">            &#125;</span>
+
+<span class="xml">        &#125;)</span>
+
+<span class="xml">    <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span>
+
+
+
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></span></code></pre>
+
+
+
+<h3 id="事件类型"><a href="#事件类型" class="headerlink" title="事件类型"></a>事件类型</h3><pre><code class="hljs routeros">methods:&#123;
+    doThis()&#123;
+     alert(<span class="hljs-string">&quot;我就是惊喜&quot;</span>);
+    &#125;
+&#125;
+&lt;button @<span class="hljs-attribute">click</span>=<span class="hljs-string">&quot;doThis&quot;</span>&gt;点我有惊喜&lt;/button&gt;
+&lt;input <span class="hljs-attribute">type</span>=<span class="hljs-string">&quot;text&quot;</span> @<span class="hljs-attribute">keyup</span>=<span class="hljs-string">&quot;doThis&quot;</span>&gt;</code></pre>
+
+<h3 id="阻止浏览器默认事件儿或者事件儿冒泡"><a href="#阻止浏览器默认事件儿或者事件儿冒泡" class="headerlink" title="阻止浏览器默认事件儿或者事件儿冒泡"></a>阻止浏览器默认事件儿或者事件儿冒泡</h3><pre><code class="hljs reasonml">methods:&#123;
+ <span class="hljs-keyword">do</span><span class="hljs-constructor">This(<span class="hljs-params">ev</span>)</span>&#123;
+        ev.prevent<span class="hljs-constructor">Default()</span>;
+        console.log(<span class="hljs-string">&quot;我跳还是不跳&quot;</span>);
+    &#125;
+&#125;
+&lt;a href=<span class="hljs-string">&quot;http://www.baidu.com&quot;</span> @click=<span class="hljs-string">&quot;doThis&quot;</span>&gt;跳到百度&lt;/a&gt;</code></pre>
+
+<h3 id="事件参数"><a href="#事件参数" class="headerlink" title="事件参数"></a>事件参数</h3><pre><code class="hljs xml">methods:&#123;
+doThis(id,e)&#123;
+     e.preventDefault();
+    console.log(id)
+    &#125;
+&#125;
+
+<span class="hljs-comment">&lt;!-- 假如普通参数和事件对象放在一起的时候，记得要用$event 代表事件对象 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;http://www.souhu.com&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;doThis(1,$event)&quot;</span>&gt;</span>搜狐<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></code></pre>
+
+<h3 id="私有过滤器"><a href="#私有过滤器" class="headerlink" title="私有过滤器"></a>私有过滤器</h3><pre><code class="hljs handlebars"><span class="xml"> //hello world反过来  app的私有过滤器</span>
+<span class="xml">filters:&#123;//过滤器</span>
+<span class="xml">     str3(st4r)&#123;</span>
+<span class="xml">    return str.slice(0,3)</span>
+<span class="xml">&#125;,</span>
+<span class="xml">myReverse(val)&#123;</span>
+<span class="xml">     return val.split(&quot;&quot;).reverse().join(&quot;&quot;);</span>
+<span class="xml">    &#125;</span>
+<span class="xml">&#125;</span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span></span>
+<span class="xml">    </span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">msg</span>|str3&#125;&#125;</span>
+<span class="xml">    </span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">msg</span>|myReverse&#125;&#125;</span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app2&quot;</span>&gt;</span></span>
+<span class="xml">    </span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">vue</span>|myReverse&#125;&#125;</span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span></code></pre>
+
+<h3 id="全局过滤器"><a href="#全局过滤器" class="headerlink" title="全局过滤器"></a>全局过滤器</h3><pre><code class="hljs processing">Vue.<span class="hljs-built_in">filter</span>(<span class="hljs-string">&quot;myReverse&quot;</span>,(val)=&gt;&#123;
+     <span class="hljs-keyword">return</span> val.<span class="hljs-built_in">split</span>(<span class="hljs-string">&quot;&quot;</span>).<span class="hljs-built_in">reverse</span>().<span class="hljs-built_in">join</span>(<span class="hljs-string">&quot;&quot;</span>);
+)</code></pre>
+
+<h3 id="过滤器案例"><a href="#过滤器案例" class="headerlink" title="过滤器案例"></a>过滤器案例</h3><pre><code class="hljs javascript"> Vue.filter(<span class="hljs-string">&quot;myTime&quot;</span>,<span class="hljs-function">(<span class="hljs-params">val,conone,contwo</span>)=&gt;</span>&#123;
+<span class="hljs-comment">//获取年份</span>
+<span class="hljs-keyword">let</span> y=val.getFullYear();
+<span class="hljs-keyword">let</span> m=val.getMonth()+<span class="hljs-number">1</span>;
+<span class="hljs-keyword">let</span> d=val.getDate();
+     <span class="hljs-comment">// 2019-- 3-- 8  模版字符串</span>
+     <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">$&#123;y&#125;</span><span class="hljs-subst">$&#123;conone&#125;</span><span class="hljs-subst">$&#123;contwo&#125;</span><span class="hljs-subst">$&#123;m&#125;</span><span class="hljs-subst">$&#123;conone&#125;</span><span class="hljs-subst">$&#123;contwo&#125;</span><span class="hljs-subst">$&#123;d&#125;</span>`</span>;
+&#125;)
+<span class="hljs-keyword">var</span> vm=<span class="hljs-keyword">new</span> Vue(&#123;
+el:<span class="hljs-string">&quot;#app&quot;</span>,
+ data:&#123;
+    msg:<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()
+ &#125;
+&#125;)
+&lt;!-- 函数调用 --&gt;
+&#123;&#123;msg|myTime(<span class="hljs-string">&quot;-&quot;</span>,<span class="hljs-string">&quot;-&quot;</span>)&#125;&#125;</code></pre>
+
+<h3 id="自定义局部指令"><a href="#自定义局部指令" class="headerlink" title="自定义局部指令"></a>自定义局部指令</h3><pre><code class="hljs dust"><span class="xml">directives:</span><span class="hljs-template-variable">&#123;</span>
+<span class="hljs-template-variable">&quot;myfocus&quot;:&#123;</span>
+<span class="hljs-template-variable">     //追加 inserted </span>
+<span class="hljs-template-variable">    inserted:function(el)&#123;</span>
+<span class="hljs-template-variable">         el.focus()</span>
+<span class="hljs-template-variable">     &#125;</span>
+<span class="xml">    &#125; </span>
+<span class="xml"> &#125;</span>
+<span class="xml"> <span class="hljs-comment">&lt;!-- 添加指令:v-自定义指令名词 --&gt;</span></span>
+<span class="xml"> <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;id1&quot;</span> <span class="hljs-attr">v-myfocus</span>/&gt;</span></span></code></pre>
+
+<h3 id="自定义全局指令"><a href="#自定义全局指令" class="headerlink" title="自定义全局指令"></a>自定义全局指令</h3><pre><code class="hljs javascript">Vue.directive(<span class="hljs-string">&quot;myfocus&quot;</span>,&#123;
+ <span class="hljs-string">&quot;inserted&quot;</span>:<span class="hljs-function">(<span class="hljs-params">el</span>)=&gt;</span>&#123;
+    el.focus();
+  &#125;
+&#125;)
+&lt;div id=<span class="hljs-string">&quot;app&quot;</span>&gt;
+&lt;input type=<span class="hljs-string">&quot;text&quot;</span> v-myfocus&gt;
+&lt;/div&gt;
+&lt;div id=<span class="hljs-string">&quot;app2&quot;</span>&gt;
+&lt;input type=<span class="hljs-string">&quot;text&quot;</span> v-myfocus&gt;
+&lt;/div&gt;</code></pre>
+
+<h3 id="自定义指令的问题"><a href="#自定义指令的问题" class="headerlink" title="自定义指令的问题"></a>自定义指令的问题</h3><pre><code class="hljs vim">Vue.directive(<span class="hljs-string">&#x27;myfocus&#x27;</span>,&#123;
+    <span class="hljs-string">&quot;inserted&quot;</span>:<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(el)</span>&#123;</span>
+        <span class="hljs-keyword">el</span>.focus()  //focus属性绑定了最后一个
+     <span class="hljs-keyword">el</span>.style.background=<span class="hljs-string">&quot;pink&quot;</span>  
+     &#125;
+&#125;)
+var <span class="hljs-keyword">vm</span>=<span class="hljs-keyword">new</span> Vue(&#123;
+    <span class="hljs-keyword">e</span><span class="hljs-variable">l:</span><span class="hljs-string">&quot;#app&quot;</span>,
+    method<span class="hljs-variable">s:</span>&#123;
+        <span class="hljs-string">&quot;aa&quot;</span>:<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>&#123;</span>
+     &#125;
+    &#125;,
+    directive<span class="hljs-variable">s:</span>&#123;
+         <span class="hljs-string">&quot;myfocuss&quot;</span>:&#123;
+         inserted:<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(el)</span>&#123;</span>
+             <span class="hljs-keyword">el</span>.focus()
+         &#125;
+      &#125;
+    &#125;
+&#125;)
+&lt;<span class="hljs-built_in">input</span> <span class="hljs-built_in">type</span>=<span class="hljs-string">&quot;text&quot;</span> v-myfocus&gt;
+&lt;<span class="hljs-built_in">input</span> <span class="hljs-built_in">type</span>=<span class="hljs-string">&quot;text&quot;</span> v-myfocus&gt;
+&lt;<span class="hljs-built_in">input</span> <span class="hljs-built_in">type</span>=<span class="hljs-string">&quot;text&quot;</span> v-myfocus&gt;
+&lt;<span class="hljs-built_in">input</span> <span class="hljs-built_in">type</span>=<span class="hljs-string">&quot;text&quot;</span> v-myfocus&gt;
+&lt;<span class="hljs-built_in">input</span> <span class="hljs-built_in">type</span>=<span class="hljs-string">&quot;text&quot;</span> v-myfocus&gt;
+
+&lt;<span class="hljs-built_in">input</span> <span class="hljs-built_in">type</span>=<span class="hljs-string">&quot;text&quot;</span> v-myfocuss&gt;</code></pre>
+
+<h3 id="购物车案例"><a href="#购物车案例" class="headerlink" title="购物车案例"></a>购物车案例</h3><pre><code class="hljs handlebars"><span class="xml"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span></span>
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span></span>
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span></span>
+
+<span class="xml">    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span></span>
+
+<span class="xml">    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span>
+
+<span class="xml">    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;X-UA-Compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;ie=edge&quot;</span>&gt;</span></span>
+
+<span class="xml">    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span></span>
+
+<span class="xml">    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span></span>
+
+<span class="xml">        \#shop&#123;</span>
+
+<span class="xml">            width: 500px;</span>
+
+<span class="xml">            margin: 40px auto;</span>
+
+<span class="xml">            text-align: center;</span>
+
+<span class="xml">        &#125;</span>
+
+<span class="xml">        table&#123;</span>
+
+<span class="xml">            border-collapse: collapse;</span>
+
+<span class="xml">            width: 500px;</span>
+
+<span class="xml">            margin: 40px auto;</span>
+
+<span class="xml">        &#125;</span>
+
+<span class="xml">        th,td&#123;</span>
+
+<span class="xml">            padding: 6px 0;</span>
+
+<span class="xml">            text-align: center;</span>
+
+<span class="xml">        &#125;</span>
+
+<span class="xml">        span&#123;</span>
+
+<span class="xml">            cursor: pointer;</span>
+
+<span class="xml">        &#125;</span>
+
+<span class="xml">        span:hover&#123;</span>
+
+<span class="xml">            color: red;</span>
+
+<span class="xml">        &#125;</span>
+
+<span class="xml">        input&#123;</span>
+
+<span class="xml">            width: 30px;</span>
+
+<span class="xml">            border: none;</span>
+
+<span class="xml">            text-align: center;</span>
+
+<span class="xml">        &#125;</span>
+
+<span class="xml">    <span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></span>
+
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></span>
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span>
+
+<span class="xml">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span></span>
+
+<span class="xml">        <span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">border</span>=<span class="hljs-string">&quot;1&quot;</span>&gt;</span></span>
+
+<span class="xml">            <span class="hljs-tag">&lt;<span class="hljs-name">thead</span>&gt;</span></span>
+
+<span class="xml">                <span class="hljs-tag">&lt;<span class="hljs-name">thead</span>&gt;</span></span>
+
+<span class="xml">                    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span></span>
+
+<span class="xml">                        <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>商品名称<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span></span>
+
+<span class="xml">                        <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>单价<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span></span>
+
+<span class="xml">                        <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>操作<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span></span>
+
+<span class="xml">                    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span></span>
+
+<span class="xml">                <span class="hljs-tag">&lt;/<span class="hljs-name">thead</span>&gt;</span></span>
+
+<span class="xml">                <span class="hljs-tag">&lt;<span class="hljs-name">tbody</span>&gt;</span></span>
+
+<span class="xml">                    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">v-for</span> = <span class="hljs-string">&quot;i of arr.entries()&quot;</span>&gt;</span></span>
+
+<span class="xml">                        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span></span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">i[1].name</span>&#125;&#125;</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span></span>
+
+<span class="xml">                        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span></span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">i[1].price</span>&#125;&#125;</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span></span>
+
+<span class="xml">                        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;add(i[0])&quot;</span>&gt;</span>购买<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span></span>
+
+<span class="xml">                    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span></span>
+
+<span class="xml">                <span class="hljs-tag">&lt;/<span class="hljs-name">tbody</span>&gt;</span></span>
+
+<span class="xml">            <span class="hljs-tag">&lt;/<span class="hljs-name">thead</span>&gt;</span></span>
+
+<span class="xml">        <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span></span>
+
+<span class="xml">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;shop&quot;</span>&gt;</span></span>
+
+<span class="xml">            <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>购物车<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span></span>
+
+<span class="xml">            <span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">border</span>=<span class="hljs-string">&quot;1&quot;</span>&gt;</span> </span>
+
+<span class="xml">                <span class="hljs-tag">&lt;<span class="hljs-name">thead</span>&gt;</span></span>
+
+<span class="xml">                    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span></span>
+
+<span class="xml">                        <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>购买商品<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span></span>
+
+<span class="xml">                        <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>数量<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span></span>
+
+<span class="xml">                        <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>价格<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span></span>
+
+<span class="xml">                    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span></span>
+
+<span class="xml">                <span class="hljs-tag">&lt;/<span class="hljs-name">thead</span>&gt;</span></span>
+
+<span class="xml">                <span class="hljs-tag">&lt;<span class="hljs-name">tbody</span>&gt;</span></span>
+
+<span class="xml">                    <span class="hljs-comment">&lt;!-- [0,&#123;na...&#125;] --&gt;</span></span>
+
+<span class="xml">                        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">v-for</span> = <span class="hljs-string">&quot;i of shopArr.entries()&quot;</span>&gt;</span></span>
+
+<span class="xml">                            <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">v-text</span>= <span class="hljs-string">&quot;i[1].name&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span></span>
+
+<span class="xml">                            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span> = <span class="hljs-string">&quot;readnum(i[0])&quot;</span>&gt;</span>-<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">v-text</span>= <span class="hljs-string">&quot;i[1].count&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span> = <span class="hljs-string">&quot;addnum(i[0])&quot;</span>&gt;</span>+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span></span>
+
+<span class="xml">                           <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">v-text</span>= <span class="hljs-string">&quot;i[1].count*i[1].price&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span></span>
+
+<span class="xml">                        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span></span>
+
+<span class="xml">                <span class="hljs-tag">&lt;/<span class="hljs-name">tbody</span>&gt;</span></span>
+
+<span class="xml">            <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span></span>
+
+<span class="xml">            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>总价格：<span class="hljs-tag">&lt;<span class="hljs-name">strong</span> <span class="hljs-attr">v-text</span> = <span class="hljs-string">&quot;zzj&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>
+
+<span class="xml">        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+
+<span class="xml">    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span>
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./vue.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span>
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span></span>
+
+<span class="xml">    var vm = new Vue(&#123;</span>
+
+<span class="xml">        el:&quot;#app&quot;,</span>
+
+<span class="xml">        data:&#123;</span>
+
+<span class="xml">            //购买</span>
+
+<span class="xml">            arr:[&#123;name:&quot;白菜&quot;,price:10&#125;,&#123;name:&quot;芹菜&quot;,price:20&#125;,&#123;name:&quot;香菜&quot;,price:30&#125;],</span>
+
+<span class="xml">            //购物车</span>
+
+<span class="xml">            shopArr:[],</span>
+
+<span class="xml">            //总计</span>
+
+<span class="xml">            zzj:0,</span>
+
+<span class="xml">        &#125;,</span>
+
+<span class="xml">        methods:&#123;</span>
+
+<span class="xml">             add(i)&#123;</span>
+
+<span class="xml">                 //计数</span>
+
+<span class="xml">                let num = 0;</span>
+
+<span class="xml">                for(var j = 0;j<span class="hljs-tag">&lt;<span class="hljs-name">this.shopArr.length;j++)&#123;</span></span></span>
+
+<span class="xml">                    if(this.shopArr[j].name == this.arr[i].name)&#123;</span>
+
+<span class="xml">                        num++;</span>
+
+<span class="xml">                        this.shopArr[j].count++;</span>
+
+<span class="xml">                    &#125;</span>
+
+<span class="xml">                &#125;</span>
+
+<span class="xml">                if(num == 0)&#123;</span>
+
+<span class="xml">                    this.arr[i].count = 1;</span>
+
+<span class="xml">                    this.shopArr.push(this.arr[i]);</span>
+
+<span class="xml">                &#125; </span>
+
+<span class="xml">                this.zj()</span>
+
+<span class="xml">            &#125;,</span>
+
+<span class="xml">            zj()&#123;</span>
+
+<span class="xml">                var shopNum = 0;</span>
+
+<span class="xml">                for(var j = 0;j<span class="hljs-tag">&lt;<span class="hljs-name">this.shopArr.length;j++)&#123;</span></span></span>
+
+<span class="xml">                    shopNum += this.shopArr[j].count * this.shopArr[j].price</span>
+
+<span class="xml">                &#125;</span>
+
+<span class="xml">                this.zzj = shopNum;</span>
+
+<span class="xml">            &#125;,</span>
+
+<span class="xml">            addnum(i)&#123;</span>
+
+<span class="xml">                this.shopArr[i].count++;</span>
+
+<span class="xml">                this.zj()</span>
+
+<span class="xml">            &#125;,</span>
+
+<span class="xml">            readnum(i)&#123;</span>
+
+<span class="xml">                this.shopArr[i].count--;</span>
+
+<span class="xml">                if(this.shopArr[i].count == 0)&#123;</span>
+
+<span class="xml">                    this.shopArr.splice(i,1)</span>
+
+<span class="xml">                &#125;</span>
+
+<span class="xml">                this.zj()</span>
+
+<span class="xml">            &#125;</span>
+
+<span class="xml">        &#125;</span>
+
+<span class="xml">    &#125;)</span>
+
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span>
+
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></span></code></pre>
+
+<h2 id="vue03"><a href="#vue03" class="headerlink" title="vue03"></a>vue03</h2><h3 id="初识组件儿"><a href="#初识组件儿" class="headerlink" title="初识组件儿"></a>初识组件儿</h3><pre><code class="hljs applescript">Vue.component(<span class="hljs-string">&quot;mycom&quot;</span>,&#123;
+​        template:`
+
+            &lt;<span class="hljs-keyword">div</span>&gt;我是一个组件&lt;/<span class="hljs-keyword">div</span>&gt;
+
+​            &#123;&#123;<span class="hljs-built_in">name</span>&#125;&#125;
+
+​        `,
+
+​        data()&#123;
+
+​           <span class="hljs-literal">return</span> &#123;
+
+​               <span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;哇哈哈&quot;</span>
+
+​           &#125; 
+
+​        &#125;
+
+​    &#125;)</code></pre>
+
+<h3 id="局部组件儿"><a href="#局部组件儿" class="headerlink" title="局部组件儿"></a>局部组件儿</h3><pre><code class="hljs dts">var mycom=&#123;
+<span class="hljs-symbol">template:</span>`
+    <span class="hljs-params">&lt;div&gt;</span>我是一个组件<span class="hljs-params">&lt;/div&gt;</span>
+ &#125;
+<span class="hljs-symbol"> el:</span><span class="hljs-string">&quot;#app&quot;</span>,
+<span class="hljs-symbol"> data:</span>&#123;&#125;,
+ <span class="hljs-comment">//局部组件</span>
+<span class="hljs-symbol"> components:</span>&#123;
+ mycom
+ &#125;</code></pre>
+
+<h3 id="template"><a href="#template" class="headerlink" title="template"></a>template</h3><pre><code class="hljs vim">var <span class="hljs-keyword">vm</span>=<span class="hljs-keyword">new</span> Vue(&#123;
+
+​        <span class="hljs-keyword">e</span><span class="hljs-variable">l:</span><span class="hljs-string">&quot;#app&quot;</span>,
+
+​        template:`<span class="hljs-symbol">&lt;div&gt;</span>我是模版字符串&lt;/div&gt;`,
+
+​        dat<span class="hljs-variable">a:</span>&#123;
+
+​            ms<span class="hljs-variable">g:</span><span class="hljs-string">&quot;hello world&quot;</span>
+
+​        &#125;
+
+​    &#125;)</code></pre>
+
+<h3 id="全局组件儿分离"><a href="#全局组件儿分离" class="headerlink" title="全局组件儿分离"></a>全局组件儿分离</h3><pre><code class="hljs dust"><span class="xml">Vue.component(&quot;mycom&quot;,</span><span class="hljs-template-variable">&#123;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​        template:&quot;#show&quot;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​    &#125;</span><span class="xml">)</span>
+
+<span class="xml">​    var vm=new Vue(</span><span class="hljs-template-variable">&#123;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​        el:&quot;#app&quot;,</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​        data:&#123;&#125;</span>
+
+<span class="xml">​    &#125;)</span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mycom</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">mycom</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+<span class="xml"><span class="hljs-comment">&lt;!-- 这里注意:type属性不是script 变成了template --&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/template&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;show&quot;</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;show&quot;</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>哇哈哈<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span>
+
+<span class="xml">获取全局组件的view层写法</span>
+<span class="xml">注意事项:</span>
+<span class="xml">全局组件:template:#show==&gt;dom层放在了body中</span>
+<span class="xml">script标签，一定要有id属性，跟你全局中定义的是一样的</span>
+<span class="xml">你所有的dom必须包裹在class为show的div中，不然会报错</span></code></pre>
+
+<h3 id="局部组件儿分离"><a href="#局部组件儿分离" class="headerlink" title="局部组件儿分离"></a>局部组件儿分离</h3><pre><code class="hljs dust"><span class="xml"> var mycom=</span><span class="hljs-template-variable">&#123;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​        template:&quot;#show&quot;,</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​        data()&#123;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​            return &#123;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​                msg:&quot;hello world&quot;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​            &#125;</span>
+
+<span class="xml">​        &#125;</span>
+
+<span class="xml">​    &#125;</span>
+
+<span class="xml">​    var vm=new Vue(</span><span class="hljs-template-variable">&#123;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​        el:&#x27;#app&#x27;,</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​        data:&#123;&#125;</span><span class="xml">,</span>
+
+<span class="xml">​        components:</span><span class="hljs-template-variable">&#123;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​            mycom</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​        &#125;</span>
+
+<span class="xml">​    &#125;)</span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mycom</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">mycom</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+<span class="xml"><span class="hljs-comment">&lt;!-- 局部组件的视图层view --&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;show&quot;</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;show&quot;</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>哇哈哈<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span></code></pre>
+
+<h3 id="动态绑定组件"><a href="#动态绑定组件" class="headerlink" title="动态绑定组件:"></a>动态绑定组件:</h3><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;(item,i) in arrBtns&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;fn(i)&quot;</span> <span class="hljs-attr">:class</span>=<span class="hljs-string">&quot;&#123;active:n===i&#125;&quot;</span>&gt;</span>
+                    &#123;&#123;item&#125;&#125;
+                <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;component&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">component</span> <span class="hljs-attr">:is</span>=<span class="hljs-string">&quot;myCom&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">component</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> Kky1=&#123;
+                data()&#123;
+                    <span class="hljs-keyword">return</span> &#123;
+                        str1:<span class="hljs-string">&quot;这是甲的故事&quot;</span>
+                    &#125;
+                &#125;,
+                template:<span class="hljs-string">`</span>
+<span class="hljs-string">                    &lt;div class=&quot;kky1&quot;&gt;</span>
+<span class="hljs-string">                        甲组件&lt;br /&gt;</span>
+<span class="hljs-string">                        &lt;input type=&quot;text&quot; v-model=&quot;str1&quot; /&gt;</span>
+<span class="hljs-string">                        &lt;br /&gt;</span>
+<span class="hljs-string">                        str1===&gt;&#123;&#123;str1&#125;&#125;</span>
+<span class="hljs-string">                    &lt;/div&gt;</span>
+<span class="hljs-string">                `</span>
+            &#125;
+            <span class="hljs-keyword">var</span> Kky2=&#123;
+                data()&#123;
+                    <span class="hljs-keyword">return</span> &#123;
+                        str2:<span class="hljs-string">&quot;这是乙的故事&quot;</span>
+                    &#125;
+                &#125;,
+                template:<span class="hljs-string">`</span>
+<span class="hljs-string">                    &lt;div class=&quot;kky2&quot;&gt;</span>
+<span class="hljs-string">                        乙组件&lt;br /&gt;</span>
+<span class="hljs-string">                        &lt;input type=&quot;text&quot; v-model=&quot;str2&quot; /&gt;</span>
+<span class="hljs-string">                        &lt;br /&gt;</span>
+<span class="hljs-string">                        str2===&gt;&#123;&#123;str2&#125;&#125;</span>
+<span class="hljs-string">                    &lt;/div&gt;</span>
+<span class="hljs-string">                `</span>
+            &#125;
+            <span class="hljs-keyword">var</span> Kky3=&#123;
+                data()&#123;
+                    <span class="hljs-keyword">return</span> &#123;
+                        str3:<span class="hljs-string">&quot;这是丙的故事&quot;</span>
+                    &#125;
+                &#125;,
+                template:<span class="hljs-string">`</span>
+<span class="hljs-string">                    &lt;div class=&quot;kky3&quot;&gt;</span>
+<span class="hljs-string">                        丙组件&lt;br /&gt;</span>
+<span class="hljs-string">                        &lt;input type=&quot;text&quot; v-model=&quot;str3&quot; /&gt;</span>
+<span class="hljs-string">                        &lt;br /&gt;</span>
+<span class="hljs-string">                        str3==&gt;&#123;&#123;str3&#125;&#125;</span>
+<span class="hljs-string">                    &lt;/div&gt;</span>
+<span class="hljs-string">                `</span>
+            &#125;
+            <span class="hljs-keyword">var</span> Kky4=&#123;
+                data()&#123;
+                    <span class="hljs-keyword">return</span> &#123;
+                        str4:<span class="hljs-string">&quot;这是丁的故事&quot;</span>
+                    &#125;
+                &#125;,
+                template:<span class="hljs-string">`</span>
+<span class="hljs-string">                    &lt;div class=&quot;kky4&quot;&gt;</span>
+<span class="hljs-string">                        丁组件&lt;br /&gt;</span>
+<span class="hljs-string">                        &lt;input type=&quot;text&quot; v-model=&quot;str4&quot; /&gt;</span>
+<span class="hljs-string">                        &lt;br /&gt;</span>
+<span class="hljs-string">                        str4===&gt;&#123;&#123;str4&#125;&#125;</span>
+<span class="hljs-string">                    &lt;/div&gt;</span>
+<span class="hljs-string">                `</span>
+            &#125;
+            <span class="hljs-keyword">var</span> app=<span class="hljs-keyword">new</span> Vue(&#123;
+                el:<span class="hljs-string">&quot;#app&quot;</span>,
+                data:&#123;
+                    arrBtns:[<span class="hljs-string">&quot;甲&quot;</span>,<span class="hljs-string">&quot;乙&quot;</span>,<span class="hljs-string">&quot;丙&quot;</span>,<span class="hljs-string">&quot;丁&quot;</span>],
+                    comArr:[<span class="hljs-string">&quot;Kky1&quot;</span>,<span class="hljs-string">&quot;Kky2&quot;</span>,<span class="hljs-string">&quot;Kky3&quot;</span>,<span class="hljs-string">&quot;Kky4&quot;</span>],
+                    n:<span class="hljs-number">0</span>,
+                    myCom:<span class="hljs-string">&quot;Kky1&quot;</span>
+                &#125;,
+                methods:&#123;
+                    fn(i)&#123;
+                        <span class="hljs-built_in">this</span>.n=i;
+                        <span class="hljs-built_in">this</span>.myCom=<span class="hljs-built_in">this</span>.comArr[i];
+                    &#125;
+                &#125;,
+                components:&#123;
+                    Kky1,
+                    Kky2,
+                    Kky3,
+                    Kky4
+                &#125;,
+            &#125;)</code></pre>
+
+<h3 id="内置的组件"><a href="#内置的组件" class="headerlink" title="内置的组件:"></a>内置的组件:</h3><h3 id="缓存组件-keep-alive"><a href="#缓存组件-keep-alive" class="headerlink" title="缓存组件:keep-alive"></a>缓存组件:keep-alive</h3><p>keep-alive包含的会缓存输入的数据,</p>
+<p>没有包含的不会缓存,</p>
+<p>include=”ak,ck”,是指ak和ck会缓存,而其他的不会缓存,</p>
+<p>exclude=”bk,dk”,代表着取反的意思.</p>
+<p>两个生命周期:在使用过keep-alive之后才生效:</p>
+<p>activated()该组件被激活时生效,</p>
+<p>deactivated()该组件被移除是生效</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;component myBorder&quot;</span>&gt;</span>
+    无keep-alive缓存<span class="hljs-tag">&lt;<span class="hljs-name">br</span>  /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">component</span> <span class="hljs-attr">:is</span>=<span class="hljs-string">&quot;myCom&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">component</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;component myBorder&quot;</span>&gt;</span>
+    keep-alive缓存<span class="hljs-tag">&lt;<span class="hljs-name">br</span>  /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">keep-alive</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">component</span> <span class="hljs-attr">:is</span>=<span class="hljs-string">&quot;myCom&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">component</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">keep-alive</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;component myBorder&quot;</span>&gt;</span>
+    通过include  指定缓存组件 <span class="hljs-tag">&lt;<span class="hljs-name">br</span>  /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">keep-alive</span> <span class="hljs-attr">include</span>=<span class="hljs-string">&quot;ak,ck&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">component</span> <span class="hljs-attr">:is</span>=<span class="hljs-string">&quot;myCom&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">component</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">keep-alive</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;component myBorder&quot;</span>&gt;</span>
+    通过exclude  指定不缓存 组件<span class="hljs-tag">&lt;<span class="hljs-name">br</span>  /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">keep-alive</span> <span class="hljs-attr">exclude</span>=<span class="hljs-string">&quot;bk,dk&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">component</span> <span class="hljs-attr">:is</span>=<span class="hljs-string">&quot;myCom&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">component</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">keep-alive</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> Kky1=&#123;
+                name:<span class="hljs-string">&quot;ak&quot;</span>,
+                data()&#123;
+                    <span class="hljs-keyword">return</span> &#123;
+                        str1:<span class="hljs-string">&quot;这是甲的故事&quot;</span>
+                    &#125;
+                &#125;,
+                template:<span class="hljs-string">`</span>
+<span class="hljs-string">                    &lt;div class=&quot;kky1&quot;&gt;</span>
+<span class="hljs-string">                        甲组件&lt;br /&gt;</span>
+<span class="hljs-string">                        &lt;input type=&quot;text&quot; v-model=&quot;str1&quot; /&gt;</span>
+<span class="hljs-string">                        &lt;br /&gt;</span>
+<span class="hljs-string">                        str1===&gt;&#123;&#123;str1&#125;&#125;</span>
+<span class="hljs-string">                    &lt;/div&gt;</span>
+<span class="hljs-string">                `</span>,
+                activated()&#123;
+                    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;kky1 该组件被激活&quot;</span>);
+                &#125;,
+                deactivated()&#123;
+                    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;kky1 该组件被移除&quot;</span>);
+                &#125;
+            &#125;
+            <span class="hljs-keyword">var</span> Kky2=&#123;
+                name:<span class="hljs-string">&quot;bk&quot;</span>,
+                data()&#123;
+                    <span class="hljs-keyword">return</span> &#123;
+                        str2:<span class="hljs-string">&quot;这是乙的故事&quot;</span>
+                    &#125;
+                &#125;,
+                template:<span class="hljs-string">`</span>
+<span class="hljs-string">                    &lt;div class=&quot;kky2&quot;&gt;</span>
+<span class="hljs-string">                        乙组件&lt;br /&gt;</span>
+<span class="hljs-string">                        &lt;input type=&quot;text&quot; v-model=&quot;str2&quot; /&gt;</span>
+<span class="hljs-string">                        &lt;br /&gt;</span>
+<span class="hljs-string">                        str2===&gt;&#123;&#123;str2&#125;&#125;</span>
+<span class="hljs-string">                    &lt;/div&gt;</span>
+<span class="hljs-string">                `</span>,
+                activated()&#123;
+                    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;kky2 该组件被激活&quot;</span>);
+                &#125;,
+                deactivated()&#123;
+                    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;kky2 该组件被移除&quot;</span>);
+                &#125;
+            &#125;
+            <span class="hljs-keyword">var</span> Kky3=&#123;
+                name:<span class="hljs-string">&quot;ck&quot;</span>,
+                data()&#123;
+                    <span class="hljs-keyword">return</span> &#123;
+                        str3:<span class="hljs-string">&quot;这是丙的故事&quot;</span>
+                    &#125;
+                &#125;,
+                template:<span class="hljs-string">`</span>
+<span class="hljs-string">                    &lt;div class=&quot;kky3&quot;&gt;</span>
+<span class="hljs-string">                        丙组件&lt;br /&gt;</span>
+<span class="hljs-string">                        &lt;input type=&quot;text&quot; v-model=&quot;str3&quot; /&gt;</span>
+<span class="hljs-string">                        &lt;br /&gt;</span>
+<span class="hljs-string">                        str3==&gt;&#123;&#123;str3&#125;&#125;</span>
+<span class="hljs-string">                    &lt;/div&gt;</span>
+<span class="hljs-string">                `</span>,
+                activated()&#123;
+                    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;kky3 该组件被激活&quot;</span>);
+                &#125;,
+                deactivated()&#123;
+                    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;kky3 该组件被移除&quot;</span>);
+                &#125;
+            &#125;
+            <span class="hljs-keyword">var</span> Kky4=&#123;
+                name:<span class="hljs-string">&quot;dk&quot;</span>,
+                data()&#123;
+                    <span class="hljs-keyword">return</span> &#123;
+                        str4:<span class="hljs-string">&quot;这是丁的故事&quot;</span>
+                    &#125;
+                &#125;,
+                template:<span class="hljs-string">`</span>
+<span class="hljs-string">                    &lt;div class=&quot;kky4&quot;&gt;</span>
+<span class="hljs-string">                        丁组件&lt;br /&gt;</span>
+<span class="hljs-string">                        &lt;input type=&quot;text&quot; v-model=&quot;str4&quot; /&gt;</span>
+<span class="hljs-string">                        &lt;br /&gt;</span>
+<span class="hljs-string">                        str4===&gt;&#123;&#123;str4&#125;&#125;</span>
+<span class="hljs-string">                    &lt;/div&gt;</span>
+<span class="hljs-string">                `</span>,
+                activated()&#123;
+                    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;kky4 该组件被激活&quot;</span>);
+                &#125;,
+                deactivated()&#123;
+                    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;kky4 该组件被移除&quot;</span>);
+                &#125;
+            &#125;
+            <span class="hljs-keyword">var</span> app=<span class="hljs-keyword">new</span> Vue(&#123;
+                el:<span class="hljs-string">&quot;#app&quot;</span>,
+                data:&#123;
+                    arrBtns:[<span class="hljs-string">&quot;甲&quot;</span>,<span class="hljs-string">&quot;乙&quot;</span>,<span class="hljs-string">&quot;丙&quot;</span>,<span class="hljs-string">&quot;丁&quot;</span>],
+                    comArr:[<span class="hljs-string">&quot;Kky1&quot;</span>,<span class="hljs-string">&quot;Kky2&quot;</span>,<span class="hljs-string">&quot;Kky3&quot;</span>,<span class="hljs-string">&quot;Kky4&quot;</span>],
+                    n:<span class="hljs-number">0</span>,
+                    myCom:<span class="hljs-string">&quot;Kky1&quot;</span>
+                &#125;,
+                methods:&#123;
+                    fn(i)&#123;
+                        <span class="hljs-built_in">this</span>.n=i;
+                        <span class="hljs-built_in">this</span>.myCom=<span class="hljs-built_in">this</span>.comArr[i];
+                    &#125;
+                &#125;,
+                components:&#123;
+                    Kky1,
+                    Kky2,
+                    Kky3,
+                    Kky4
+                &#125;,
+                computed:&#123;
+
+                &#125;,
+            &#125;);</code></pre>
+
+<h3 id="组件儿传值"><a href="#组件儿传值" class="headerlink" title="组件儿传值"></a>组件儿传值</h3><pre><code class="hljs handlebars"><span class="xml">Vue.component(&quot;mycom&quot;,&#123;</span>
+
+<span class="xml">​        template:&#x27;#show&#x27;,</span>
+
+<span class="xml">​        data()&#123;</span>
+
+<span class="xml">​            return &#123;</span>
+
+<span class="xml">​                msg1:&quot;world&quot;</span>
+
+<span class="xml">​            &#125;</span>
+
+<span class="xml">​        &#125;,</span>
+
+<span class="xml">​        props:[&quot;abc&quot;]</span>
+
+<span class="xml">​    &#125;)</span>
+
+<span class="xml">​    //父传子</span>
+
+<span class="xml">​    //组件之间的传值 通讯  数据的传递</span>
+
+<span class="xml">​    var vm=new Vue(&#123;</span>
+
+<span class="xml">​        el:&quot;#app&quot;,</span>
+
+<span class="xml">​        data:&#123;</span>
+
+<span class="xml">​            msg0:&quot;hello&quot;</span>
+
+<span class="xml">​        &#125;</span>
+
+<span class="xml">​    &#125;)</span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mycom</span> <span class="hljs-attr">v-bind:abc</span>=<span class="hljs-string">&quot;msg0&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">mycom</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+<span class="xml"><span class="hljs-comment">&lt;!-- 分离的全局组件 --&gt;</span></span>
+<span class="xml"><span class="hljs-comment">&lt;!-- 子组件的view层 --&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/template&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;show&quot;</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;show&quot;</span>&gt;</span></span>
+<span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">abc</span>&#125;&#125;</span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">msg1</span>&#125;&#125;</span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span></code></pre>
+
+<h3 id="父传子案例"><a href="#父传子案例" class="headerlink" title="父传子案例"></a>父传子案例</h3><pre><code class="hljs handlebars"><span class="xml">Vue.component(&quot;mycom&quot;,&#123;</span>
+
+<span class="xml">​        template:&quot;#show&quot;,</span>
+
+<span class="xml">​        data()&#123;</span>
+
+<span class="xml">​            return &#123;</span>
+
+<span class="xml">​                msg3:&quot;三大&quot;</span>
+
+<span class="xml">​            &#125;</span>
+
+<span class="xml">​        &#125;,</span>
+
+<span class="xml">​        props:[&quot;msg0&quot;,&quot;msg1&quot;]</span>
+
+<span class="xml">​    &#125;)</span>
+
+<span class="xml">​    //局部组件</span>
+
+<span class="xml">​    var mycom1=&#123;</span>
+
+<span class="xml">​        template:&quot;#entire&quot;,</span>
+
+<span class="xml">​        data()&#123;</span>
+
+<span class="xml">​            return &#123;</span>
+
+<span class="xml">​                msg4:&quot;吃饭&quot;,</span>
+
+<span class="xml">​                msg5:&quot;睡觉&quot;</span>
+
+<span class="xml">​            &#125;</span>
+
+<span class="xml">​        &#125;,</span>
+
+<span class="xml">​        props:[&quot;msg2&quot;]</span>
+
+<span class="xml">​    &#125;</span>
+
+<span class="xml">​    var vm=new Vue(&#123;</span>
+
+<span class="xml">​        el:&quot;#app&quot;,</span>
+
+<span class="xml">​        data:&#123;</span>
+
+<span class="xml">​            msg0:&quot;车萍&quot;,</span>
+
+<span class="xml">​            msg1:&quot;爱好&quot;,</span>
+
+<span class="xml">​            msg2:&quot;打豆豆&quot;</span>
+
+<span class="xml">​        &#125;,</span>
+
+<span class="xml">​        components:&#123;</span>
+
+<span class="xml">​            mycom1</span>
+
+<span class="xml">​        &#125;</span>
+
+<span class="xml">​    &#125;)</span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mycom</span> <span class="hljs-attr">:msg0</span>=<span class="hljs-string">&quot;msg0&quot;</span> <span class="hljs-attr">:msg1</span>=<span class="hljs-string">&quot;msg1&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">mycom</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mycom1</span> <span class="hljs-attr">:msg2</span>=<span class="hljs-string">&quot;msg2&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">mycom1</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+
+<span class="xml"><span class="hljs-comment">&lt;!-- 全局视图 --&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/template&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;show&quot;</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;show&quot;</span>&gt;</span></span>
+<span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">msg0</span>&#125;&#125;</span><span class="xml"> </span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">msg3</span>&#125;&#125;</span><span class="xml"> </span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">msg1</span>&#125;&#125;</span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span>
+<span class="xml"><span class="hljs-comment">&lt;!-- 局部试图 --&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;entire&quot;</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;entire&quot;</span>&gt;</span></span>
+<span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">msg4</span>&#125;&#125;</span><span class="xml"> </span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">msg5</span>&#125;&#125;</span><span class="xml"> </span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">msg2</span>&#125;&#125;</span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span></code></pre>
+
+<h3 id="子传父"><a href="#子传父" class="headerlink" title="子传父"></a>子传父</h3><pre><code class="hljs handlebars"><span class="xml">var mycom=&#123;</span>
+
+<span class="xml">​        template:&quot;#show&quot;,</span>
+
+<span class="xml">​        data()&#123;</span>
+
+<span class="xml">​            return &#123;</span>
+
+<span class="xml">​                cf:&quot;吃饭&quot;,</span>
+
+<span class="xml">​                sj:&quot;睡觉&quot;</span>
+
+<span class="xml">​                //子组件中的数据</span>
+
+<span class="xml">​            &#125;</span>
+
+<span class="xml">​        &#125;,</span>
+
+<span class="xml">​        //追加一个业务，用于传值</span>
+
+<span class="xml">​        methods:&#123;</span>
+
+<span class="xml">​            add(cf,sj)&#123;</span>
+
+<span class="xml">​                //第一个参数 自定义的方法业务myevent 你要往父组件中传的值</span>
+
+<span class="xml">​                this.$emit(&quot;myevent&quot;,cf,sj)//如果多个值，需要逗号隔开</span>
+
+<span class="xml">​            &#125;</span>
+
+<span class="xml">​        &#125;</span>
+
+<span class="xml">​    &#125;</span>
+
+<span class="xml">​    //全局组件</span>
+
+<span class="xml">​    Vue.component(&quot;mycom1&quot;,&#123;</span>
+
+<span class="xml">​        template:&quot;#qj&quot;,</span>
+
+<span class="xml">​        data()&#123;</span>
+
+<span class="xml">​            return &#123;</span>
+
+<span class="xml">​                sd:&quot;三大&quot;</span>
+
+<span class="xml">​            &#125;</span>
+
+<span class="xml">​        &#125;,</span>
+
+<span class="xml">​        methods:&#123;</span>
+
+<span class="xml">​            fs(sd)&#123;</span>
+
+<span class="xml">​                //自定义方法  发送三大</span>
+
+<span class="xml">​                this.$emit(&quot;fssd&quot;,sd)</span>
+
+<span class="xml">​            &#125;</span>
+
+<span class="xml">​        &#125;</span>
+
+<span class="xml">​    &#125;)</span>
+
+<span class="xml">​    //定义vue实例</span>
+
+<span class="xml">​    var vm=new Vue(&#123;</span>
+
+<span class="xml">​        el:&quot;#app&quot;,</span>
+
+<span class="xml">​        data:&#123;</span>
+
+<span class="xml">​            cf:&quot;&quot;,</span>
+
+<span class="xml">​            sj:&quot;&quot;,</span>
+
+<span class="xml">​            cp:&quot;车萍&quot;,</span>
+
+<span class="xml">​            ah:&quot;爱好&quot;,</span>
+
+<span class="xml">​            dd:&quot;打豆豆&quot;,</span>
+
+<span class="xml">​            sd:&quot;&quot;</span>
+
+<span class="xml">​        &#125;,</span>
+
+<span class="xml">​        components:&#123;</span>
+
+<span class="xml">​            mycom</span>
+
+<span class="xml">​        &#125;,</span>
+
+<span class="xml">​        //子组件中有业务,并且有传值,我们要接收一下</span>
+
+<span class="xml">​        methods:&#123;</span>
+
+<span class="xml">​            //接收业务 要把方法和你传过来的值都接收一下</span>
+
+<span class="xml">​            fn(m,n)&#123;</span>
+
+<span class="xml">​                this.cf = m;</span>
+
+<span class="xml">​                this.sj = n;</span>
+
+<span class="xml">​            &#125;,</span>
+
+<span class="xml">​            //接收三大</span>
+
+<span class="xml">​            fnn(s)&#123;</span>
+
+<span class="xml">​                this.sd = s;</span>
+
+<span class="xml">​            &#125;</span>
+
+<span class="xml">​        &#125;</span>
+
+<span class="xml">​    &#125;)</span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span></span>
+<span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">cp</span>&#125;&#125;</span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">sd</span>&#125;&#125;</span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">ah</span>&#125;&#125;</span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span></span>
+<span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">cf</span>&#125;&#125;</span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">sj</span>&#125;&#125;</span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">dd</span>&#125;&#125;</span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mycom</span> <span class="hljs-attr">v-on:myevent</span>=<span class="hljs-string">&quot;fn&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">mycom</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mycom1</span> <span class="hljs-attr">v-on:fssd</span>=<span class="hljs-string">&quot;fnn&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">mycom1</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>   </span>
+<span class="xml"><span class="hljs-comment">&lt;!-- 局部试图层 --&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;show&quot;</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;show&quot;</span>&gt;</span></span>
+<span class="xml"><span class="hljs-comment">&lt;!-- 调用方法 --&gt;</span></span>
+<span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">add</span>(<span class="hljs-name">cf</span>,sj)&#125;&#125;</span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span> </span>
+<span class="xml"><span class="hljs-comment">&lt;!-- 全局视图层 --&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/template&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;qj&quot;</span> &gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span> = <span class="hljs-string">&quot;qj&quot;</span>&gt;</span></span>
+<span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">fs</span>(<span class="hljs-name">sd</span>)&#125;&#125;</span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span></code></pre>
+
+<h2 id="vue04"><a href="#vue04" class="headerlink" title="vue04"></a>vue04</h2><h3 id="基础路由"><a href="#基础路由" class="headerlink" title="基础路由"></a>基础路由</h3><pre><code class="hljs javascript"><span class="hljs-comment">// 定义我们的路由组件</span>
+
+​    <span class="hljs-keyword">var</span> movie=&#123;
+
+​        template:<span class="hljs-string">&quot;&lt;div&gt;我是电影界面&lt;/div&gt;&quot;</span>
+
+​    &#125;
+
+​    <span class="hljs-keyword">var</span> music=&#123;
+
+​        template:<span class="hljs-string">&quot;&lt;div&gt;我是音乐界面&lt;/div&gt;&quot;</span>
+
+​    &#125;
+
+​    <span class="hljs-comment">//定义路由，每个路由映射响应的组件</span>
+
+​    <span class="hljs-keyword">var</span> routes=[
+
+​        &#123;<span class="hljs-attr">path</span>:<span class="hljs-string">&quot;/movie&quot;</span>,<span class="hljs-attr">component</span>:movie&#125;,
+
+​        &#123;<span class="hljs-attr">path</span>:<span class="hljs-string">&quot;/music&quot;</span>,<span class="hljs-attr">component</span>:music&#125;
+
+​        
+
+​    ]
+
+​    <span class="hljs-comment">//创建路由实例，然后传入我们的routes配置</span>
+
+​    <span class="hljs-keyword">var</span> router=<span class="hljs-keyword">new</span> VueRouter(&#123;
+
+​        <span class="hljs-comment">// routes:routes</span>
+
+​        routes
+
+​    &#125;)
+
+​    <span class="hljs-comment">//创建挂载 根实例</span>
+
+​    <span class="hljs-keyword">var</span> vm=<span class="hljs-keyword">new</span> Vue(&#123;
+
+​        el:<span class="hljs-string">&quot;#app&quot;</span>,
+
+​        data:&#123;&#125;,
+
+​        router
+
+​    &#125;)
+&lt;!-- 第一步 --&gt;
+&lt;div id=<span class="hljs-string">&quot;app&quot;</span>&gt;
+&lt;!-- 使用router-link来导航 --&gt;
+&lt;!-- <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span> --&gt;
+&lt;!-- 面试路由第一个问题
+原理 --&gt;
+&lt;router-link to=<span class="hljs-string">&quot;/movie&quot;</span>&gt;电影&lt;/router-link&gt;
+&lt;router-link to=<span class="hljs-string">&quot;/music&quot;</span>&gt;音乐&lt;/router-link&gt;
+&lt;!-- 进来第二步,设置路由出口 --&gt;
+&lt;!-- 讲我们路由匹配的组件渲染到页面中 --&gt;
+&lt;router-view&gt;&lt;/router-view&gt;
+&lt;/div&gt;</code></pre>
+
+<h3 id="配合组件儿写路由"><a href="#配合组件儿写路由" class="headerlink" title="配合组件儿写路由"></a>配合组件儿写路由</h3><pre><code class="hljs dust"><span class="xml">// 定义你的组件  vue特点 组件化开发</span>
+
+<span class="xml">​    var home=</span><span class="hljs-template-variable">&#123;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​        template:&quot;#home&quot;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​    &#125;</span>
+
+<span class="xml">​    var movie=</span><span class="hljs-template-variable">&#123;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​        template:&quot;#movie&quot;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​    &#125;</span>
+
+<span class="xml">​    var music=</span><span class="hljs-template-variable">&#123;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​        template:&quot;#music&quot;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​    &#125;</span>
+
+<span class="xml">​    var we=</span><span class="hljs-template-variable">&#123;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​        template:&quot;#we&quot;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​    &#125;</span>
+
+<span class="xml">​    //定义路由</span>
+
+<span class="xml">​    var routes=[</span>
+
+<span class="xml">​        </span><span class="hljs-template-variable">&#123;path:&quot;/home&quot;,component:home&#125;</span><span class="xml">,</span>
+
+<span class="xml">​        </span><span class="hljs-template-variable">&#123;path:&quot;/movie&quot;,component:movie&#125;</span><span class="xml">,</span>
+
+<span class="xml">​        </span><span class="hljs-template-variable">&#123;path:&quot;/music&quot;,component:music&#125;</span><span class="xml">,</span>
+
+<span class="xml">​        </span><span class="hljs-template-variable">&#123;path:&quot;/we&quot;,component:we&#125;</span><span class="xml">,</span>
+
+<span class="xml">​        </span><span class="hljs-template-variable">&#123;path:&quot;*&quot;,redirect:&quot;/home&quot;&#125;</span><span class="xml">//设置路由初始界面</span>
+
+<span class="xml">​    ]</span>
+
+<span class="xml">​    //实例话你的路由</span>
+
+<span class="xml">​    var router=new VueRouter(</span><span class="hljs-template-variable">&#123;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​        routes</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​    &#125;</span><span class="xml">)</span>
+
+<span class="xml">​    //挂载在根实例上</span>
+
+<span class="xml">​    var vm=new Vue(</span><span class="hljs-template-variable">&#123;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​        el:&quot;#app&quot;,</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​        data:&#123;&#125;</span><span class="xml">,</span>
+
+<span class="xml">​        router</span>
+
+<span class="xml">​    &#125;)</span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span></span>
+<span class="xml"><span class="hljs-comment">&lt;!--   to关键字跳转 --&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">&quot;/home&quot;</span>&gt;</span>首页<span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">&quot;/movie&quot;</span>&gt;</span>电影<span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">&quot;/music&quot;</span>&gt;</span>音乐<span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">&quot;/we&quot;</span>&gt;</span>我们<span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span></span>
+
+<span class="xml"><span class="hljs-comment">&lt;!-- router-view 渲染页面 --&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">router-view</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">router-view</span>&gt;</span> </span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+
+<span class="xml"><span class="hljs-comment">&lt;!-- 局部组件我们怎么获取 --&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;home&quot;</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;home&quot;</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>我是home页面<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span> </span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;movie&quot;</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;movie&quot;</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>我是movie页面<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;music&quot;</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;music&quot;</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>我是music页面<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;we&quot;</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;we&quot;</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>我是we页面<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span></code></pre>
+
+<h3 id="二级路由"><a href="#二级路由" class="headerlink" title="二级路由"></a>二级路由</h3><pre><code class="hljs javascript"><span class="hljs-comment">// 定义组件</span>
+
+​    <span class="hljs-keyword">var</span> home=&#123;
+
+​        template:<span class="hljs-string">&quot;#home&quot;</span>
+
+​    &#125;
+
+​    <span class="hljs-keyword">var</span> movie=&#123;
+
+​        template:<span class="hljs-string">&quot;#movie&quot;</span>
+
+​    &#125;
+
+​    <span class="hljs-keyword">var</span> music=&#123;
+
+​        template:<span class="hljs-string">&quot;#music&quot;</span>
+
+​    &#125;
+
+​    <span class="hljs-keyword">var</span> we=&#123;
+
+​        template:<span class="hljs-string">&quot;#we&quot;</span>
+
+​    &#125;
+
+​    <span class="hljs-comment">// 写两个子组件</span>
+
+​    <span class="hljs-keyword">var</span> classic=&#123;
+
+​        template:<span class="hljs-string">&quot;#classic&quot;</span>
+
+​    &#125;
+
+​    <span class="hljs-keyword">var</span> popular=&#123;
+
+​        template:<span class="hljs-string">&quot;#popular&quot;</span>
+
+​    &#125;
+
+​    <span class="hljs-comment">//设置路由</span>
+
+​    <span class="hljs-keyword">var</span> routes=[
+
+​        &#123;<span class="hljs-attr">path</span>:<span class="hljs-string">&quot;/home&quot;</span>,<span class="hljs-attr">component</span>:home&#125;,
+
+​        &#123;<span class="hljs-attr">path</span>:<span class="hljs-string">&quot;/movie&quot;</span>,<span class="hljs-attr">component</span>:movie&#125;,
+
+​        &#123;
+
+​            path:<span class="hljs-string">&quot;/music&quot;</span>,<span class="hljs-attr">component</span>:music,
+
+​            <span class="hljs-comment">//设置二级路由</span>
+
+​            children:[
+
+​                &#123;<span class="hljs-attr">path</span>:<span class="hljs-string">&quot;/classic&quot;</span>,<span class="hljs-attr">component</span>:classic&#125;,
+
+​                &#123;<span class="hljs-attr">path</span>:<span class="hljs-string">&quot;/popular&quot;</span>,<span class="hljs-attr">component</span>:popular&#125;,
+
+​                &#123;<span class="hljs-attr">path</span>:<span class="hljs-string">&quot;*&quot;</span>,<span class="hljs-attr">redirect</span>:<span class="hljs-string">&quot;/music&quot;</span>&#125;
+
+​            ]
+
+​        &#125;,
+
+​        &#123;<span class="hljs-attr">path</span>:<span class="hljs-string">&quot;/we&quot;</span>,<span class="hljs-attr">component</span>:we&#125;,
+
+​        <span class="hljs-comment">//redirect 重定向 ／home  fn to -from watch</span>
+
+​        <span class="hljs-comment">//设置页面初始化路由</span>
+
+​        &#123;<span class="hljs-attr">path</span>:<span class="hljs-string">&quot;*&quot;</span>,<span class="hljs-attr">redirect</span>:<span class="hljs-string">&quot;/home&quot;</span>&#125;
+
+​    ]
+
+​    <span class="hljs-keyword">var</span> router=<span class="hljs-keyword">new</span> VueRouter(&#123;
+
+​        routes
+
+​    &#125;)
+
+​    <span class="hljs-keyword">var</span> vm=<span class="hljs-keyword">new</span> Vue(&#123;
+
+​        el:<span class="hljs-string">&quot;#app&quot;</span>,
+
+​        data:&#123;&#125;,
+
+​        router
+
+​    &#125;)
+&lt;div id=<span class="hljs-string">&quot;app&quot;</span>&gt;
+&lt;router-link to=<span class="hljs-string">&quot;/home&quot;</span>&gt;首页&lt;/router-link&gt;
+&lt;router-link to=<span class="hljs-string">&quot;/movie&quot;</span>&gt;电影&lt;/router-link&gt;
+&lt;router-link to=<span class="hljs-string">&quot;/music&quot;</span>&gt;音乐&lt;/router-link&gt;
+&lt;router-link to=<span class="hljs-string">&quot;/we&quot;</span>&gt;关于我们&lt;/router-link&gt;
+
+&lt;router-view&gt;&lt;/router-view&gt;
+&lt;/div&gt;
+&lt;!-- 设置组件的内容 --&gt;
+&lt;template id=<span class="hljs-string">&quot;home&quot;</span>&gt;
+&lt;div <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">&quot;home&quot;</span>&gt;
+home页面
+&lt;/div&gt;
+&lt;/template&gt;
+&lt;template id=<span class="hljs-string">&quot;movie&quot;</span>&gt;
+&lt;div <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">&quot;movie&quot;</span>&gt;
+movie页面
+&lt;/div&gt;
+&lt;/template&gt;
+&lt;template id=<span class="hljs-string">&quot;music&quot;</span>&gt;
+&lt;div <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">&quot;music&quot;</span>&gt;
+music页面
+&lt;router-link to=<span class="hljs-string">&quot;/classic&quot;</span>&gt;古典&lt;/router-link&gt;
+&lt;router-link to=<span class="hljs-string">&quot;/popular&quot;</span>&gt;流行&lt;/router-link&gt;
+
+&lt;router-view&gt;&lt;/router-view&gt;
+&lt;/div&gt;
+&lt;/template&gt;
+&lt;template id=<span class="hljs-string">&quot;we&quot;</span>&gt;
+&lt;div <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">&quot;we&quot;</span>&gt;
+关于我们页面
+&lt;/div&gt;
+&lt;/template&gt;
+&lt;template id=<span class="hljs-string">&quot;classic&quot;</span>&gt;
+&lt;div <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">&quot;classic&quot;</span>&gt;
+古典
+&lt;/div&gt;
+&lt;/template&gt;
+&lt;template id=<span class="hljs-string">&quot;popular&quot;</span>&gt;
+&lt;div <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">&quot;popular&quot;</span>&gt;
+流行
+&lt;/div&gt;
+&lt;/template&gt;</code></pre>
+
+<h3 id="命名路由"><a href="#命名路由" class="headerlink" title="命名路由"></a>命名路由</h3><pre><code class="hljs xquery"> // <span class="hljs-string">&quot;/&quot;</span>  为了方便下午的传值 带入我们命名路由的知识点
+
+​    var movie=&#123;
+
+​        template:<span class="hljs-string">&quot;#movie&quot;</span>
+
+​    &#125;
+
+​    var music=&#123;
+
+​        template:<span class="hljs-string">&quot;#music&quot;</span>
+
+​    &#125;
+
+​    var routes=[
+
+​        <span class="hljs-built_in">&#123;path</span>:<span class="hljs-string">&quot;/movie&quot;</span>,component:movie&#125;,
+
+​        <span class="hljs-built_in">&#123;path</span>:<span class="hljs-string">&quot;/music&quot;</span><span class="hljs-built_in">,name</span>:<span class="hljs-string">&quot;music&quot;</span>,component:music&#125;,
+
+​    ]
+
+​    var router=new VueRouter(&#123;
+
+​        routes
+
+​    &#125;)
+
+​    var vm=new Vue(&#123;
+
+​        el:<span class="hljs-string">&quot;#app&quot;</span>,
+
+​        data:&#123;&#125;,
+
+​        router
+
+​    &#125;)
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span></span>
+<span class="xml"><span class="hljs-comment">&lt;!-- 普通路由的写法 --&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">&quot;/movie&quot;</span>&gt;</span>电影<span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span></span>
+<span class="xml"><span class="hljs-comment">&lt;!-- 命名路由的方法 --&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">:to</span>=<span class="hljs-string">&quot;&#123;name:&#x27;music&#x27;&#125;&quot;</span>&gt;</span>音乐<span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span></span>
+<span class="xml"><span class="hljs-comment">&lt;!-- 渲染 --&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">router-view</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">router-view</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;movie&quot;</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;movie&quot;</span>&gt;</span></span>
+<span class="xml">大人物</span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;music&quot;</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;music&quot;</span>&gt;</span></span>
+<span class="xml">清风</span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span></code></pre>
+
+<h3 id="模拟美团"><a href="#模拟美团" class="headerlink" title="模拟美团"></a>模拟美团</h3><pre><code class="hljs handlebars"><span class="xml"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span></span>
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span></span>
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span></span>
+
+<span class="xml">    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span></span>
+
+<span class="xml">    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span>
+
+<span class="xml">    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;X-UA-Compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;ie=edge&quot;</span>&gt;</span></span>
+
+<span class="xml">​    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span></span>
+
+<span class="xml">    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;vue.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span>
+
+<span class="xml">    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;vue-router.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span>
+
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></span>
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span>
+
+<span class="xml">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span></span>
+
+<span class="xml">​       <span class="hljs-tag">&lt;<span class="hljs-name">router-view</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">router-view</span>&gt;</span></span>
+
+<span class="xml">​    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+
+<span class="xml">​    <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;search&quot;</span>&gt;</span></span>
+
+<span class="xml">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span>
+
+<span class="xml">​            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;search&quot;</span>&gt;</span></span>
+
+<span class="xml">​            <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span></span>
+
+<span class="xml">​                <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;(item,index) in searchData&quot;</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;index&quot;</span>&gt;</span></span>
+
+<span class="xml">​                    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;value in item.city&quot;</span>&gt;</span></span>
+
+<span class="xml">​                        </span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">value</span>&#125;&#125;</span>
+
+<span class="xml">​                    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></span>
+
+<span class="xml">​                <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></span>
+
+<span class="xml">​            <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></span>
+
+<span class="xml">​        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+
+<span class="xml">​    <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span>
+
+<span class="xml">​    <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;index&quot;</span>&gt;</span> </span>
+
+<span class="xml">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span>
+
+<span class="xml">​            <span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">&quot;/search&quot;</span>&gt;</span></span>
+
+<span class="xml">​                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;search&quot;</span>&gt;</span></span>
+
+<span class="xml">​            <span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span></span>
+
+<span class="xml">​            <span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">&quot;/shan&quot;</span>&gt;</span>山东<span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span></span>
+
+<span class="xml">​            <span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">&quot;/henan&quot;</span>&gt;</span>河南<span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span></span>
+
+<span class="xml">​            <span class="hljs-tag">&lt;<span class="hljs-name">router-view</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">router-view</span>&gt;</span></span>
+
+<span class="xml">​        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+
+<span class="xml">​    <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span>
+
+<span class="xml">​    <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;shan&quot;</span> &gt;</span></span>
+
+<span class="xml">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;shan&quot;</span>&gt;</span></span>
+
+<span class="xml">​            山东</span>
+
+<span class="xml">​        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+
+<span class="xml">​    <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span>
+
+<span class="xml">​    <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;henan&quot;</span>&gt;</span></span>
+
+<span class="xml">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;henan&quot;</span>&gt;</span></span>
+
+<span class="xml">​            河南</span>
+
+<span class="xml">​        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+
+<span class="xml">​    <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span>
+
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span>
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span></span>
+
+<span class="xml">​    //两个组件</span>
+
+<span class="xml">​    let shandong=&#123;</span>
+
+<span class="xml">​        template:&quot;#shan&quot;,</span>
+
+<span class="xml">​        data()&#123;</span>
+
+<span class="xml">​            return &#123;</span>
+
+<span class="xml">​                bol:false</span>
+
+<span class="xml">​            &#125;</span>
+
+<span class="xml">​        &#125;</span>
+
+<span class="xml">​    &#125;</span>
+
+<span class="xml">​    let henan=&#123;</span>
+
+<span class="xml">​        template:&quot;#henan&quot;</span>
+
+<span class="xml">​    &#125;</span>
+
+<span class="xml">​    let index = &#123;</span>
+
+<span class="xml">​        template:&quot;#index&quot;,</span>
+
+<span class="xml">​    &#125;</span>
+
+<span class="xml">​    let search = &#123;</span>
+
+<span class="xml">​        template:&quot;#search&quot;,</span>
+
+<span class="xml">​        data()&#123;</span>
+
+<span class="xml">​            return &#123;</span>
+
+<span class="xml">​                search:&quot;&quot;,</span>
+
+<span class="xml">​                cityArr:[&#123;</span>
+
+<span class="xml">​                    sheng:&quot;山东&quot;,</span>
+
+<span class="xml">​                    city:[&quot;济南&quot;,&quot;青岛&quot;,&quot;潍坊&quot;]</span>
+
+<span class="xml">​                &#125;,&#123;</span>
+
+<span class="xml">​                    sheng:&quot;河南&quot;,</span>
+
+<span class="xml">​                    city:[&quot;安阳&quot;,&quot;郑州&quot;]</span>
+
+<span class="xml">​                &#125;]</span>
+
+<span class="xml">​            &#125;   </span>
+
+<span class="xml">​        &#125;,</span>
+
+<span class="xml">​        computed:&#123;</span>
+
+<span class="xml">​            searchData()&#123;</span>
+
+<span class="xml">​                if(this.search)&#123;</span>
+
+<span class="xml">​                    let resultArr = this.cityArr.filter(item=&gt;&#123;</span>
+
+<span class="xml">​                        console.log(this.search)</span>
+
+<span class="xml">​                        console.log(item.sheng.indexOf(this.search))</span>
+
+<span class="xml">​                        if(item.sheng.indexOf(this.search)&gt;=0)&#123;</span>
+
+<span class="xml">​                            return true;</span>
+
+<span class="xml">​                        &#125;else&#123;</span>
+
+<span class="xml">​                            return false;</span>
+
+<span class="xml">​                        &#125;</span>
+
+<span class="xml">​                    &#125;)</span>
+
+<span class="xml">​                    console.log(resultArr)</span>
+
+<span class="xml">​                    return resultArr</span>
+
+<span class="xml">​                &#125;else&#123;</span>
+
+<span class="xml">​                    return [];</span>
+
+<span class="xml">​                &#125;</span>
+
+<span class="xml">​                </span>
+
+<span class="xml">​            &#125;</span>
+
+<span class="xml">​        &#125;</span>
+
+<span class="xml">​    &#125;</span>
+
+<span class="xml">​    let routes=[</span>
+
+<span class="xml">​        &#123;</span>
+
+<span class="xml">​            path:&quot;/&quot;,</span>
+
+<span class="xml">​            component:index,</span>
+
+<span class="xml">​            children:[&#123;path:&#x27;/shan&#x27;,component:shandong&#125;,</span>
+
+<span class="xml">​                &#123;path:&#x27;/henan&#x27;,component:henan&#125;]</span>
+
+<span class="xml">​        &#125;,</span>
+
+<span class="xml">​        &#123;</span>
+
+<span class="xml">​            path:&quot;/search&quot;,</span>
+
+<span class="xml">​            component:search</span>
+
+<span class="xml">​        &#125;</span>
+
+<span class="xml">​    ]</span>
+
+<span class="xml">​    var router=new VueRouter(&#123;</span>
+
+<span class="xml">​        routes    </span>
+
+<span class="xml">​    &#125;)</span>
+
+<span class="xml">​    var vm=new Vue(&#123;</span>
+
+<span class="xml">​        el:&quot;#app&quot;,</span>
+
+<span class="xml">​        router</span>
+
+<span class="xml">​    &#125;)</span>
+
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span>
+
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></span></code></pre>
+
+<h2 id="vue05"><a href="#vue05" class="headerlink" title="vue05"></a>vue05</h2><h3 id="path路由传值"><a href="#path路由传值" class="headerlink" title="path路由传值"></a>path路由传值</h3><pre><code class="hljs handlebars"><span class="xml">// 传值，要传的是变量</span>
+
+<span class="xml">​    //定义一个组件</span>
+
+<span class="xml">​    let user=&#123;</span>
+
+<span class="xml">​        template:&quot;#user&quot;</span>
+
+<span class="xml">​    &#125;</span>
+
+<span class="xml">​    //定义一个路由</span>
+
+<span class="xml">​    let routes=[</span>
+
+<span class="xml">​        // 在设置路由的时候  要传的值加在／:的后面</span>
+
+<span class="xml">​        &#123;path:&quot;/user/:userName&quot;,component:user&#125;</span>
+
+<span class="xml">​    ]</span>
+
+<span class="xml">​    //new路由</span>
+
+<span class="xml">​    let router=new VueRouter(&#123;</span>
+
+<span class="xml">​        routes</span>
+
+<span class="xml">​    &#125;)</span>
+
+<span class="xml">​    //挂载实例</span>
+
+<span class="xml">​    let vm=new Vue(&#123;</span>
+
+<span class="xml">​        el:&quot;#app&quot;,</span>
+
+<span class="xml">​        data:&#123;</span>
+
+<span class="xml">​            obj:&#123;</span>
+
+<span class="xml">​                userName:&quot;shao&quot;</span>
+
+<span class="xml">​            &#125;</span>
+
+<span class="xml">​            </span>
+
+<span class="xml">​        &#125;,</span>
+
+<span class="xml">​        router,</span>
+
+<span class="xml">​        methods:&#123;</span>
+
+<span class="xml">​            fn()&#123;</span>
+
+<span class="xml">​                // 跳转页面的存储对象==》locastorage</span>
+
+<span class="xml">​                console.log(this.$route);</span>
+
+<span class="xml">​            &#125;</span>
+
+<span class="xml">​        &#125;</span>
+
+<span class="xml">​    &#125;)</span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span></span>
+<span class="xml"><span class="hljs-comment">&lt;!-- path路由跳转的时候 命名路由    path+路由名称+传的数据 aa--&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">:to</span>=<span class="hljs-string">&quot;&#123;path:&#x27;/user/aa&#x27;&#125;&quot;</span>&gt;</span>aa<span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">:to</span>=<span class="hljs-string">&quot;&#123;path:&#x27;/user/bb&#x27;&#125;&quot;</span>&gt;</span>bb<span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span></span>
+<span class="xml"><span class="hljs-comment">&lt;!-- 字符串拼接 --&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">:to</span>=<span class="hljs-string">&quot;&#123;path:&#x27;/user/&#x27;+userName&#125;&quot;</span>&gt;</span>cc<span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span></span>
+<span class="xml"><span class="hljs-comment">&lt;!-- 按钮 --&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;fn&quot;</span>&gt;</span>点击进入控制台<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span>
+<span class="xml"><span class="hljs-comment">&lt;!-- 渲染 --&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">router-view</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">router-view</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+<span class="xml"><span class="hljs-comment">&lt;!-- 组件 --&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;user&quot;</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;user&quot;</span>&gt;</span></span>
+<span class="xml"><span class="hljs-comment">&lt;!-- 我是user界面 --&gt;</span></span>
+<span class="xml"><span class="hljs-comment">&lt;!-- aa --&gt;</span></span>
+<span class="xml"><span class="hljs-comment">&lt;!-- 接收到数据，显示在组件中  localstorage.set    localstorage.get --&gt;</span></span>
+<span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">$route.params.userName</span>&#125;&#125;</span>
+<span class="xml"><span class="hljs-comment">&lt;!-- </span></span><span class="hljs-template-variable">&#123;&#123;&#125;&#125;</span><span class="xml"><span class="hljs-comment"> --&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span></code></pre>
+
+<h3 id="query传值"><a href="#query传值" class="headerlink" title="query传值"></a>query传值</h3><pre><code class="hljs dust"><span class="xml">let user=</span><span class="hljs-template-variable">&#123;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​        template:&quot;#user&quot;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​    &#125;</span>
+
+<span class="xml">​    //根据需求画路由，决定多少组件，组件化开发</span>
+
+<span class="xml">​    let routes=[</span>
+
+<span class="xml">​        </span><span class="hljs-template-variable">&#123;path:&quot;/user/:userName&quot;,component:user&#125;</span>
+
+<span class="xml">​    ]</span>
+
+<span class="xml">​    let router=new VueRouter(</span><span class="hljs-template-variable">&#123;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​        routes</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​    &#125;</span><span class="xml">)</span>
+
+<span class="xml">​    let vm=new Vue(</span><span class="hljs-template-variable">&#123;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​        el:&quot;#app&quot;,</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​        data:&#123;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​        &#125;</span><span class="xml">,</span>
+
+<span class="xml">​        router,</span>
+
+<span class="xml">​        methods:</span><span class="hljs-template-variable">&#123;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​            fn()&#123;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​                console.log(this.$route)</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​            &#125;</span>
+
+<span class="xml">​        &#125;</span>
+
+<span class="xml">​    &#125;)</span>
+
+<span class="xml">​    // query传值会将你传的值显示在地址栏儿上，类似与我们的ajax中的get传输方式</span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">:to</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">&#123;path:&#x27;/user/aa&#x27;,query:&#123;name:&#x27;shao&#x27;,age:28&#125;</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">&#125;&quot;</span>&gt;</span>aa<span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">:to</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">&#123;path:&#x27;/user/bb&#x27;,query:&#123;name:&#x27;che&#x27;,age:18&#125;</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">&#125;&quot;</span>&gt;</span>bb<span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">:to</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">&#123;path:&#x27;/user/cc&#x27;,query:&#123;name:&#x27;hui&#x27;,age:16&#125;</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">&#125;&quot;</span>&gt;</span>cc<span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;fn&quot;</span>&gt;</span>点我进入控制台<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">router-view</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">router-view</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+<span class="xml"><span class="hljs-comment">&lt;!-- 组件 --&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;user&quot;</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;user&quot;</span>&gt;</span></span>
+<span class="hljs-template-variable">&#123;&#123;$route.params&#125;</span><span class="xml">&#125;</span>
+<span class="xml"><span class="hljs-comment">&lt;!-- query可以和path连着用，接下来要讲的params传值方式不可以配合path --&gt;</span></span>
+<span class="hljs-template-variable">&#123;&#123;$route.query&#125;</span><span class="xml">&#125;</span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span></code></pre>
+
+<h3 id="params传值"><a href="#params传值" class="headerlink" title="params传值"></a>params传值</h3><pre><code class="hljs dust"><span class="xml">//根据路由画模版</span>
+
+<span class="xml">​    let user=</span><span class="hljs-template-variable">&#123;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​        template:&quot;#user&quot;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​    &#125;</span>
+
+<span class="xml">​    // 定义路由</span>
+
+<span class="xml">​    let routes=[</span>
+
+<span class="xml">​        </span><span class="hljs-template-variable">&#123;path:&quot;/user&quot;,name:&quot;user&quot;,component:user&#125;</span>
+
+<span class="xml">​    ]</span>
+
+<span class="xml">​    //new 路由实例</span>
+
+<span class="xml">​    let router=new VueRouter(</span><span class="hljs-template-variable">&#123;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​        routes</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​    &#125;</span><span class="xml">)  </span>
+
+<span class="xml">​    //挂在实栗</span>
+
+<span class="xml">​    let vm=new Vue(</span><span class="hljs-template-variable">&#123;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​        el:&quot;#app&quot;,</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​        data:&#123;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​            userName:&quot;shao&quot;,</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​            age:28</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​        &#125;</span><span class="xml">,</span>
+
+<span class="xml">​        router,</span>
+
+<span class="xml">​        methods:</span><span class="hljs-template-variable">&#123;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​            fn()&#123;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​                console.log(this.$route)</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​            &#125;</span>
+
+<span class="xml">​        &#125;</span>
+
+<span class="xml">​    &#125;)</span>
+
+<span class="xml">​        // params传值注意的点</span>
+
+<span class="xml">​        // +命名路由name配合使用</span>
+
+<span class="xml">​        // 不能和path配合使用(容易出现问题)</span>
+
+<span class="xml">​        // 刷新时数据被清空</span>
+
+<span class="xml">​        //meta用来拦截路由的 </span>
+<span class="xml"> <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span></span>
+<span class="xml"> <span class="hljs-comment">&lt;!-- params传值不能配合我们的path  它是和name命名路由一起用 --&gt;</span></span>
+<span class="xml"> <span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">:to</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">&#123;name:&#x27;user&#x27;,params:&#123;name:userName,age:age&#125;</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">&#125;&quot;</span>&gt;</span>用户<span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span></span>
+<span class="xml"> <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;fn&quot;</span>&gt;</span>点我进入控制台<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span>
+<span class="xml"> <span class="hljs-tag">&lt;<span class="hljs-name">router-view</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">router-view</span>&gt;</span></span>
+<span class="xml"> <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+<span class="xml"> <span class="hljs-comment">&lt;!-- 模版 --&gt;</span></span>
+<span class="xml"> <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;user&quot;</span>&gt;</span></span>
+<span class="xml"> <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;user&quot;</span>&gt;</span></span>
+<span class="xml"> </span><span class="hljs-template-variable">&#123;&#123;$route.params&#125;</span><span class="xml">&#125;</span>
+<span class="xml"> <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+<span class="xml"> <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span></code></pre>
+
+<h3 id="动态路由"><a href="#动态路由" class="headerlink" title="动态路由"></a>动态路由</h3><pre><code class="hljs dust"><span class="xml">//动态路由</span>
+
+<span class="xml">​    //定义四个组件</span>
+
+<span class="xml">​    // let aa=</span><span class="hljs-template-variable">&#123;tempplate:&quot;#aa&quot;&#125;</span>
+
+<span class="xml">​    // let bb=</span><span class="hljs-template-variable">&#123;tempplate:&quot;#bb&quot;&#125;</span>
+
+<span class="xml">​    // let cc=</span><span class="hljs-template-variable">&#123;tempplate:&quot;#cc&quot;&#125;</span>
+
+<span class="xml">​    // let dd=</span><span class="hljs-template-variable">&#123;tempplate:&quot;#dd&quot;&#125;</span>
+
+<span class="xml">​    let user=</span><span class="hljs-template-variable">&#123;template:&quot;#user&quot;&#125;</span>
+
+<span class="xml">​    //定义路由</span>
+
+<span class="xml">​    // let routes=[</span>
+
+<span class="xml">​    //     </span><span class="hljs-template-variable">&#123;path:&quot;/aa&quot;,component:aa&#125;</span><span class="xml">,</span>
+
+<span class="xml">​    //     </span><span class="hljs-template-variable">&#123;path:&quot;/bb&quot;,component:bb&#125;</span><span class="xml">,</span>
+
+<span class="xml">​    //     </span><span class="hljs-template-variable">&#123;path:&quot;/cc&quot;,component:cc&#125;</span><span class="xml">,</span>
+
+<span class="xml">​    //     </span><span class="hljs-template-variable">&#123;path:&quot;/dd&quot;,component:dd&#125;</span>
+
+<span class="xml">​    // ]</span>
+
+<span class="xml">​    //path:&quot;/user/:user&quot;</span>
+
+<span class="xml">​    let routes=[</span><span class="hljs-template-variable">&#123;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​        path:&quot;/user/:userName/age/:age&quot;,</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​        component:user</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​    &#125;</span><span class="xml">]</span>
+
+<span class="xml">​    let router=new VueRouter(</span><span class="hljs-template-variable">&#123;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​        routes</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​    &#125;</span><span class="xml">)</span>
+
+<span class="xml">​    let vm=new Vue(</span><span class="hljs-template-variable">&#123;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​        el:&quot;#app&quot;,</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​        data:&#123;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​            </span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​        &#125;</span><span class="xml">,</span>
+
+<span class="xml">​        router</span>
+
+<span class="xml">​    &#125;)</span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">:to</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">&#123;path:&#x27;/user/aa/age/20&#x27;&#125;</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>&gt;</span>aa<span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span></span>
+<span class="xml"><span class="hljs-comment">&lt;!-- &lt;router-link :to=&quot;</span></span><span class="hljs-template-variable">&#123;path:&#x27;/user/bb&#x27;&#125;</span><span class="xml"><span class="hljs-comment">&quot;&gt;bb&lt;/router-link&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">:to</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">&#123;path:&#x27;/user/cc&#x27;&#125;</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>&gt;</span>cc<span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">:to</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">&#123;path:&#x27;/user/dd&#x27;&#125;</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>&gt;</span>dd<span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span> --&gt;</span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">router-view</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">router-view</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+<span class="xml"><span class="hljs-comment">&lt;!-- 四个组件 --&gt;</span></span>
+<span class="xml"><span class="hljs-comment">&lt;!-- 一个组件 --&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;user&quot;</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;user&quot;</span>&gt;</span></span>
+<span class="xml">我是</span><span class="hljs-template-variable">&#123;&#123;$route.params.userName&#125;</span><span class="xml">&#125;页面</span>
+<span class="xml">我</span><span class="hljs-template-variable">&#123;&#123;$route.params.age&#125;</span><span class="xml">&#125;岁了</span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span></code></pre>
+
+<h3 id="点击进入详情页面案例"><a href="#点击进入详情页面案例" class="headerlink" title="点击进入详情页面案例"></a>点击进入详情页面案例</h3><pre><code class="hljs dust"><span class="xml">//根据路由写组件</span>
+
+<span class="xml">​    let index=</span><span class="hljs-template-variable">&#123;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​        template:&quot;#index&quot;,</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​        // 数据</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​        data()&#123;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​            return &#123;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​                goods:[</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​                    &#123;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​                        // 给唯一的标识</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​                        id:1,</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​                        name:&quot;黄瓜&quot;,</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​                        price:24</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​                    &#125;</span><span class="xml">,</span>
+
+<span class="xml">​                    </span><span class="hljs-template-variable">&#123;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​                        id:2,</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​                        name:&quot;西瓜&quot;,</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​                        price:25</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​                    &#125;</span><span class="xml">,</span>
+
+<span class="xml">​                    </span><span class="hljs-template-variable">&#123;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​                        id:3,</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​                        name:&quot;冬瓜&quot;,</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​                        price:26</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​                    &#125;</span>
+
+<span class="xml">​                ]</span>
+
+<span class="xml">​            &#125;</span>
+
+<span class="xml">​        &#125;</span>
+
+<span class="xml">​    &#125;</span>
+
+<span class="xml">​    //详情组件</span>
+
+<span class="xml">​    let details=</span><span class="hljs-template-variable">&#123;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​        template:&quot;#details&quot;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​    &#125;</span>
+
+<span class="xml">​    //先去画路由</span>
+
+<span class="xml">​    let routes=[</span>
+
+<span class="xml">​        //主页路由</span>
+
+<span class="xml">​        </span><span class="hljs-template-variable">&#123;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​            path:&quot;/&quot;,//根目录下</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​            component:index</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​        &#125;</span><span class="xml">,</span>
+
+<span class="xml">​        //详情路由</span>
+
+<span class="xml">​        </span><span class="hljs-template-variable">&#123;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​            path:&quot;/details/:name/price/:price&quot;,</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​            component:details</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​        &#125;</span>
+
+<span class="xml">​    ]</span>
+
+<span class="xml">​    //创建我们的router实例</span>
+
+<span class="xml">​    let router=new VueRouter(</span><span class="hljs-template-variable">&#123;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​        routes</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​    &#125;</span><span class="xml">)</span>
+
+<span class="xml">​    //挂在我们的vue实例上</span>
+
+<span class="xml">​    let vm=new Vue(</span><span class="hljs-template-variable">&#123;</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​        el:&quot;#app&quot;,</span>
+<span class="hljs-template-variable"></span>
+<span class="hljs-template-variable">​        data:&#123;&#125;</span><span class="xml">,</span>
+
+<span class="xml">​        router</span>
+
+<span class="xml">​    &#125;)</span>
+<span class="xml"><span class="hljs-comment">&lt;!-- view层中写路由 --&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span></span>
+<span class="xml"><span class="hljs-comment">&lt;!-- &lt;router-link to=&quot;/&quot;&gt;&lt;/router-link&gt; --&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">router-view</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">router-view</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+<span class="xml"><span class="hljs-comment">&lt;!-- 首页的内容，在组件中 --&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;index&quot;</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;index&quot;</span>&gt;</span></span>
+<span class="xml"><span class="hljs-comment">&lt;!-- 将数据渲染出来 --&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;(items,index) in goods&quot;</span>&gt;</span> </span>
+<span class="xml"><span class="hljs-comment">&lt;!--路由文件的跳转  --&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">:to</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">&#123;path:&#x27;/details/&#x27;+items.name+&#x27;/price/&#x27;+items.price&#125;</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>&gt;</span></span>
+<span class="hljs-template-variable">&#123;&#123;items&#125;</span><span class="xml">&#125;</span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span> </span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">router-view</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">router-view</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span>
+<span class="xml"><span class="hljs-comment">&lt;!-- detail组件 --&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;details&quot;</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;details&quot;</span>&gt;</span></span>
+<span class="hljs-template-variable">&#123;&#123;$route.params&#125;</span><span class="xml">&#125;</span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span></code></pre>
+
+<h3 id="侦听器"><a href="#侦听器" class="headerlink" title="侦听器"></a>侦听器</h3><pre><code class="hljs awk"> let vm=new Vue(&#123;
+
+​        el:<span class="hljs-string">&quot;#app&quot;</span>,
+
+​        data:&#123;
+
+​            xing:<span class="hljs-string">&quot;&quot;</span>,
+
+​            ming:<span class="hljs-string">&quot;&quot;</span>,
+
+​            fullName:<span class="hljs-string">&quot;&quot;</span>
+
+​        &#125;,
+
+​        <span class="hljs-regexp">//</span>概念
+
+​        <span class="hljs-regexp">//</span> 检测数据,一般为普通的字符串，number ，bol
+
+​        <span class="hljs-regexp">//</span>假如想要监听对象和数组 
+
+​        <span class="hljs-regexp">//</span>双层对象
+
+​        <span class="hljs-regexp">//</span> &#123;
+
+​        <span class="hljs-regexp">//</span>     obj:&#123;
+
+​        <span class="hljs-regexp">//</span>         obj:&#123;
+
+​        <span class="hljs-regexp">//</span>         &#125;
+
+​        <span class="hljs-regexp">//</span>     &#125;
+
+​        <span class="hljs-regexp">//</span> &#125;
+
+​        <span class="hljs-regexp">//</span>深度监听  深度响应
+
+​        <span class="hljs-regexp">//</span>添加侦听
+
+​        watch:&#123;
+
+​            <span class="hljs-regexp">//</span>当你的姓改变的时候，整体的姓名也要改变
+
+​            xing()&#123;
+
+​                this.fullName=this.xing+this.ming
+
+​            &#125;
+
+​        &#125;
+
+​    &#125;)
+&lt;div id=<span class="hljs-string">&quot;app&quot;</span>&gt;
+姓: &lt;input type=<span class="hljs-string">&quot;text&quot;</span> v-model=<span class="hljs-string">&quot;xing&quot;</span>&gt;&lt;br/&gt;
+名: &lt;input type=<span class="hljs-string">&quot;text&quot;</span> v-model=<span class="hljs-string">&quot;ming&quot;</span>&gt;&lt;br/&gt;
+
+&#123;&#123;fullName&#125;&#125;
+&lt;/div&gt;</code></pre>
+
+<h3 id="深度响应"><a href="#深度响应" class="headerlink" title="深度响应"></a>深度响应</h3><pre><code class="hljs javascript"><span class="hljs-comment">//创建一个实例子</span>
+
+​    <span class="hljs-keyword">let</span> vm=<span class="hljs-keyword">new</span> Vue(&#123;
+
+​        el:<span class="hljs-string">&quot;#app&quot;</span>,
+
+​        data:&#123;
+
+​            obj:&#123;
+
+​                name:<span class="hljs-string">&quot;shao&quot;</span>
+
+​            &#125;
+
+​        &#125;,
+
+​        <span class="hljs-comment">//设置监听</span>
+
+​        watch:&#123;
+
+​            obj:&#123;
+
+​                <span class="hljs-comment">// 设置一个监听方法</span>
+
+​                <span class="hljs-comment">// v1 指代 更新之前的数据 &lt;==&gt; v2指代的更新之后的数据 两者指向同一数据对象 </span>
+
+​                handler(v1,v2)&#123;
+
+​                    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;哈哈哈&quot;</span>)
+
+​                    <span class="hljs-built_in">console</span>.log(v1,v2)
+
+​                &#125;,
+
+​                <span class="hljs-comment">// 深度监听 deep属性</span>
+
+​                deep:<span class="hljs-literal">true</span>
+
+​            &#125;
+
+​        &#125;
+
+​    &#125;)
+&lt;div id=<span class="hljs-string">&quot;app&quot;</span>&gt;
+&lt;input type=<span class="hljs-string">&quot;text&quot;</span> v-model=<span class="hljs-string">&quot;obj.name&quot;</span>&gt;
+&lt;/div&gt;</code></pre>
+
+
+
+<h1 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h1><h2 id="native方法"><a href="#native方法" class="headerlink" title="native方法:"></a>native方法:</h2><p>将原生事件绑定到组件上</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">kky</span> @<span class="hljs-attr">click.native</span> = <span class="hljs-string">&quot;fn&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">kky</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> kky = &#123;
+    template:<span class="hljs-string">`</span>
+<span class="hljs-string">    &lt;div class=&quot;kky&quot;&gt;点我试试&lt;/div&gt;</span>
+<span class="hljs-string">    `</span>
+&#125;</code></pre>
+
+<p>此时不用在组件内部写点击事件的方法,直接可以用click方法</p>
+<h2 id="promise函数"><a href="#promise函数" class="headerlink" title="promise函数"></a>promise函数</h2><p>新的解决异步编程 方案</p>
+<p>​        异步传统解决方案是回调函数</p>
+<p>Promise有三个状态 有三种状:</p>
+<p>​    pending(进行中),</p>
+<p>​    fulfilled(已成功)</p>
+<p>​    和rejected(已失败)</p>
+<p>对应函数resolve  成功时的回调,rejected失败时的回调</p>
+<p>格式:</p>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> p = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>)=&gt;</span>&#123;
+    <span class="hljs-keyword">if</span>(条件)&#123;
+        resolve (成功时回调)
+    &#125;<span class="hljs-keyword">else</span>&#123;
+        reject(失败时回调)
+    &#125;
+&#125;)</code></pre>
+
+<p>then </p>
+<p>​    至少需要一个函数,成功时调用的函数对应resolve,</p>
+<p>​    若有第二个函数对应reject函数,通常建议使用catch处理recject</p>
+<p>​    catch 对应reject函数</p>
+<p>​    finally 无论resove,还是reject,执行之后最后执行</p>
+<p>​    </p>
+<p>​    有三个异步函数分别为myajax1 ,myajax2,myajax3</p>
+<p>​    all 三个都成功时,返回数据[数据1,数据2,数据3], 看谁最后成功,谁跑的慢(都需要成功)</p>
+<p>​    </p>
+<p>​    race 只要有一个成功,就返回数据,看谁最先成功 看谁跑的快(只要第一个成功,就不再执行后面的),第一个失败了,也不再执行</p>
+<p>​    </p>
+<pre><code class="hljs js"><span class="hljs-comment">//三次调用异步,但无法控制异步顺序</span>
+            <span class="hljs-comment">// myAjax(url1).then(res1=&gt;&#123;</span>
+            <span class="hljs-comment">//     console.log(&quot;res1:&quot;,res1);</span>
+            <span class="hljs-comment">// &#125;).catch(err1=&gt;&#123;</span>
+            <span class="hljs-comment">//     console.log(&quot;err1:&quot;,err1);</span>
+            <span class="hljs-comment">// &#125;)</span>
+            <span class="hljs-comment">// myAjax(url2).then(res2=&gt;&#123;</span>
+            <span class="hljs-comment">//     console.log(&quot;res2:&quot;,res2);</span>
+            <span class="hljs-comment">// &#125;).catch(err1=&gt;&#123;</span>
+            <span class="hljs-comment">//     console.log(&quot;err2:&quot;,err2);</span>
+            <span class="hljs-comment">// &#125;)</span>
+            <span class="hljs-comment">// myAjax(url3).then(res3=&gt;&#123;</span>
+            <span class="hljs-comment">//     console.log(&quot;res3:&quot;,res3);</span>
+            <span class="hljs-comment">// &#125;).catch(err3=&gt;&#123;</span>
+            <span class="hljs-comment">//     console.log(&quot;err3:&quot;,err3);</span>
+            <span class="hljs-comment">// &#125;)</span>
+
+            <span class="hljs-comment">//按照需要的顺序,调用三次异步</span>
+            myAjax(url2).then(<span class="hljs-function"><span class="hljs-params">res2</span>=&gt;</span>&#123;
+                <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;res2:&quot;</span>,res2);
+                <span class="hljs-keyword">return</span> myAjax(url3);
+            &#125;).then(<span class="hljs-function"><span class="hljs-params">res3</span>=&gt;</span>&#123;
+                <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;res3:&quot;</span>,res3);
+                <span class="hljs-keyword">return</span> myAjax(url1);
+            &#125;).then(<span class="hljs-function"><span class="hljs-params">res1</span>=&gt;</span>&#123;
+                <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;res1:&quot;</span>,res1);
+            &#125;).catch(<span class="hljs-function"><span class="hljs-params">err</span>=&gt;</span>&#123;
+                <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;err:&quot;</span>,err);
+            &#125;)</code></pre>
+
+
+
+<h2 id="async-await函数"><a href="#async-await函数" class="headerlink" title="async   await函数"></a>async   await函数</h2><p>async await</p>
+<p>​    使得异步操作变得更加方便 必须和promise连用</p>
+<p>​    </p>
+<p>​    格式</p>
+<p>​    async 规定这是个async 函数 fn</p>
+<p>​    await 必须放在一个通过promise写的异步函数</p>
+<p>​    最后调用fn</p>
+<p>​    fn().then().catch().finally();</p>
+<p>​    </p>
+<h2 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h2><p>​      四种:</p>
+<p>/*</p>
+<p>​      redirect:”地址”(String)</p>
+<p>​      redirect:{ptah:”/地址”},对象</p>
+<p>​      redirect:{name:”路由名称”},对象</p>
+<p>​      redirect:to=&gt;{</p>
+<p>​        //逻辑操作</p>
+<p>​        return 新地址(字符串)</p>
+<p>​      }</p>
+<p>​       */</p>
+<h2 id="路由守卫"><a href="#路由守卫" class="headerlink" title="路由守卫"></a>路由守卫</h2><pre><code class="hljs js">
+router.beforeEach(<span class="hljs-function">(<span class="hljs-params">to, <span class="hljs-keyword">from</span>, next</span>)=&gt;</span> &#123;
+  <span class="hljs-comment">//console.log(&quot;00000000000000000to:&quot;,to,&quot;form:&quot;,from,&quot;是否需要登录:&quot;,to.meta.isLogin);</span>
+  <span class="hljs-comment">//to.meta.isLogin//只能判断单个路由是否需要登录</span>
+  <span class="hljs-comment">//to.matched.some(route=&gt;route.meta.isLogin) //判断当前路由以及父路由是否需要登录</span>
+  <span class="hljs-built_in">document</span>.title=to.meta.title;<span class="hljs-comment">//地址栏的标题</span>
+  <span class="hljs-keyword">if</span>(to.matched.some(<span class="hljs-function"><span class="hljs-params">route</span>=&gt;</span>route.meta.isLogin))&#123;
+    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">localStorage</span>.token)&#123;<span class="hljs-comment">//是否登录</span>
+      next();
+    &#125;<span class="hljs-keyword">else</span>&#123;
+      Message(&#123;
+        message:<span class="hljs-string">&quot;请先登录,即将前往登录页面&quot;</span>,
+        center:<span class="hljs-literal">true</span>,
+        duration:<span class="hljs-number">1500</span>
+      &#125;);
+      <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">()=&gt;</span>&#123;
+        next(&#123;
+          path:<span class="hljs-string">&quot;/login&quot;</span>,
+          query:&#123;<span class="hljs-attr">redirect</span>:to.fullPath&#125;<span class="hljs-comment">//登录后将回到登录之前的路由</span>
+        &#125;)
+      &#125;)
+    &#125;
+  &#125;<span class="hljs-keyword">else</span>&#123;
+    next();
+  &#125;
+&#125;)</code></pre>
+
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/">知识点总结</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/vue/">vue</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/09/16/hello-world/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">请输入关键字</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <!-- <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> -->
+      <a href="http://xuxd.top/" target="_blank" rel="nofollow noopener"><span>主页</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="http://xuxd.top/categories/" target="_blank" rel="nofollow noopener">
+        <span>分类</span></a>
+    </div>
+    
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "vue基础&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 60,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript">
+      //定义获取词语下标
+      var a_idx = 0;
+      jQuery(document).ready(function ($) {
+        //点击body时触发事件
+        $("body").click(function (e) {
+          //需要显示的词语
+          var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善");
+          //设置词语给span标签
+          var $i = $("<span/>").text(a[a_idx]);
+          //下标等于原来下标+1  余 词语总数
+          a_idx = (a_idx + 1) % a.length;
+          //获取鼠标指针的位置，分别相对于文档的左和右边缘。
+          //获取x和y的指针坐标
+          var x = e.pageX, y = e.pageY;
+          //在鼠标的指针的位置给$i定义的span标签添加css样式
+          $i.css({
+            "z-index": 999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "color": rand_color()
+          });
+          // 随机颜色
+          function rand_color() {
+            return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+          }
+          //在body添加这个标签
+          $("body").append($i);
+          //animate() 方法执行 CSS 属性集的自定义动画。
+          //该方法通过CSS样式将元素从一个状态改变为另一个状态。CSS属性值是逐渐改变的，这样就可以创建动画效果。
+          //详情请看http://www.w3school.com.cn/jquery/effect_animate.asp
+          $i.animate({
+            //将原来的位置向上移动180
+            "top": y - 180,
+            "opacity": 0
+            //1500动画的速度
+          }, 1500, function () {
+            //时间到了自动删除
+            $i.remove();
+          });
+        });
+      })
+      ;
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
